@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
+    "lint": "eslint --ignore-path .gitignore **/*.{js,svelte}",
     "build-storybook": "build-storybook"
   },
   "repository": {
@@ -26,6 +27,8 @@
     "@storybook/addon-svelte-csf": "^1.1.0",
     "@storybook/svelte": "^6.4.0-alpha.34",
     "babel-loader": "^8.2.2",
+    "eslint": "^7.32.0",
+    "eslint-plugin-svelte3": "^3.2.1",
     "svelte": "^3.42.5",
     "svelte-loader": "^3.1.2"
   },
