@@ -11,6 +11,7 @@
     "storybook": "start-storybook -p 6006",
     "lint": "eslint --ignore-path .gitignore **/*.{js,svelte}",
     "format": "prettier --ignore-path .gitignore --write **/*.{js,svelte}",
+    "format:diff": "prettier --ignore-path .gitignore --list-different **/*.{js,svelte}",
     "build-storybook": "build-storybook"
   },
   "repository": {
