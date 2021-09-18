@@ -6,7 +6,7 @@
   disagreement is no excuse for poor behavior or poor manners. It is important
   that we resolve disagreements and differing views constructively.
 
-* **Be welcoming.** We strive to be a community that welcomes and supports
+- **Be welcoming.** We strive to be a community that welcomes and supports
   people of all backgrounds and identities.
 
 ## Our Pledge
