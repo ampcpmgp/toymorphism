@@ -1,6 +1,6 @@
 {
   "name": "toymorphism",
-  "version": "1.0.1-2",
+  "version": "1.0.1",
   "description": "Toy + Skeuomorphism",
   "main": "src/index.js",
   "engines": {
