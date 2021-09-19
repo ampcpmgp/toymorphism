@@ -24,9 +24,10 @@ npm run storybook
 npm run dev
 ```
 
-## Release
+## Pull Request
+
+If edit `src/` files, enter below & commit it.
 
 ```shell
-npm version [major | minor | patch | prerelease]
-git push origin <tag_name>
+npx changeset # Enter changelog
 ```
