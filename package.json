@@ -2,7 +2,7 @@
   "name": "toymorphism",
   "version": "1.0.1",
   "description": "Toy + Skeuomorphism",
-  "main": "index.js",
+  "main": "src/index.js",
   "engines": {
     "node": ">=16.0.0"
   },
