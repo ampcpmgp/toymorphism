@@ -1,4 +1,4 @@
-name: Deploy
+name: Website
 on:
   push:
     tags:
@@ -23,7 +23,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
+      - name: Website
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
