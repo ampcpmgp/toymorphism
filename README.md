@@ -24,7 +24,7 @@ npm run storybook
 npm run dev
 ```
 
-## Pull Request
+### Before pull request
 
 If edit `src/` files, enter below & commit it.
 
