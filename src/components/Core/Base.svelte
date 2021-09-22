@@ -1,8 +1,10 @@
 <script>
   export let hidden = true;
+
+  const thickness = "1rem";
 </script>
 
-<div class:hidden><slot /></div>
+<div class:hidden style="--thickness: {thickness}"><slot /></div>
 
 <style>
   div {
@@ -14,23 +16,23 @@
     /* prettier-ignore */
     box-shadow:
       /* top */
-      0rem -0.1rem 0rem rgba(255, 255, 255, 0.7),
-      0rem -0.2rem 0rem #cb4966,
+      0rem calc(var(--thickness) * -0.1) 0rem rgba(255, 255, 255, 0.7),
+      0rem calc(var(--thickness) * -0.2) 0rem #cb4966,
 
       /* left & right */
-      0.08rem -0.1rem 0rem #cb4966,
-      -0.08rem -0.1rem 0rem #cb4966,
-      0.1rem 0rem 0rem #cb4966,
-      -0.1rem 0rem 0rem #cb4966,
-      0.08rem 0.2rem 0rem #cb4966,
-      -0.08rem 0.2rem 0rem #cb4966,
-      0.06rem 0.4rem 0rem #cb4966,
-      -0.06rem 0.4rem 0rem #cb4966,
+      calc(var(--thickness) * 0.08) calc(var(--thickness) * -0.1) 0rem #cb4966,
+      calc(var(--thickness) * -0.08) calc(var(--thickness) * -0.1) 0rem #cb4966,
+      calc(var(--thickness) * 0.1) 0rem 0rem #cb4966,
+      calc(var(--thickness) * -0.1) 0rem 0rem #cb4966,
+      calc(var(--thickness) * 0.08) calc(var(--thickness) * 0.2) 0rem #cb4966,
+      calc(var(--thickness) * -0.08) calc(var(--thickness) * 0.2) 0rem #cb4966,
+      calc(var(--thickness) * 0.06) calc(var(--thickness) * 0.4) 0rem #cb4966,
+      calc(var(--thickness) * -0.06) calc(var(--thickness) * 0.4) 0rem #cb4966,
 
       /* bottom */
-      0rem 0.4rem 0rem #cb4966,
-      0rem 0.6rem 0.1rem #be4265,
-      0rem 1rem 0.4rem 0rem rgba(128, 128, 128, 1),
+      0rem calc(var(--thickness) * 0.4) 0rem #cb4966,
+      0rem calc(var(--thickness) * 0.6) calc(var(--thickness) * 0.1) #be4265,
+      0rem var(--thickness) calc(var(--thickness) * 0.4) 0rem rgba(128, 128, 128, 1),
 
       /* blank */
       0 0 0 transparent
