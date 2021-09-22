@@ -47,7 +47,8 @@
       0rem 0.6rem 0.1rem #be4265,
       0rem 1rem 0.4rem 0rem rgba(128, 128, 128, 1),
 
-      0 0 0 white
+      /* blank */
+      0 0 0 transparent
       ;
   }
 </style>
