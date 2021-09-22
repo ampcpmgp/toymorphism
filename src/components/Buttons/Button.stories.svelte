@@ -4,7 +4,7 @@
 </script>
 
 <Meta
-  title="Example/Button"
+  title="Buttons/Button"
   component={Button}
   parameters={{
     backgrounds: {
