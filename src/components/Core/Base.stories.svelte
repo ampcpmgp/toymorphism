@@ -23,7 +23,6 @@
 </Template>
 
 <Story name="With white box" args={{}} />
-<Story name="Hidden false" args={{ hidden: false }} />
 
 <style>
   .box {

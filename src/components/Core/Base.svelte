@@ -1,10 +1,10 @@
 <script>
-  export let hidden = true;
-
   const thickness = "1rem";
 </script>
 
-<div class:hidden style="--thickness: {thickness}"><slot /></div>
+<div style="--thickness: {thickness}">
+  <slot />
+</div>
 
 <style>
   div {
@@ -37,9 +37,5 @@
       /* blank */
       0 0 0 transparent
       ;
-  }
-
-  .hidden {
-    overflow: hidden;
   }
 </style>
