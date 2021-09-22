@@ -6,25 +6,32 @@
 <Meta
   title="Example/Button"
   component={Button}
-  argTypes={{
-    label: { control: "text" },
-    primary: { control: "boolean" },
-    backgroundColor: { control: "color" },
-    size: {
-      control: { type: "select", options: ["small", "medium", "large"] },
+  parameters={{
+    backgrounds: {
+      default: "gray",
     },
+  }}
+  argTypes={{
     onClick: { action: "onClick" },
   }}
 />
 
 <Template let:args>
-  <Button {...args} on:click={args.onClick} />
+  <Button {...args} on:click={args.onClick}>
+    <div style="font-size: 2rem; margin: 1rem 1.2rem;">{args.text}</div>
+  </Button>
 </Template>
 
 <Story
-  name="Primary"
+  name="Emoji Button"
   args={{
-    primary: true,
-    label: "Button",
+    text: "🎶",
+  }}
+/>
+
+<Story
+  name="More Emojis"
+  args={{
+    text: "🎶🎶🎶",
   }}
 />
