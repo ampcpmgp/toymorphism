@@ -1,5 +1,5 @@
 <script>
-  const thickness = "1rem";
+  const thickness = "2.5rem";
 </script>
 
 <div style="--thickness: {thickness}">
