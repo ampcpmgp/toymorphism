@@ -11,6 +11,3 @@ storybook-static/
 
 # Vite app
 website/dist/
-
-# Chromatic
-build-storybook.log
