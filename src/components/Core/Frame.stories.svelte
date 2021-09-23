@@ -1,5 +1,6 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
+  import Text from "../Texts/Text.svelte";
   import Frame from "./Frame.svelte";
 </script>
 
@@ -18,7 +19,9 @@
 
 <Template let:args>
   <Frame {...args}>
-    <div class="box" />
+    <div class="box">
+      <Text size="2rem">Hello World</Text>
+    </div>
   </Frame>
 </Template>
 
@@ -28,6 +31,8 @@
   .box {
     width: 50vw;
     height: 50vh;
+    display: grid;
+    place-items: center;
     background-color: white;
   }
 </style>
