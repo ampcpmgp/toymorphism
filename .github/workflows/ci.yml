@@ -26,3 +26,6 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Import error check
+        run: npm run build
