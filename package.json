@@ -41,7 +41,6 @@
     "@storybook/svelte": "^6.4.0-beta.0",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
     "babel-loader": "^8.2.2",
-    "chromatic": "^5.10.1",
     "eslint": "^7.32.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "prettier": "^2.4.1",
