@@ -1,8 +1,11 @@
 <script>
   export let size = "1rem";
+
+  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
+  export let attrs = {};
 </script>
 
-<p style="--size: {size}">
+<p {...attrs} style="--size: {size}">
   <slot />
 </p>
 
