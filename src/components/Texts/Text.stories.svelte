@@ -31,6 +31,6 @@
   name="Symbol & spetial character"
   args={{
     size: "5rem",
-    message: "1`˜!@#-$~%あநூந்सैसមួᏗᏍ백叢张",
+    message: "1`˜!@#-$~%あநூந்सैसមួᏗᏍ백叢张夕張",
   }}
 />
