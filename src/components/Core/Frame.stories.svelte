@@ -25,7 +25,12 @@
   </Frame>
 </Template>
 
-<Story name="Normal" args={{}} />
+<Story
+  name="Normal"
+  args={{
+    attrs: { title: "Frame" },
+  }}
+/>
 
 <style>
   .box {

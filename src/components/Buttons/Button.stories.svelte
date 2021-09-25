@@ -26,6 +26,9 @@
   name="Emoji Button"
   args={{
     text: "🎶",
+    attrs: {
+      title: "music",
+    },
   }}
 />
 

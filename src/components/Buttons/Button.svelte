@@ -2,10 +2,13 @@
   import { createEventDispatcher } from "svelte";
   import Base from "../Core/Base.svelte";
 
+  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes */
+  export let attrs = {};
+
   const dispatch = createEventDispatcher();
 </script>
 
-<button on:click={(e) => dispatch("click", e)}>
+<button {...attrs} on:click={(e) => dispatch("click", e)}>
   <Base>
     <slot />
   </Base>

@@ -1,9 +1,12 @@
 <script>
   import Base from "./Base.svelte";
+
+  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
+  export let attrs = {};
 </script>
 
 <Base>
-  <div>
+  <div {...attrs}>
     <slot />
   </div>
 </Base>

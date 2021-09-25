@@ -1,8 +1,11 @@
 <script>
   const thickness = "1rem";
+
+  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
+  export let attrs = {};
 </script>
 
-<div style="--thickness: {thickness}">
+<div {...attrs} style="--thickness: {thickness}">
   <slot />
 </div>
 

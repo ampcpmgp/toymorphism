@@ -35,6 +35,9 @@
   name="Hello world"
   args={{
     message: "Hello World",
+    attrs: {
+      title: "Hello World text",
+    },
   }}
 />
 
