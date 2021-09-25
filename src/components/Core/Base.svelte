@@ -19,11 +19,15 @@
       0rem calc(var(--thickness) * -0.1) 0rem rgba(255, 255, 255, 0.7),
       0rem calc(var(--thickness) * -0.2) 0rem #cb4966,
 
-      /* left & right */
+      /* left top & right top */
       calc(var(--thickness) * 0.08) calc(var(--thickness) * -0.1) 0rem #cb4966,
       calc(var(--thickness) * -0.08) calc(var(--thickness) * -0.1) 0rem #cb4966,
+
+      /* left & right */
       calc(var(--thickness) * 0.1) 0rem 0rem #cb4966,
       calc(var(--thickness) * -0.1) 0rem 0rem #cb4966,
+
+      /* left bottom & right bottom */
       calc(var(--thickness) * 0.08) calc(var(--thickness) * 0.2) 0rem #cb4966,
       calc(var(--thickness) * -0.08) calc(var(--thickness) * 0.2) 0rem #cb4966,
       calc(var(--thickness) * 0.06) calc(var(--thickness) * 0.4) 0rem #cb4966,

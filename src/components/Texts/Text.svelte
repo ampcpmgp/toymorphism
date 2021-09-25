@@ -18,16 +18,16 @@
 
     /* prettier-ignore */
     text-shadow:
-      /* left & right */
-      calc(var(--size) * 0.02) 0rem 0rem #cb4966,
-      calc(var(--size) * -0.02) 0rem 0rem #cb4966,
-
-      calc(var(--size) * 0.02) calc(var(--size) * 0.1) 0rem #cb4966,
-      calc(var(--size) * -0.02) calc(var(--size) * 0.1) 0rem #cb4966,
-
       /* bottom */
-      0rem calc(var(--size) * 0.05) 0rem #cb4966,
-      0rem calc(var(--size) * 0.1) 0rem #be4265,
+      0rem calc(var(--size) * 0.005) 0rem #cb4966,
+      0rem calc(var(--size) * 0.01) 0rem #cb4966,
+      0rem calc(var(--size) * 0.015) 0rem #cb4966,
+      0rem calc(var(--size) * 0.02) 0rem #cb4966,
+      0rem calc(var(--size) * 0.025) 0rem #cb4966,
+      0rem calc(var(--size) * 0.03) 0rem #cb4966,
+      0rem calc(var(--size) * 0.035) 0rem #be4265,
+      0rem calc(var(--size) * 0.04) 0rem #be4265,
+      0rem calc(var(--size) * 0.06) calc(var(--size) * 0.05) rgba(0, 0, 0, 0.6),
 
       /* blank */
       0 0 0 transparent
