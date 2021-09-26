@@ -54,7 +54,7 @@
       /* bottom */
       0rem calc(var(--thickness) * 0.64) 0rem var(--side-color),
       0rem calc(var(--thickness) * 1.0) calc(var(--thickness) * 0.16) var(--bottom-color),
-      0rem calc(var(--thickness) * 1.66) calc(var(--thickness) * 0.64) 0rem rgba(0, 0, 0, 0.5),
+      0rem calc(var(--thickness) * 1.67) calc(var(--thickness) * 0.64) 0rem rgba(0, 0, 0, 0.5),
 
       /* blank */
       0 0 0 transparent
