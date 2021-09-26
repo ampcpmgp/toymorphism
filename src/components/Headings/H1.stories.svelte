@@ -24,5 +24,8 @@
   name="Normal"
   args={{
     message: "H1 Text",
+    attrs: {
+      id: "h1-text",
+    },
   }}
 />
