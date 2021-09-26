@@ -14,6 +14,7 @@
 <div
   {...attrs}
   style="
+    {attrs.style};
     --base-color: {color};
     --side-color: {baseColors.sideColor};
     --top-light-color: {baseColors.topLightColor};

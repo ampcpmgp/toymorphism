@@ -1,0 +1,5 @@
+---
+"toymorphism": minor
+---
+
+Toy Link
