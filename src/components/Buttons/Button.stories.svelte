@@ -12,6 +12,11 @@
     },
   }}
   argTypes={{
+    baseColor: {
+      control: {
+        type: "color",
+      },
+    },
     onClick: { action: "onClick" },
   }}
 />
@@ -26,6 +31,7 @@
   name="Emoji Button"
   args={{
     text: "🎶",
+    baseColor: "#fc769f",
     attrs: {
       title: "music",
     },
@@ -33,8 +39,9 @@
 />
 
 <Story
-  name="More Emojis"
+  name="Black baseColor"
   args={{
     text: "🎶🎶🎶",
+    baseColor: "black",
   }}
 />

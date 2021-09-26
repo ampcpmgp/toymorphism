@@ -28,6 +28,7 @@
 <Story
   name="Normal"
   args={{
+    color: "#fc769f",
     attrs: { title: "Frame" },
   }}
 />

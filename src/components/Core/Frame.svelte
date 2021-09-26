@@ -3,9 +3,10 @@
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
   export let attrs = {};
+  export let color;
 </script>
 
-<Base>
+<Base {color}>
   <div {...attrs}>
     <slot />
   </div>
