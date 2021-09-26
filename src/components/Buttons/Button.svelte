@@ -4,12 +4,13 @@
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes */
   export let attrs = {};
+  export let baseColor;
 
   const dispatch = createEventDispatcher();
 </script>
 
 <button {...attrs} on:click={(e) => dispatch("click", e)}>
-  <Base>
+  <Base color={baseColor}>
     <slot />
   </Base>
 </button>
