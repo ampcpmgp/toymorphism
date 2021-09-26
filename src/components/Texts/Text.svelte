@@ -1,11 +1,26 @@
 <script>
+  import { colors } from "../../stores/theme";
+  import { getTextColors } from "../../utils/color";
+
   export let size = "1rem";
+  export let color = $colors.text;
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
   export let attrs = {};
+
+  $: textColors = getTextColors(color);
 </script>
 
-<p {...attrs} style="--size: {size}">
+<p
+  {...attrs}
+  style="
+    --size: {size};
+    --base-color: {color};
+    --side-color: {textColors.sideColor};
+    --bottom-color: {textColors.bottomColor};
+    --thickness: calc(var(--size) / 15);
+  "
+>
   <slot />
 </p>
 
@@ -15,22 +30,24 @@
     place-items: center;
 
     margin: 0;
-    color: #fc769f;
+    color: var(--base-color);
     font-size: var(--size);
     line-height: calc(var(--size) * 1);
 
     /* prettier-ignore */
     text-shadow:
       /* bottom */
-      0rem calc(var(--size) * 0.005) 0rem #cb4966,
-      0rem calc(var(--size) * 0.01) 0rem #cb4966,
-      0rem calc(var(--size) * 0.015) 0rem #cb4966,
-      0rem calc(var(--size) * 0.02) 0rem #cb4966,
-      0rem calc(var(--size) * 0.025) 0rem #cb4966,
-      0rem calc(var(--size) * 0.03) 0rem #cb4966,
-      0rem calc(var(--size) * 0.035) 0rem #be4265,
-      0rem calc(var(--size) * 0.04) 0rem #be4265,
-      0rem calc(var(--size) * 0.06) calc(var(--size) * 0.05) rgba(0, 0, 0, 0.6),
+      0rem calc(var(--thickness) * 0.1) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 0.2) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 0.3) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 0.4) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 0.5) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 0.6) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 0.7) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 0.8) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 0.9) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 1.0) 0rem var(--bottom-color),
+      0rem calc(var(--thickness) * 1.5) calc(var(--thickness) * 0.8) rgba(0, 0, 0, 0.5),
 
       /* blank */
       0 0 0 transparent

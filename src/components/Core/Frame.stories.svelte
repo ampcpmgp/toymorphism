@@ -20,7 +20,7 @@
 <Template let:args>
   <Frame {...args}>
     <div class="box">
-      <Text size="2rem">Hello World</Text>
+      <Text size="2rem" color="#fc769f">Hello World</Text>
     </div>
   </Frame>
 </Template>

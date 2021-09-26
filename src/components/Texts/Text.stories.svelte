@@ -8,7 +8,7 @@
   component={Text}
   parameters={{
     backgrounds: {
-      default: "gray",
+      default: "white",
     },
   }}
   argTypes={{
@@ -34,7 +34,8 @@
 <Story
   name="Hello world"
   args={{
-    message: "Hello World",
+    message: "Hello World | こんにちは世界",
+    color: "#fc769f",
     attrs: {
       title: "Hello World text",
     },
@@ -44,7 +45,17 @@
 <Story
   name="Symbol & spetial character"
   args={{
+    size: "1rem",
+    color: "#fc769f",
+    message: "1`˜!@#-$~%あநூந்सैसមួᏗᏍ백叢张夕張",
+  }}
+/>
+
+<Story
+  name="Big size character"
+  args={{
     size: "5rem",
+    color: "#fc769f",
     message: "1`˜!@#-$~%あநூந்सैसមួᏗᏍ백叢张夕張",
   }}
 />
@@ -53,6 +64,7 @@
   name="Font awesome"
   args={{
     size: "5rem",
+    color: "#fc769f",
     icon: true,
   }}
 />
