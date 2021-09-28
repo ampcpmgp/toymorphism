@@ -7,9 +7,10 @@
 
   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li#attributes
   export let attrs = {};
+  export let cid = "default";
 </script>
 
-<li {...attrs}>
+<li {...attrs} style="{attrs.style}; --cid: {cid};">
   <Text {size} {color}>
     <div class="counter">
       <slot />
@@ -19,7 +20,7 @@
 
 <style>
   li .counter::before {
-    counter-increment: section;
-    content: counters(section, ".") ". ";
+    counter-increment: var(--cid);
+    content: counters(var(--cid), ".") ". ";
   }
 </style>

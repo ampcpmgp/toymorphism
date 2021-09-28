@@ -18,11 +18,34 @@
 />
 
 <Template let:args>
+  <OL hierarchy let:cid>
+    <OLItem {cid} {...args}>OLItem Item</OLItem>
+    <OLItem {cid} {...args}>OLItem Item</OLItem>
+    <OLItem {cid} {...args}>OLItem Item</OLItem>
+    <OLItem {cid} {...args}>OLItem Item</OLItem>
+    <OL hierarchy let:cid>
+      <OLItem {cid} {...args}>OLItem Item</OLItem>
+      <OLItem {cid} {...args}>OLItem Item</OLItem>
+      <OL hierarchy let:cid>
+        <OLItem {cid} {...args}>OLItem Item</OLItem>
+      </OL>
+    </OL>
+    <OLItem {cid} {...args}>OLItem Item</OLItem>
+    <OLItem {cid} {...args}>OLItem Item</OLItem>
+    <OLItem {cid} {...args}>OLItem Item</OLItem>
+    <OL let:cid>
+      <OLItem {cid} {...args}>OLItem Item</OLItem>
+    </OL>
+  </OL>
+
   <OL>
-    <OLItem {...args}>OLItem Item</OLItem>
-    <OLItem {...args}>OLItem Item</OLItem>
-    <OLItem {...args}>OLItem Item</OLItem>
-    <OLItem {...args}>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
+  </OL>
+
+  <OL>
+    <OLItem>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
   </OL>
 </Template>
 
