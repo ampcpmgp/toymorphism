@@ -1,5 +1,11 @@
 # toymorphism
 
+## 0.2.3
+
+### Patch Changes
+
+- 18e3661: fix CI
+
 ## 0.2.2
 
 ### Patch Changes
