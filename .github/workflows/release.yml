@@ -5,8 +5,8 @@ on:
       - main
 
 jobs:
-  ci:
-    name: CI
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

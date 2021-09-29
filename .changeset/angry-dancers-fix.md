@@ -1,0 +1,5 @@
+---
+"toymorphism": patch
+---
+
+fix CI
