@@ -23,7 +23,7 @@ jobs:
 
   deploy:
     name: Website
-    needs: [guard]
+    needs: guard
     runs-on: ubuntu-latest
     if: ${{ needs.guard.outputs.should_deploy == true }}
     steps:
