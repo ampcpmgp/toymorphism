@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          # ref: https://github.community/t/action-does-not-trigger-another-on-push-tag-action/17148
+          token: ${{ secrets.TOY_PAT }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v2

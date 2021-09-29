@@ -1,5 +1,6 @@
 <script>
   import { Button } from "../../src";
+  import Text from "../../src/components/Texts/Text.svelte";
 
   import logo from "./assets/svelte.png";
 </script>
@@ -8,7 +9,9 @@
   <img src={logo} alt="Svelte Logo" />
   <h1>Hello world!</h1>
 
-  <Button>Click me!</Button>
+  <Button baseColor="#fc769f">
+    <Text attrs={{ style: "padding: 20px;" }}>Click me!</Text>
+  </Button>
 </main>
 
 <style>
