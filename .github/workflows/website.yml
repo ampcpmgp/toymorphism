@@ -6,12 +6,12 @@ on:
 
 jobs:
   # ref: https://github.com/primer/react/blob/f97a69aa124d28cf93734415cc00598d6a6fa303/.github/workflows/deploy_production.yml#L6-L22
-  # Problem: https://github.community/t/action-does-not-trigger-another-on-push-tag-action/17148
+  # problem: https://github.community/t/action-does-not-trigger-another-on-push-tag-action/17148
   guard:
     name: Guard
     runs-on: ubuntu-latest
     outputs:
-      should_deploy: ${{ steps.changeset-count.outputs.change_count == 0 }}
+      change_count: ${{ steps.changeset-count.outputs.change_count }}
     steps:
       - uses: actions/checkout@v2
 
@@ -25,16 +25,13 @@ jobs:
     name: Website
     needs: guard
     runs-on: ubuntu-latest
+    if: ${{ needs.guard.outputs.change_count == 0 }}
     steps:
       - name: Log guard output
         run: echo ${{ needs.guard.outputs.should_deploy }}
 
-      - name: Log CHANGE_COUNT
-        run: echo ${{ steps.changeset-count.outputs.CHANGE_COUNT }}
-
       - name: Checkout repository
         uses: actions/checkout@v2
-        if: ${{ steps.changeset-count.outputs.CHANGE_COUNT == 0 }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
