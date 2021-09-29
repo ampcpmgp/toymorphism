@@ -1,9 +1,6 @@
 name: Website
 on:
   push:
-    # TODO: remove
-    branches:
-      - fix-website-ci
     tags:
       - 'v*'
 
