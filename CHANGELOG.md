@@ -1,5 +1,11 @@
 # toymorphism
 
+## 0.2.0
+
+### Minor Changes
+
+- c14dbf7: Toy Ordered Lists / Toy Unordered List
+
 ## 0.1.0
 
 ### Minor Changes
