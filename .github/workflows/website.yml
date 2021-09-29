@@ -25,7 +25,7 @@ jobs:
     name: Website
     needs: [guard]
     runs-on: ubuntu-latest
-    if: ${{ steps.changeset-count.outputs.CHANGE_COUNT == 0 }}
+    if: ${{ needs.guard.outputs.should_deploy == true }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
