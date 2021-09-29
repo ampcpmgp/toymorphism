@@ -27,9 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ needs.guard.outputs.change_count == 0 }}
     steps:
-      - name: Log guard output
-        run: echo ${{ needs.guard.outputs.should_deploy }}
-
       - name: Checkout repository
         uses: actions/checkout@v2
 
