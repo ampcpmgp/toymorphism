@@ -33,11 +33,6 @@
   "include": [
     "src/**/*.svelte",
     "src/**/*.d.ts",
-    "src/**/*.js",
-    "website/**/*.svelte",
-    "website/**/*.d.ts",
-    "website/**/*.js",
-    "website/**/*.svelte"
-  ],
-  "exclude": ["website/dist"]
+    "src/**/*.js"
+  ]
 }
