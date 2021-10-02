@@ -1,5 +1,0 @@
----
-"toymorphism-svelte": minor
----
-
-Monorepo
