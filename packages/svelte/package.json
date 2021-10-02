@@ -3,6 +3,9 @@
   "description": "Toy + Skeuomorphism",
   "version": "0.3.0",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@storybook/addon-actions": "^6.4.0-alpha.34",
