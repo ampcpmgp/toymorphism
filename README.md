@@ -29,5 +29,5 @@ npm run dev
 If edit `src/` files, enter below & commit it.
 
 ```shell
-npx changeset # Enter changelog
+npx changeset # Please select module, semver, and input changelog.
 ```
