@@ -5,6 +5,3 @@
 
 # Node.js
 node_modules/
-
-# Vite app
-website/dist/

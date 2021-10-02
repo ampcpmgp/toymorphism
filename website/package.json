@@ -1,0 +1,37 @@
+{
+  "name": "toymorphism-website",
+  "private": true,
+  "description": "Toy + Skeuomorphism",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ignore-path .gitignore **/*.{js,svelte}",
+    "format": "prettier --write . --ignore-path .gitignore --config ../../.prettierrc",
+    "format:diff": "prettier --list-different . --ignore-path .gitignore --config ../../.prettierrc",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ampcpmgp/toymorphism.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ampcpmgp/toymorphism/issues"
+  },
+  "homepage": "https://ampcpmgp.github.io/toymorphism/",
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
+    "svelte": "^3.42.6",
+    "vite": "^2.5.8"
+  },
+  "dependencies": {
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

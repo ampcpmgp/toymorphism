@@ -1,5 +1,5 @@
 {
-  "name": "toymorphism",
+  "name": "toymorphism-portal",
   "private": true,
   "description": "Toy + Skeuomorphism",
   "main": "src/index.js",
@@ -11,12 +11,14 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run dev --workspace=website",
+    "build": "npm run build --workspace=website",
+    "storybook": "npm run storybook --workspace=svelte",
+    "storybook:ce": "npm run storybook --workspace=custom-elements",
+    "storybook:r": "npm run storybook --workspace=react",
     "lint": "npm run lint --workspaces",
     "format": "npm run format --workspaces",
     "format:diff": "npm run format:diff --workspaces",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
     "release": "changeset publish"
   },
   "repository": {
@@ -31,17 +33,15 @@
   "homepage": "https://ampcpmgp.github.io/toymorphism/",
   "devDependencies": {
     "@changesets/cli": "^2.17.0",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
     "eslint": "^7.32.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "prettier": "^2.4.1",
-    "prettier-plugin-svelte": "^2.4.0",
-    "svelte": "^3.42.6",
-    "vite": "^2.5.8"
+    "prettier-plugin-svelte": "^2.4.0"
   },
   "dependencies": {
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "website"
   ]
 }

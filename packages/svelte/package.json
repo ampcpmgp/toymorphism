@@ -1,5 +1,5 @@
 {
-  "name": "toymorphism-svelte",
+  "name": "toymorphism",
   "description": "Toy + Skeuomorphism",
   "version": "0.2.5",
   "main": "index.js",
@@ -12,10 +12,6 @@
     "@storybook/svelte": "^6.4.0-beta.0",
     "@types/chroma-js": "^2.1.3",
     "babel-loader": "^8.2.2",
-    "eslint": "^7.32.0",
-    "eslint-plugin-svelte3": "^3.2.1",
-    "prettier": "^2.4.1",
-    "prettier-plugin-svelte": "^2.4.0",
     "svelte": "^3.42.6",
     "svelte-loader": "^3.1.2"
   },
