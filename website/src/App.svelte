@@ -1,6 +1,5 @@
 <script>
-  import { Button } from "../../src";
-  import Text from "../../src/components/Texts/Text.svelte";
+  import { Button, Text } from "toymorphism";
 
   import logo from "./assets/svelte.png";
 </script>

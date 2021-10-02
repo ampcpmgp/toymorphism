@@ -1,6 +1,6 @@
 {
-  "name": "toymorphism",
-  "version": "0.2.5",
+  "name": "toymorphism-portal",
+  "private": true,
   "description": "Toy + Skeuomorphism",
   "main": "src/index.js",
   "engines": {
@@ -11,14 +11,14 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "lint": "eslint --ignore-path .gitignore **/*.{js,svelte}",
-    "format": "prettier --ignore-path .gitignore --write **/*.{js,svelte}",
-    "format:diff": "prettier --ignore-path .gitignore --list-different **/*.{js,svelte}",
-    "build-storybook": "build-storybook",
+    "dev": "npm run dev --workspace=website",
+    "build": "npm run build --workspace=website",
+    "storybook": "npm run storybook --workspace=svelte",
+    "storybook:ce": "npm run storybook --workspace=custom-elements",
+    "storybook:r": "npm run storybook --workspace=react",
+    "lint": "npm run lint --workspaces",
+    "format": "npm run format --workspaces",
+    "format:diff": "npm run format:diff --workspaces",
     "release": "changeset publish"
   },
   "repository": {
@@ -30,27 +30,18 @@
   "bugs": {
     "url": "https://github.com/ampcpmgp/toymorphism/issues"
   },
-  "homepage": "https://github.com/ampcpmgp/toymorphism#readme",
+  "homepage": "https://ampcpmgp.github.io/toymorphism/",
   "devDependencies": {
-    "@babel/core": "^7.15.5",
     "@changesets/cli": "^2.17.0",
-    "@storybook/addon-actions": "^6.4.0-alpha.34",
-    "@storybook/addon-essentials": "^6.4.0-beta.0",
-    "@storybook/addon-links": "^6.4.0-beta.0",
-    "@storybook/addon-svelte-csf": "^1.1.0",
-    "@storybook/svelte": "^6.4.0-beta.0",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
-    "@types/chroma-js": "^2.1.3",
-    "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "prettier": "^2.4.1",
-    "prettier-plugin-svelte": "^2.4.0",
-    "svelte": "^3.42.6",
-    "svelte-loader": "^3.1.2",
-    "vite": "^2.5.8"
+    "prettier-plugin-svelte": "^2.4.0"
   },
   "dependencies": {
-    "chroma-js": "^2.1.2"
-  }
+  },
+  "workspaces": [
+    "packages/*",
+    "website"
+  ]
 }

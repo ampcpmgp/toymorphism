@@ -30,14 +30,5 @@
    * Use global.d.ts instead of compilerOptions.types
    * to avoid limiting type declarations.
    */
-  "include": [
-    "src/**/*.svelte",
-    "src/**/*.d.ts",
-    "src/**/*.js",
-    "website/**/*.svelte",
-    "website/**/*.d.ts",
-    "website/**/*.js",
-    "website/**/*.svelte"
-  ],
-  "exclude": ["website/dist"]
+  "include": ["**/*.svelte", "**/*.js"]
 }
