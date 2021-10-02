@@ -1,0 +1,7 @@
+.vscode/
+
+# for mac user
+.DS_Store
+
+# storybook
+storybook-static/

@@ -11,9 +11,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npm run lint --workspace",
-    "format": "prettier --ignore-path .gitignore --write **/*.{js,svelte}",
-    "format:diff": "prettier --ignore-path .gitignore --list-different **/*.{js,svelte}",
+    "lint": "npm run lint --workspaces",
+    "format": "npm run format --workspaces",
+    "format:diff": "npm run format:diff --workspaces",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",

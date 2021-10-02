@@ -6,8 +6,5 @@
 # Node.js
 node_modules/
 
-# storybook
-storybook-static/
-
 # Vite app
 website/dist/

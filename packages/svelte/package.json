@@ -1,7 +1,7 @@
 {
   "name": "toymorphism",
-  "version": "0.2.5",
   "description": "Toy + Skeuomorphism",
+  "version": "0.2.5",
   "main": "index.js",
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -26,8 +26,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "lint": "eslint --ignore-path .gitignore **/*.{js,svelte}",
-    "format": "prettier --ignore-path .gitignore --write **/*.{js,svelte}",
-    "format:diff": "prettier --ignore-path .gitignore --list-different **/*.{js,svelte}",
+    "format": "prettier --write . --ignore-path .gitignore --config ../../.prettierrc",
+    "format:diff": "prettier --list-different . --ignore-path .gitignore --config ../../.prettierrc",
     "build-storybook": "build-storybook"
   },
   "repository": {
