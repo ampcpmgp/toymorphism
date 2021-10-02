@@ -1,7 +1,7 @@
 {
   "name": "toymorphism",
   "description": "Toy + Skeuomorphism",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "main": "index.js",
   "devDependencies": {
     "@babel/core": "^7.15.5",

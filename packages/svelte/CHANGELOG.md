@@ -1,5 +1,15 @@
 # toymorphism
 
+## 0.3.0
+
+### Minor Changes
+
+- ec7bbf1: Apply monorepo
+
+### Patch Changes
+
+- 15d5424: Toy Code
+
 ## 0.2.5
 
 ### Patch Changes
