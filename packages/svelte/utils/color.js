@@ -8,9 +8,9 @@ export function getBaseColors(color) {
   const luminance = chromaColor.luminance();
   const isDark = luminance < 0.01;
 
-  const sideColor = chroma.mix(color, isDark ? "#333" : "black", 0.4).hex();
+  const sideColor = chroma.mix(color, isDark ? "#444" : "black", 0.4).hex();
   const topLightColor = chromaColor.brighten(1.5).hex();
-  const bottomColor = chroma.mix(color, isDark ? "#333" : "black", 0.6).hex();
+  const bottomColor = chroma.mix(color, isDark ? "#444" : "black", 0.6).hex();
 
   return {
     sideColor,
