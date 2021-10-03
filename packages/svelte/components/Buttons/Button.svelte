@@ -1,15 +1,23 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import Base from "../Core/Base.svelte";
+  import { colors } from "../../stores/theme";
+  import { getLuminance } from "../../utils/color";
+  import Base from "../_Core/Base.svelte";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes */
   export let attrs = {};
-  export let baseColor;
+  export let baseColor = $colors.base;
 
   const dispatch = createEventDispatcher();
+  $: isDark = getLuminance(baseColor);
+  $: brightness = isDark ? "80%" : "120%";
 </script>
 
-<button {...attrs} on:click={(e) => dispatch("click", e)}>
+<button
+  {...attrs}
+  on:click={(e) => dispatch("click", e)}
+  style="--brightness: {brightness};"
+>
   <Base color={baseColor}>
     <slot />
   </Base>
@@ -27,5 +35,9 @@
 
     /* custom style */
     cursor: pointer;
+  }
+
+  button:hover {
+    filter: brightness(var(--brightness));
   }
 </style>

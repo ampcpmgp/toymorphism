@@ -1,6 +1,6 @@
 <script>
   import { getBaseColors } from "../../utils/color.js";
-  import { colors } from "./../../stores/theme.js";
+  import { colors } from "../../stores/theme.js";
 
   export let color = $colors.base;
 
@@ -9,19 +9,17 @@
 
   const thickness = "0.6rem";
   $: baseColors = getBaseColors(color);
+  $: style = `
+    ${attrs.style};
+    --base-color: ${color};
+    --side-color: ${baseColors.sideColor};
+    --top-light-color: ${baseColors.topLightColor};
+    --bottom-color: ${baseColors.bottomColor};
+    --thickness: ${thickness};
+  `;
 </script>
 
-<div
-  {...attrs}
-  style="
-    {attrs.style};
-    --base-color: {color};
-    --side-color: {baseColors.sideColor};
-    --top-light-color: {baseColors.topLightColor};
-    --bottom-color: {baseColors.bottomColor};
-    --thickness: {thickness};
-  "
->
+<div {...attrs} {style}>
   <slot />
 </div>
 
