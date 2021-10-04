@@ -4,9 +4,9 @@
   import { createEventDispatcher } from "svelte";
 
   export let color = $colors.base;
-
   /** @type {"div" | "button"} */
   export let tag = "div";
+  export let disabled = false;
 
   /**
    * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
@@ -22,7 +22,7 @@
     ${attrs.style};
     --base-color: ${color};
     --side-color: ${baseColors.sideColor};
-    --top-light-color: ${baseColors.topLightColor};
+    --light-color: ${baseColors.lightColor};
     --bottom-color: ${baseColors.bottomColor};
     --thickness: ${thickness};
   `;
@@ -38,6 +38,7 @@
     class="base"
     {...attrs}
     {style}
+    {disabled}
   >
     <slot />
   </button>
@@ -49,11 +50,12 @@
     place-items: center;
     border-radius: 1rem;
     background-color: var(--base-color);
+    transition: box-shadow 100ms, transform 100ms;
 
     /* prettier-ignore */
     box-shadow:
       /* top */
-      0rem calc(var(--thickness) * -0.16) 0rem var(--top-light-color),
+      0rem calc(var(--thickness) * -0.16) 0rem var(--light-color),
       0rem calc(var(--thickness) * -0.32) 0rem var(--side-color),
 
       /* left top & right top */
@@ -87,33 +89,10 @@
     cursor: pointer;
     outline: none;
     appearance: none;
+    color: initial;
 
     /* custom style */
     cursor: pointer;
-  }
-
-  button:hover {
-    /* prettier-ignore */
-    box-shadow:
-      /* top */
-      0rem calc(var(--thickness) * -0.16) 0rem var(--bottom-color),
-
-      /* left top & right top */
-      calc(var(--thickness) * 0.14) calc(var(--thickness) * -0.16) 0rem var(--bottom-color),
-      calc(var(--thickness) * -0.14) calc(var(--thickness) * -0.16) 0rem var(--bottom-color),
-
-      /* left & right */
-      calc(var(--thickness) * 0.16) 0rem 0rem var(--bottom-color),
-      calc(var(--thickness) * -0.16) 0rem 0rem var(--bottom-color),
-
-      /* bottom */
-      0rem calc(var(--thickness) * 0.64) 0rem var(--bottom-color),
-      0rem calc(var(--thickness) * 1.0) calc(var(--thickness) * 0.16) var(--bottom-color),
-      0rem calc(var(--thickness) * 1.67) calc(var(--thickness) * 0.64) 0rem rgba(0, 0, 0, 0.5),
-
-
-      /* blank */
-      0 0 0 transparent
   }
 
   button:active {
@@ -137,5 +116,10 @@
 
       /* blank */
       0 0 0 transparent
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 </style>

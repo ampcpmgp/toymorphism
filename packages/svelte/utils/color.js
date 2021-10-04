@@ -9,15 +9,13 @@ export function getLuminance(color) {
  */
 export function getBaseColors(color) {
   const chromaColor = chroma(color);
-  const luminance = chromaColor.luminance();
-  const isBlack = luminance < 0.01;
-  const sideColor = chroma.mix(color, isBlack ? "#444" : "black", 0.4).hex();
-  const topLightColor = chromaColor.brighten(1.5).hex();
-  const bottomColor = chroma.mix(color, isBlack ? "#444" : "black", 0.6).hex();
+  const sideColor = chroma.mix(color, "black", 0.4).hex();
+  const lightColor = chromaColor.brighten(1.5).hex();
+  const bottomColor = chroma.mix(color, "black", 0.6).hex();
 
   return {
     sideColor,
-    topLightColor,
+    lightColor,
     bottomColor,
   };
 }
