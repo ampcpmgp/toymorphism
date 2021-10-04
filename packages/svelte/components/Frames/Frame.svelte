@@ -1,5 +1,5 @@
 <script>
-  import Base from "./Base.svelte";
+  import Base from "../_Core/Base.svelte";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
   export let attrs = {};

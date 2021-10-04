@@ -39,6 +39,14 @@
 />
 
 <Story
+  name="Disabled"
+  args={{
+    text: "🎶",
+    baseColor: "#fc769f",
+    disabled: true,
+  }}
+/>
+<Story
   name="Black baseColor"
   args={{
     text: "🎶🎶🎶",

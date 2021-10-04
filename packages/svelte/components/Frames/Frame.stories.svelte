@@ -5,7 +5,7 @@
 </script>
 
 <Meta
-  title="Core/Frame"
+  title="Frames/Frame"
   component={Frame}
   parameters={{
     backgrounds: {

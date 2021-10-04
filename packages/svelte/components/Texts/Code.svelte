@@ -1,7 +1,7 @@
 <script>
   import { colors } from "../../stores/theme";
 
-  import Frame from "../Core/Frame.svelte";
+  import Frame from "../Frames/Frame.svelte";
 
   export let code = "";
   export let baseColor = $colors.base;

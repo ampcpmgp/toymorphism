@@ -4,7 +4,7 @@
 </script>
 
 <Meta
-  title="Core/Base"
+  title="_Core/Base"
   component={Base}
   parameters={{
     backgrounds: {
