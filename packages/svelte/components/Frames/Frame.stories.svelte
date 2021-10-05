@@ -33,6 +33,15 @@
   }}
 />
 
+<Story
+  name="Overflow visible"
+  args={{
+    color: "#fc769f",
+    overflow: "visible",
+    attrs: { title: "Frame" },
+  }}
+/>
+
 <style>
   .box {
     width: 50vw;

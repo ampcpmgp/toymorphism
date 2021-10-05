@@ -4,10 +4,12 @@
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
   export let attrs = {};
   export let color;
+  /** see: https://developer.mozilla.org/ja/docs/Web/CSS/overflow */
+  export let overflow = "hidden";
 </script>
 
 <Base {color}>
-  <div {...attrs}>
+  <div {...attrs} style="{attrs.style}; --overflow: {overflow};">
     <slot />
   </div>
 </Base>
@@ -15,7 +17,7 @@
 <style>
   div {
     margin: 0.25rem;
-    overflow: hidden;
+    overflow: var(--overflow);
     border-radius: 1rem;
   }
 </style>
