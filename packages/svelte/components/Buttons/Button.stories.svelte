@@ -17,6 +17,8 @@
         type: "color",
       },
     },
+    disabled: { control: "boolean" },
+    selected: { control: "boolean" },
     onClick: { action: "onClick" },
   }}
 />
@@ -46,6 +48,16 @@
     disabled: true,
   }}
 />
+
+<Story
+  name="Selected"
+  args={{
+    text: "🎶",
+    baseColor: "#fc769f",
+    selected: true,
+  }}
+/>
+
 <Story
   name="Black baseColor"
   args={{
