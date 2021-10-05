@@ -7,6 +7,7 @@
   /** @type {"div" | "button"} */
   export let tag = "div";
   export let disabled = false;
+  export let selected = false;
 
   /**
    * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
@@ -29,13 +30,14 @@
 </script>
 
 {#if tag === "div"}
-  <div class="base" {...attrs} {style}>
+  <div class="base" class:selected {...attrs} {style}>
     <slot />
   </div>
 {:else}
   <button
     on:click={(e) => dispatch("click", e)}
     class="base"
+    class:selected
     {...attrs}
     {style}
     {disabled}
@@ -95,6 +97,7 @@
     cursor: pointer;
   }
 
+  .selected,
   button:active {
     transform: translateY(calc(var(--thickness) * 1));
 

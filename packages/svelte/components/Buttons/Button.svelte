@@ -6,9 +6,10 @@
   export let attrs = {};
   export let baseColor = $colors.base;
   export let disabled;
+  export let selected;
 </script>
 
-<Base tag="button" {...attrs} color={baseColor} {disabled} on:click>
+<Base tag="button" {...attrs} color={baseColor} {disabled} {selected} on:click>
   <slot />
 </Base>
 
