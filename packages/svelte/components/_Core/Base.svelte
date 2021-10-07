@@ -8,6 +8,11 @@
   export let tag = "div";
   export let disabled = false;
   export let selected = false;
+  /** @type {"normal" | "circle"} */
+  export let shape = "normal";
+
+  /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
+  export const thickness = "0.6rem";
 
   /**
    * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
@@ -16,7 +21,6 @@
   export let attrs = {};
 
   const dispatch = createEventDispatcher();
-  const thickness = "0.6rem";
 
   $: baseColors = getBaseColors(color);
   $: style = `
@@ -30,13 +34,20 @@
 </script>
 
 {#if tag === "div"}
-  <div class="base" class:selected {...attrs} {style}>
+  <div
+    class="base"
+    class:circle={shape === "circle"}
+    class:selected
+    {...attrs}
+    {style}
+  >
     <slot />
   </div>
 {:else}
   <button
     on:click={(e) => dispatch("click", e)}
     class="base"
+    class:circle={shape === "circle"}
     class:selected
     {...attrs}
     {style}
@@ -82,6 +93,10 @@
       /* blank */
       0 0 0 transparent
       ;
+  }
+
+  .circle {
+    border-radius: 50%;
   }
 
   button {
