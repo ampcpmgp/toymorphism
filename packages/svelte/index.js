@@ -1,4 +1,5 @@
 export { default as Button } from "./components/Buttons/Button.svelte";
+export { default as CircleButton } from "./components/Buttons/CircleButton.svelte";
 export { default as Frame } from "./components/Frames/Frame.svelte";
 export { default as H1 } from "./components/Headings/H1.svelte";
 export { default as H2 } from "./components/Headings/H2.svelte";
