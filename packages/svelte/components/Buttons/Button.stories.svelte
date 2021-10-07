@@ -30,7 +30,7 @@
 </Template>
 
 <Story
-  name="Emoji Button"
+  name="Normal"
   args={{
     text: "🎶",
     baseColor: "#fc769f",
