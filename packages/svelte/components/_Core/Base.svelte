@@ -10,6 +10,8 @@
   export let selected = false;
   /** @type {"normal" | "circle"} */
   export let shape = "normal";
+  /** https://developer.mozilla.org/ja/docs/Web/CSS/transition-duration */
+  export let transitionDuration = "80ms";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
   export const thickness = "0.6rem";
@@ -30,6 +32,7 @@
     --light-color: ${baseColors.lightColor};
     --bottom-color: ${baseColors.bottomColor};
     --thickness: ${thickness};
+    --transition-duration: ${transitionDuration};
   `;
 </script>
 
@@ -52,6 +55,7 @@
     {...attrs}
     {style}
     {disabled}
+    ontouchstart={() => {}}
   >
     <slot />
   </button>
@@ -63,7 +67,8 @@
     place-items: center;
     border-radius: 1rem;
     background-color: var(--base-color);
-    transition: box-shadow 100ms, transform 100ms;
+    transition: box-shadow var(--transition-duration),
+      transform var(--transition-duration);
 
     /* prettier-ignore */
     box-shadow:
@@ -103,13 +108,16 @@
     /* css reset */
     background-color: transparent;
     border: none;
-    cursor: pointer;
     outline: none;
-    appearance: none;
     color: initial;
-
-    /* custom style */
+    contain: none;
+    user-select: none;
+    /* for ios */
+    -webkit-user-select: none;
+    appearance: none;
     cursor: pointer;
+    /* https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile */
+    -webkit-tap-highlight-color: transparent;
   }
 
   .selected,

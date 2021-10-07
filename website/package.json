@@ -10,7 +10,7 @@
     "lint": "eslint --ignore-path .gitignore **/*.{js,svelte}",
     "format": "prettier --write . --ignore-path .gitignore --config ../.prettierrc",
     "format:diff": "prettier --list-different . --ignore-path .gitignore --config ../.prettierrc",
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "serve": "vite preview"
   },
