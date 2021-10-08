@@ -29,7 +29,9 @@
     "svelte": "^3.42.6",
     "vite": "^2.5.8"
   },
-  "dependencies": {},
+  "dependencies": {
+    "svelte-spa-router": "^3.2.0"
+  },
   "workspaces": [
     "packages/*"
   ]
