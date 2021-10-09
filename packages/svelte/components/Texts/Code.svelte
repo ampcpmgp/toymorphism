@@ -4,14 +4,14 @@
   import Frame from "../Frames/Frame.svelte";
 
   export let code = "";
-  export let baseColor = $colors.base;
+  export let frameColor = $colors.base;
   export let textColor = $colors.text;
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
   export let attrs = {};
 </script>
 
-<Frame color={baseColor}>
+<Frame {frameColor}>
   <pre
     class="wrapper">
     <code {...attrs} style="{attrs.style || ''}; --text-color: {textColor};">
