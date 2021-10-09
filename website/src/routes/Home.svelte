@@ -1,23 +1,27 @@
 <script>
-  import { Frame } from "toymorphism";
+  import { Button, H1, Text } from "toymorphism";
+  import Header from "../containers/!Headers/Header.svelte";
+  import { version } from "toymorphism/package.json";
 </script>
 
 <div class="wrapper">
-  <Frame>aaaa</Frame>
+  <Header />
+
+  <H1 color="black">toymorphism {version}</H1>
+
+  <Button>
+    <Text>Click Me!</Text>
+  </Button>
 </div>
 
 <style>
-  :global(html) {
-    height: -webkit-fill-available;
-  }
-  :global(body) {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    display: grid;
-    margin: 1rem;
-  }
   .wrapper {
-    height: 100%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    max-width: 1080px;
+    margin: auto;
+    background-color: lightgoldenrodyellow;
+    place-items: center;
   }
 </style>
