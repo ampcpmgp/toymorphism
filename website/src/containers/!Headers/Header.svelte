@@ -3,7 +3,7 @@
 </script>
 
 <div class="wrapper">
-  <Button>
+  <Button selected>
     <Text>
       <i class="fas fa-home" />
       Home
