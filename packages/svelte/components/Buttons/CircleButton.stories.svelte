@@ -36,7 +36,7 @@
   args={{
     text: "🎶🎶",
     diameter: "6rem",
-    baseColor: "#fc769f",
+    baseColor: "lightgreen",
   }}
 />
 
@@ -45,6 +45,6 @@
   args={{
     text: "🎶🎶",
     padding: "2rem",
-    baseColor: "#fc769f",
+    baseColor: "lightgreen",
   }}
 />

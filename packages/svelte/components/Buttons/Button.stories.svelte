@@ -33,7 +33,7 @@
   name="Normal"
   args={{
     text: "🎶",
-    baseColor: "#fc769f",
+    baseColor: "lightgreen",
     attrs: {
       title: "music",
     },
@@ -44,7 +44,7 @@
   name="Disabled"
   args={{
     text: "🎶",
-    baseColor: "#fc769f",
+    baseColor: "lightgreen",
     disabled: true,
   }}
 />
@@ -53,7 +53,7 @@
   name="Selected"
   args={{
     text: "🎶",
-    baseColor: "#fc769f",
+    baseColor: "lightgreen",
     selected: true,
   }}
 />

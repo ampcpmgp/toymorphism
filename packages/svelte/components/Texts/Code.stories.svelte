@@ -12,7 +12,7 @@
     },
   }}
   argTypes={{
-    baseColor: {
+    frameColor: {
       control: {
         type: "color",
       },
@@ -35,7 +35,7 @@
   args={{
     code: `window.Prism = window.Prism || {};
 window.Prism.manual = true;`,
-    baseColor: "white",
+    frameColor: "white",
     textColor: "black",
     attrs: {},
   }}

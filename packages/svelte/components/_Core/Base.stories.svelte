@@ -25,7 +25,7 @@
 <Story
   name="With white box"
   args={{
-    color: "#fc769f",
+    color: "lightgreen",
   }}
 />
 

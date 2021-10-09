@@ -10,9 +10,12 @@
   export let selected = false;
   /** @type {"normal" | "circle"} */
   export let shape = "normal";
+  /** https://developer.mozilla.org/ja/docs/Web/CSS/transition-duration */
+  export let transitionDuration = "80ms";
 
-  /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
-  export const thickness = "0.6rem";
+  /** 3rem corrucpted, pending
+   * see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
+  export let _thickness = "0.6rem";
 
   /**
    * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
@@ -24,12 +27,13 @@
 
   $: baseColors = getBaseColors(color);
   $: style = `
-    ${attrs.style};
+    ${attrs.style || ""};
     --base-color: ${color};
     --side-color: ${baseColors.sideColor};
     --light-color: ${baseColors.lightColor};
     --bottom-color: ${baseColors.bottomColor};
-    --thickness: ${thickness};
+    --thickness: ${_thickness};
+    --transition-duration: ${transitionDuration};
   `;
 </script>
 
@@ -44,6 +48,10 @@
     <slot />
   </div>
 {:else}
+  <!--
+    ios safari needs ontouchstart & -webkit-tap-highlight-color
+    https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile
+  -->
   <button
     on:click={(e) => dispatch("click", e)}
     class="base"
@@ -52,6 +60,7 @@
     {...attrs}
     {style}
     {disabled}
+    ontouchstart={() => {}}
   >
     <slot />
   </button>
@@ -63,7 +72,8 @@
     place-items: center;
     border-radius: 1rem;
     background-color: var(--base-color);
-    transition: box-shadow 100ms, transform 100ms;
+    transition: box-shadow var(--transition-duration),
+      transform var(--transition-duration);
 
     /* prettier-ignore */
     box-shadow:
@@ -103,13 +113,16 @@
     /* css reset */
     background-color: transparent;
     border: none;
-    cursor: pointer;
     outline: none;
-    appearance: none;
     color: initial;
-
-    /* custom style */
+    contain: none;
+    user-select: none;
+    /* for ios */
+    -webkit-user-select: none;
+    appearance: none;
     cursor: pointer;
+    /* https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile */
+    -webkit-tap-highlight-color: transparent;
   }
 
   .selected,
