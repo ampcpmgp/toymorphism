@@ -48,6 +48,10 @@
     <slot />
   </div>
 {:else}
+  <!--
+    ios safari needs ontouchstart & -webkit-tap-highlight-color
+    https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile
+  -->
   <button
     on:click={(e) => dispatch("click", e)}
     class="base"
