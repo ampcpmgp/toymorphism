@@ -14,7 +14,7 @@
 <Frame color={baseColor}>
   <pre
     class="wrapper">
-    <code {...attrs} style="{attrs.style}; --text-color: {textColor};">
+    <code {...attrs} style="{attrs.style || ''}; --text-color: {textColor};">
       {code}
     </code>
   </pre>

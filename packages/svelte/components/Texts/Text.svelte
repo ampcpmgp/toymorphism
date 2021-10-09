@@ -14,7 +14,7 @@
 <p
   {...attrs}
   style="
-    {attrs.style};
+    {attrs.style || ''};
     --size: {size};
     --base-color: {color};
     --side-color: {textColors.sideColor};

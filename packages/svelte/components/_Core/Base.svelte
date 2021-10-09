@@ -26,7 +26,7 @@
 
   $: baseColors = getBaseColors(color);
   $: style = `
-    ${attrs.style};
+    ${attrs.style || ""};
     --base-color: ${color};
     --side-color: ${baseColors.sideColor};
     --light-color: ${baseColors.lightColor};

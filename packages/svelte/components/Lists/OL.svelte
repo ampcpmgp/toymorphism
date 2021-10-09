@@ -9,7 +9,7 @@
   $: cid = hierarchy ? generateRandomString(20) : "default";
 </script>
 
-<ol {...attrs} style="{attrs.style}; --cid: {cid};">
+<ol {...attrs} style="${attrs.style || ''}; --cid: {cid};">
   <slot {cid} />
 </ol>
 

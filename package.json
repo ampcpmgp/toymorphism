@@ -35,8 +35,7 @@
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "workspaces": [
     "packages/*",
     "website"
