@@ -13,8 +13,9 @@
   /** https://developer.mozilla.org/ja/docs/Web/CSS/transition-duration */
   export let transitionDuration = "80ms";
 
-  /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
-  export const thickness = "0.6rem";
+  /** 3rem corrucpted, pending
+   * see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
+  export let _thickness = "0.6rem";
 
   /**
    * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
@@ -31,7 +32,7 @@
     --side-color: ${baseColors.sideColor};
     --light-color: ${baseColors.lightColor};
     --bottom-color: ${baseColors.bottomColor};
-    --thickness: ${thickness};
+    --thickness: ${_thickness};
     --transition-duration: ${transitionDuration};
   `;
 </script>
