@@ -4,14 +4,20 @@
   import { createEventDispatcher } from "svelte";
 
   export let color = $colors.base;
+
   /** @type {"div" | "button"} */
   export let tag = "div";
+
   export let disabled = false;
   export let selected = false;
+
   /** @type {"normal" | "circle"} */
   export let shape = "normal";
   /** https://developer.mozilla.org/ja/docs/Web/CSS/transition-duration */
   export let transitionDuration = "80ms";
+
+  /** https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius */
+  export let borderRadius = "1rem";
 
   /** 3rem corrucpted, pending
    * see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
@@ -34,18 +40,15 @@
     --bottom-color: ${baseColors.bottomColor};
     --thickness: ${_thickness};
     --transition-duration: ${transitionDuration};
+    --border-radius: ${borderRadius};
   `;
 </script>
 
 {#if tag === "div"}
-  <div
-    class="base"
-    class:circle={shape === "circle"}
-    class:selected
-    {...attrs}
-    {style}
-  >
-    <slot />
+  <div class="box-shadow-wrapper" {...attrs} {style}>
+    <div class="base" class:circle={shape === "circle"} class:selected>
+      <slot />
+    </div>
   </div>
 {:else}
   <!--
@@ -54,23 +57,28 @@
   -->
   <button
     on:click={(e) => dispatch("click", e)}
-    class="base"
-    class:circle={shape === "circle"}
-    class:selected
     {...attrs}
     {style}
     {disabled}
     ontouchstart={() => {}}
+    class="box-shadow-wrapper"
   >
-    <slot />
+    <div class="base" class:circle={shape === "circle"} class:selected>
+      <slot />
+    </div>
   </button>
 {/if}
 
 <style>
+  .box-shadow-wrapper {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+
   .base {
     display: inline-grid;
     place-items: center;
-    border-radius: 1rem;
+    border-radius: var(--border-radius);
     background-color: var(--base-color);
     transition: box-shadow var(--transition-duration),
       transform var(--transition-duration);
@@ -126,7 +134,7 @@
   }
 
   .selected,
-  button:active {
+  button:active > .base {
     transform: translateY(calc(var(--thickness) * 1));
 
     /* prettier-ignore */
