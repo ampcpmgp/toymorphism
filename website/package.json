@@ -27,7 +27,7 @@
   "homepage": "https://ampcpmgp.github.io/toymorphism/",
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
-    "svelte": "^3.42.6",
+    "svelte": "^3.43.1",
     "svelte-check": "^2.2.7",
     "vite": "^2.5.8"
   },
