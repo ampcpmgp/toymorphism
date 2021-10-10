@@ -23,8 +23,24 @@
 </Template>
 
 <Story
-  name="With white box"
+  name="Tag div"
   args={{
+    color: "lightgreen",
+  }}
+/>
+
+<Story
+  name="Selected"
+  args={{
+    selected: true,
+    color: "lightgreen",
+  }}
+/>
+
+<Story
+  name="Tag button"
+  args={{
+    tag: "button",
     color: "lightgreen",
   }}
 />
@@ -33,6 +49,7 @@
   .box {
     width: 150px;
     height: 40px;
+    margin: 20px;
     background-color: white;
   }
 </style>
