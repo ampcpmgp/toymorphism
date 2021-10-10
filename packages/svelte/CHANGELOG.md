@@ -1,5 +1,20 @@
 # toymorphism
 
+## 0.3.1
+
+### Patch Changes
+
+- f298fd1: Toy Frame overflow settings
+- 80ca298: apply type check
+- 545aef3: Circle Button
+- 6a14c47: fix Button | mobile
+- 4546f57: Improve button clickable areas
+- 172dab1: Fix black button style
+- 6a14c47: Add frame color settings
+- 2bdcc24: Button pseudo style
+- f490ad7: Button Selected
+- 2bdcc24: Brush up button
+
 ## 0.3.0
 
 ### Minor Changes
