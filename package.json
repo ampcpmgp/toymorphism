@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run dev --workspace=toymorphism-website",
-    "build": "npm run build --workspace=toymorphism-website",
+    "dev": "npm run dev --workspace=website",
+    "build": "npm run build --workspace=website",
     "storybook": "npm run storybook --workspace=toymorphism",
     "storybook:ce": "npm run storybook --workspace=toymorphism-custom-elements",
     "storybook:r": "npm run storybook --workspace=toymorphism-react",

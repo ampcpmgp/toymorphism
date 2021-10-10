@@ -1,5 +1,5 @@
 {
-  "name": "toymorphism-website",
+  "name": "website",
   "private": true,
   "description": "Toy + Skeuomorphism",
   "publishConfig": {
@@ -10,6 +10,7 @@
     "lint": "eslint --ignore-path .gitignore **/*.{js,svelte}",
     "format": "prettier --write . --ignore-path .gitignore --config ../.prettierrc",
     "format:diff": "prettier --list-different . --ignore-path .gitignore --config ../.prettierrc",
+    "typecheck": "tsc --noEmit && svelte-check",
     "dev": "vite --host",
     "build": "vite build",
     "serve": "vite preview"
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
     "svelte": "^3.42.6",
+    "svelte-check": "^2.2.7",
     "vite": "^2.5.8"
   },
   "dependencies": {
