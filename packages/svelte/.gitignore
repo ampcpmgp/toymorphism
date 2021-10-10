@@ -1,2 +1,5 @@
 # storybook
 storybook-static/
+
+# rollup build
+dist/

@@ -12,7 +12,7 @@
     "format:diff": "prettier --list-different . --ignore-path .gitignore --config ../.prettierrc",
     "typecheck": "tsc --noEmit && svelte-check",
     "dev": "vite --host",
-    "build": "vite build",
+    "build-website": "vite build",
     "serve": "vite preview"
   },
   "repository": {

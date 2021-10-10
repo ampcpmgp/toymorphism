@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run dev --workspace=website",
-    "build": "npm run build --workspace=website",
+    "build": "npm run build --workspaces --if-present",
+    "build-website": "npm run build-website --workspace=website",
     "storybook": "npm run storybook --workspace=toymorphism",
     "storybook:ce": "npm run storybook --workspace=toymorphism-custom-elements",
     "storybook:r": "npm run storybook --workspace=toymorphism-react",
