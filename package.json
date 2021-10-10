@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predev": "npm run build",
     "dev": "npm run dev --workspace=website",
     "build": "npm run build --workspaces --if-present",
     "build-website": "npm run build-website --workspace=website",
@@ -18,7 +17,6 @@
     "lint": "npm run lint --workspaces",
     "format": "npm run format --workspaces",
     "format:diff": "npm run format:diff --workspaces",
-    "pretypecheck": "npm run build",
     "typecheck": "npm run typecheck --workspaces",
     "release": "changeset publish"
   },
