@@ -5,7 +5,7 @@
 
   export let color = $colors.base;
 
-  /** @type {"div" | "button"} */
+  /** @type {import("../../types/Base").Tag} */
   export let tag = "div";
 
   export let disabled = false;
