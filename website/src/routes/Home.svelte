@@ -7,7 +7,7 @@
 <div class="wrapper">
   <Header />
 
-  <H1 color="black">toymorphism {version}</H1>
+  <H1 color="black">Toymorphism {version}</H1>
 
   <Button>
     <Text>Click Me!</Text>
