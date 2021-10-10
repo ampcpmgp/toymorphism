@@ -1,7 +1,7 @@
 <script>
-  import { Button, H1, Text } from "toymorphism";
+  import { Button, H1, Text } from "../../../packages/svelte";
   import Header from "../containers/!Headers/Header.svelte";
-  import { version } from "toymorphism/package.json";
+  import { version } from "../../../packages/svelte/package.json";
 </script>
 
 <div class="wrapper">
