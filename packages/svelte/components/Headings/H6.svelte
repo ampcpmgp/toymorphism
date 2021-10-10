@@ -1,8 +1,10 @@
 <script>
+  import { colors } from "../../stores/theme";
   import Text from "../Texts/Text.svelte";
 
   export let size = "0.67rem";
-  export let color;
+  /** @type {string} */
+  export let color = $colors.base;
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
   export let attrs = {};
