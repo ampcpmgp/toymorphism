@@ -1,5 +1,5 @@
 <script>
-  import { Button, Text } from "../../../../packages/svelte";
+  import { Button, Text } from "toymorphism";
 </script>
 
 <div class="wrapper">

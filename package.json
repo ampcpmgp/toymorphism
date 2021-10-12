@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run dev --workspace=website",
+    "watch": "npm run watch --workspaces --if-present",
+    "dev": "concurrently \"npm run watch\" \"npm run dev --workspace=website\"",
     "build": "npm run build --workspaces --if-present",
     "build-website": "npm run build-website --workspace=website",
     "storybook": "npm run storybook --workspace=toymorphism",
@@ -17,6 +18,7 @@
     "lint": "npm run lint --workspaces",
     "format": "npm run format --workspaces",
     "format:diff": "npm run format:diff --workspaces",
+    "pretypecheck": "npm run build",
     "typecheck": "npm run typecheck --workspaces",
     "release": "changeset publish"
   },
@@ -32,6 +34,7 @@
   "homepage": "https://ampcpmgp.github.io/toymorphism/",
   "devDependencies": {
     "@changesets/cli": "^2.17.0",
+    "concurrently": "^6.3.0",
     "eslint": "^7.32.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "prettier": "^2.4.1",

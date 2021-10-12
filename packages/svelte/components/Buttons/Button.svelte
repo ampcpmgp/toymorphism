@@ -4,6 +4,8 @@
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes */
   export let attrs = {};
+
+  /** @type {string} */
   export let baseColor = $colors.base;
   export let disabled = false;
   export let selected = false;
