@@ -1,6 +1,4 @@
 import { writable } from "svelte/store";
 
-export const colors = writable({
-  base: "#fc769f",
-  text: "#fff",
-});
+export const baseColor = writable("#fc769f");
+export const textColor = writable("#fff");

@@ -22,6 +22,8 @@
   </Base>
 </Template>
 
+<Story name="Default" args={{}} />
+
 <Story
   name="Tag div"
   args={{

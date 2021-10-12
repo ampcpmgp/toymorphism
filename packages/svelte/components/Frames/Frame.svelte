@@ -1,12 +1,12 @@
 <script>
-  import { colors } from "../../stores/theme";
+  import { baseColor } from "../../stores/theme";
   import Base from "../_Core/Base.svelte";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
   export let attrs = {};
 
   /** see: https://developer.mozilla.org/ja/docs/Web/CSS/color */
-  export let frameColor = $colors.base;
+  export let frameColor = $baseColor;
 
   /** see: https://developer.mozilla.org/ja/docs/Web/CSS/color */
   export let innerColor = "#fff";

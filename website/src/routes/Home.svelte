@@ -1,12 +1,10 @@
 <script>
-  import { Button, H1, Text, theme } from "toymorphism";
+  import { Button, H1, Text } from "toymorphism";
+  import { textColor } from "toymorphism/stores/theme";
   import Header from "../containers/!Headers/Header.svelte";
   import { version } from "toymorphism/package.json";
 
-  theme.colors.set({
-    base: "lightgoldenrodyellow",
-    text: "brown",
-  });
+  $textColor = "brown";
 </script>
 
 <div class="wrapper">

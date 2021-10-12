@@ -1,9 +1,9 @@
 <script>
-  import { colors } from "../../stores/theme";
+  import { textColor } from "../../stores/theme";
   import { getTextColors } from "../../utils/color";
 
   export let size = "1rem";
-  export let color = $colors.text;
+  export let color = $textColor;
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
   export let attrs = {};
