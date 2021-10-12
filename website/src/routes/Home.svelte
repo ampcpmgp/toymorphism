@@ -1,7 +1,12 @@
 <script>
-  import { Button, H1, Text } from "../../../packages/svelte";
+  import { Button, H1, Text, theme } from "toymorphism";
   import Header from "../containers/!Headers/Header.svelte";
-  import { version } from "../../../packages/svelte/package.json";
+  import { version } from "toymorphism/package.json";
+
+  theme.colors.set({
+    base: "lightgoldenrodyellow",
+    text: "brown",
+  });
 </script>
 
 <div class="wrapper">
@@ -9,7 +14,7 @@
 
   <H1 color="black">Toymorphism {version}</H1>
 
-  <Button>
+  <Button baseColor="red">
     <Text>Click Me!</Text>
   </Button>
 </div>

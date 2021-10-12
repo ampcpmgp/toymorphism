@@ -38,6 +38,7 @@
     "format:diff": "prettier --list-different . --ignore-path .gitignore --config ../../.prettierrc",
     "typecheck": "tsc --noEmit && svelte-check",
     "build": "rollup -c",
+    "watch": "rollup -wc",
     "build-storybook": "build-storybook"
   },
   "repository": {

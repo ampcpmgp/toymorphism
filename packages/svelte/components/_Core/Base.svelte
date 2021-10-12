@@ -3,9 +3,11 @@
   import { colors } from "../../stores/theme.js";
   import { createEventDispatcher } from "svelte";
 
+  /** https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
+   * @type {string} */
   export let color = $colors.base;
 
-  /** @type {import("../../types/Base").Tag} */
+  /** @type {"div" | "button"} */
   export let tag = "div";
 
   export let disabled = false;
