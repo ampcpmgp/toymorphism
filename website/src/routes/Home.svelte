@@ -9,31 +9,15 @@
   void baseColor, textColor;
 </script>
 
-<div class="wrapper">
-  <Frame innerColor="lightgoldenrodyellow">
-    <div class="content">
-      <Header />
+<Frame gap="1rem" padding="1rem" frameColor="lightgoldenrodyellow">
+  <Header />
 
-      <H1 color="black">Toymorphism {version}</H1>
+  <H1 color="black">Toymorphism {version}</H1>
 
-      <Button baseColor="red">
-        <Text>Click Me!</Text>
-      </Button>
-    </div>
-  </Frame>
-</div>
+  <Button padding="1rem" baseColor="green">
+    <Text>Click Me!</Text>
+  </Button>
+</Frame>
 
 <style>
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-  }
-
-  .content {
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
 </style>

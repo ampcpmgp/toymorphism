@@ -94,7 +94,7 @@
   }
 
   .base {
-    display: inline-flex;
+    display: flex;
     flex-direction: var(--flex-direction);
     place-items: center;
     border-radius: var(--border-radius);

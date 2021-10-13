@@ -3,19 +3,19 @@
 </script>
 
 <div class="wrapper">
-  <Button selected>
+  <Button padding="0.5rem" selected>
     <Text>
       <i class="fas fa-home" />
       Home
     </Text>
   </Button>
-  <Button>
+  <Button padding="0.5rem">
     <Text>
       <i class="fas fa-puzzle-piece" />
       Components
     </Text>
   </Button>
-  <Button>
+  <Button padding="0.5rem">
     <Text>
       <i class="fas fa-book" />
       Documents
@@ -29,9 +29,5 @@
     place-content: center;
     gap: 1rem;
     margin: auto;
-  }
-
-  .class-to-add {
-    padding: 1rem;
   }
 </style>

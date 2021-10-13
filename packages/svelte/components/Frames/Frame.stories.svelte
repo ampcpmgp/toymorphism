@@ -19,26 +19,27 @@
 
 <Template let:args>
   <Frame {...args}>
-    <div class="box">
-      <Text size="2rem" color="green">Hello World</Text>
-    </div>
+    <Text size="2rem" color="green">Hello World</Text>
+    <Text size="2rem" color="green">Hello World</Text>
+    <Text size="2rem" color="green">Hello World</Text>
   </Frame>
 </Template>
 
 <Story
-  name="Normal"
+  name="No settings"
   args={{
-    frameColor: "lightgreen",
-    innerColor: "#ffff99",
     attrs: { title: "Frame" },
   }}
 />
 
-<style>
-  .box {
-    width: 50vw;
-    height: 50vh;
-    display: grid;
-    place-items: center;
-  }
-</style>
+<Story
+  name="All settings"
+  args={{
+    edgeColor: "lightgreen",
+    frameColor: "#ffff99",
+    gap: "1rem",
+    padding: "1rem",
+    edgePadding: "0.5rem",
+    attrs: { title: "Frame" },
+  }}
+/>
