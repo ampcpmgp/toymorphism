@@ -25,15 +25,26 @@
 
 <Template let:args>
   <Button {...args} on:click={args.onClick}>
-    <div style="font-size: 2rem; margin: 1rem 1.2rem;">{args.text}</div>
+    <div>{args.text}</div>
+    <div>{args.text}</div>
   </Button>
 </Template>
+
+<Story
+  name="No settings"
+  args={{
+    text: "🎶",
+  }}
+/>
 
 <Story
   name="Normal"
   args={{
     text: "🎶",
     baseColor: "lightgreen",
+    padding: "1rem",
+    fontSize: "2rem",
+    gap: "1rem",
     attrs: {
       title: "music",
     },
@@ -45,6 +56,9 @@
   args={{
     text: "🎶",
     baseColor: "lightgreen",
+    padding: "1rem",
+    fontSize: "2rem",
+    gap: "1rem",
     disabled: true,
   }}
 />
@@ -54,6 +68,9 @@
   args={{
     text: "🎶",
     baseColor: "lightgreen",
+    padding: "1rem",
+    fontSize: "2rem",
+    gap: "1rem",
     selected: true,
   }}
 />
@@ -63,5 +80,8 @@
   args={{
     text: "🎶🎶🎶",
     baseColor: "black",
+    padding: "1rem",
+    fontSize: "2rem",
+    gap: "1rem",
   }}
 />

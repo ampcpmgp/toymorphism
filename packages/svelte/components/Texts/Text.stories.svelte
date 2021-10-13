@@ -8,7 +8,7 @@
   component={Text}
   parameters={{
     backgrounds: {
-      default: "white",
+      default: "gray",
     },
   }}
   argTypes={{
@@ -18,18 +18,25 @@
 
 <Template let:args>
   {#if args.message}
-    <Text {...args}>{args.message}</Text>
+    <Text {...args}>
+      <div>{args.message}</div>
+    </Text>
   {:else if args.icon}
     <Text {...args}>
-      <div>
-        <i class="fas fa-paw" />
-        <i class="fas fa-hippo" />
-        <i class="fas fa-kiwi-bird" />
-        <i class="fas fa-horse" />
-      </div>
+      <i class="fas fa-paw" />
+      <i class="fas fa-hippo" />
+      <i class="fas fa-kiwi-bird" />
+      <i class="fas fa-horse" />
     </Text>
   {/if}
 </Template>
+
+<Story
+  name="No settings"
+  args={{
+    message: "Hello World | こんにちは世界",
+  }}
+/>
 
 <Story
   name="Hello world"
@@ -64,6 +71,7 @@
   name="Font awesome"
   args={{
     size: "5rem",
+    gap: "1rem",
     color: "#fc769f",
     icon: true,
   }}

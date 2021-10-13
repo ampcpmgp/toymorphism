@@ -6,14 +6,26 @@
   export let attrs = {};
 
   /** see: https://developer.mozilla.org/ja/docs/Web/CSS/color */
-  export let frameColor = $baseColor;
+  export let edgeColor = $baseColor;
 
   /** see: https://developer.mozilla.org/ja/docs/Web/CSS/color */
-  export let innerColor = "#fff";
+  export let frameColor = "#fff";
+
+  export let padding = "initial";
+  export let edgePadding = "0.25rem";
+  export let gap = "initial";
 </script>
 
-<Base {attrs} color={frameColor}>
-  <div class="base-inner" style="--inner-color: {innerColor};">
+<Base {attrs} color={edgeColor}>
+  <div
+    class="base-inner"
+    style="
+      --inner-color: {frameColor};
+      --padding:{padding};
+      --gap:{gap};
+      --edge-padding: {edgePadding};
+    "
+  >
     <div class="frame">
       <slot />
     </div>
@@ -27,14 +39,17 @@
     height: 100%;
     box-sizing: border-box;
     place-content: center;
-    padding: 0.25rem;
+    padding: var(--edge-padding);
   }
   .frame {
     border-radius: 1rem;
+    background-color: var(--inner-color);
+    padding: var(--padding);
     flex: 1;
     display: flex;
+    flex-direction: column;
     place-content: center;
     place-items: center;
-    background-color: var(--inner-color);
+    gap: var(--gap);
   }
 </style>

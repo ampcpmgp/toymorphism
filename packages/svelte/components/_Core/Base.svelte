@@ -21,6 +21,18 @@
   /** https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius */
   export let borderRadius = "1rem";
 
+  /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
+  export let padding = "initial";
+
+  /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction */
+  export let flexDirection = "initial";
+
+  /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size */
+  export let fontSize = "initial";
+
+  /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
+  export let gap = "initial";
+
   /** 3rem corrucpted, pending
    * see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
   export let _thickness = "0.6rem";
@@ -43,6 +55,10 @@
     --thickness: ${_thickness};
     --transition-duration: ${transitionDuration};
     --border-radius: ${borderRadius};
+    --padding: ${padding};
+    --flex-direction: ${flexDirection};
+    --font-size: ${fontSize};
+    --gap: ${gap};
   `;
 </script>
 
@@ -74,16 +90,23 @@
 <style>
   .box-shadow-wrapper {
     padding: 0;
-    padding-bottom: 1rem;
+    /* same top shadow */
+    padding-top: calc(var(--thickness) * 0.32);
+    /* same bottom shadow */
+    padding-bottom: calc(var(--thickness) * 1.67);
   }
 
   .base {
-    display: inline-grid;
+    display: flex;
+    flex-direction: var(--flex-direction);
     place-items: center;
     border-radius: var(--border-radius);
     background-color: var(--base-color);
     transition: box-shadow var(--transition-duration),
       transform var(--transition-duration);
+    padding: var(--padding);
+    font-size: var(--font-size);
+    gap: var(--gap);
 
     /* prettier-ignore */
     box-shadow:
@@ -127,10 +150,12 @@
     color: initial;
     contain: none;
     user-select: none;
+
     /* for ios */
     -webkit-user-select: none;
     appearance: none;
     cursor: pointer;
+
     /* https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile */
     -webkit-tap-highlight-color: transparent;
   }
