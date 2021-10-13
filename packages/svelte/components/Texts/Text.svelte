@@ -2,8 +2,11 @@
   import { textColor } from "../../stores/theme";
   import { getTextColors } from "../../utils/color";
 
+  /** calc */
   export let size = "1rem";
+  export let lineHeight = "initial";
   export let color = $textColor;
+  export let gap = "0.25rem";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
   export let attrs = {};
@@ -16,10 +19,12 @@
   style="
     {attrs.style || ''};
     --size: {size};
+    --line-height: {lineHeight};
     --base-color: {color};
     --side-color: {textColors.sideColor};
     --bottom-color: {textColors.bottomColor};
     --thickness: calc(var(--size) / 15);
+    --gap: {gap};
   "
 >
   <slot />
@@ -27,13 +32,13 @@
 
 <style>
   p {
-    display: inline-grid;
-    place-items: center;
-
     margin: 0;
+    display: inline-flex;
+    gap: var(--gap);
+
     color: var(--base-color);
     font-size: var(--size);
-    line-height: calc(var(--size) * 1);
+    line-height: var(--line-height);
 
     /* prettier-ignore */
     text-shadow:
