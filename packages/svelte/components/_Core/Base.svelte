@@ -90,8 +90,10 @@
 <style>
   .box-shadow-wrapper {
     padding: 0;
+    /* same top shadow */
     padding-top: calc(var(--thickness) * 0.32);
-    padding-bottom: calc(var(--thickness) * 1);
+    /* same bottom shadow */
+    padding-bottom: calc(var(--thickness) * 1.67);
   }
 
   .base {
