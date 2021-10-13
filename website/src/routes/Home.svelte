@@ -9,7 +9,7 @@
   void baseColor, textColor;
 </script>
 
-<Frame gap="1rem" padding="1rem" frameColor="lightgoldenrodyellow">
+<Frame gap="0.75rem" padding="1rem" frameColor="lightgoldenrodyellow">
   <Header />
 
   <H1 color="black">Toymorphism {version}</H1>

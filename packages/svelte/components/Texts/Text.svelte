@@ -2,11 +2,12 @@
   import { textColor } from "../../stores/theme";
   import { getTextColors } from "../../utils/color";
 
-  /** calc */
+  /** calculable size (e.g. 1rem, 20px) */
   export let size = "1rem";
-  export let lineHeight = "initial";
+  export let lineHeight = "normal";
   export let color = $textColor;
   export let gap = "0.25rem";
+  export let _thinkness = "calc(var(--size) / 15)";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
   export let attrs = {};
@@ -23,7 +24,7 @@
     --base-color: {color};
     --side-color: {textColors.sideColor};
     --bottom-color: {textColors.bottomColor};
-    --thickness: calc(var(--size) / 15);
+    --thickness: {_thinkness};
     --gap: {gap};
   "
 >
