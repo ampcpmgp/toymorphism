@@ -17,8 +17,8 @@
   </Button>
   <Button>
     <Text>
-      <i class="fas fa-info-circle" />
-      Info
+      <i class="fas fa-book" />
+      Documents
     </Text>
   </Button>
 </div>
@@ -29,5 +29,9 @@
     place-content: center;
     gap: 1rem;
     margin: auto;
+  }
+
+  .class-to-add {
+    padding: 1rem;
   }
 </style>

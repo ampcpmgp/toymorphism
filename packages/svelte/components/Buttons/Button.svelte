@@ -9,9 +9,22 @@
   export let baseColor = $_baseColor;
   export let disabled = false;
   export let selected = false;
+  export let padding = "initial";
+  export let fontSize = "initial";
+  export let gap = "initial";
 </script>
 
-<Base tag="button" {...attrs} color={baseColor} {disabled} {selected} on:click>
+<Base
+  tag="button"
+  {attrs}
+  color={baseColor}
+  {disabled}
+  {selected}
+  {padding}
+  {fontSize}
+  {gap}
+  on:click
+>
   <slot />
 </Base>
 
