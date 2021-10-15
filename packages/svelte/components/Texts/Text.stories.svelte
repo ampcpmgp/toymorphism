@@ -39,31 +39,35 @@
 />
 
 <Story
-  name="Hello world"
+  name="Shape none"
   args={{
-    message: "Hello World | こんにちは世界",
+    size: "2rem",
     color: "#fc769f",
+    shape: "none",
+    message: "Hello World | こんにちは世界",
     attrs: {
-      title: "Hello World text",
+      title: "Shape none",
     },
   }}
 />
 
 <Story
-  name="Symbol & spetial character"
+  name="Shape solid-3d"
   args={{
-    size: "1rem",
+    size: "2rem",
     color: "#fc769f",
-    message: "1`˜!@#-$~%あநூந்सैसមួᏗᏍ백叢张夕張",
+    shape: "solid-3d",
+    message: "Hello World | こんにちは世界",
   }}
 />
 
 <Story
-  name="Big size character"
+  name="Shape float"
   args={{
-    size: "5rem",
+    size: "2rem",
     color: "#fc769f",
-    message: "1`˜!@#-$~%あநூந்सैसមួᏗᏍ백叢张夕張",
+    shape: "float",
+    message: "Hello World | こんにちは世界",
   }}
 />
 
@@ -72,6 +76,7 @@
   args={{
     size: "5rem",
     gap: "1rem",
+    shape: "solid-3d",
     color: "#fc769f",
     icon: true,
   }}

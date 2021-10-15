@@ -7,7 +7,9 @@
   export let lineHeight = "normal";
   export let color = $textColor;
   export let gap = "0.25rem";
-  export let _thinkness = "calc(var(--size) / 15)";
+  export let thickness = "calc(var(--size) / 8)";
+  /** @type {"solid-3d" | "float" | "none"} */
+  export let shape = "none";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
   export let attrs = {};
@@ -17,6 +19,8 @@
 
 <p
   {...attrs}
+  class:solid-3d={shape === "solid-3d"}
+  class:float={shape === "float"}
   style="
     {attrs.style || ''};
     --size: {size};
@@ -24,7 +28,7 @@
     --base-color: {color};
     --side-color: {textColors.sideColor};
     --bottom-color: {textColors.bottomColor};
-    --thickness: {_thinkness};
+    --thickness: {thickness};
     --gap: {gap};
   "
 >
@@ -32,14 +36,19 @@
 </p>
 
 <style>
-  p {
-    margin: 0;
-    display: inline-flex;
-    gap: var(--gap);
+  .float {
+    /* prettier-ignore */
+    text-shadow:
+      /* bottom */
+      0rem calc(var(--thickness) * 1.0) calc(var(--thickness) * 0.8) rgba(0, 0, 0, 0.5),
 
-    color: var(--base-color);
-    font-size: var(--size);
-    line-height: var(--line-height);
+      /* blank */
+      0 0 0 transparent
+    ;
+  }
+
+  .solid-3d {
+    padding-bottom: calc(var(--thickness) * 1.5);
 
     /* prettier-ignore */
     text-shadow:
@@ -59,5 +68,15 @@
       /* blank */
       0 0 0 transparent
       ;
+  }
+
+  p {
+    margin: 0;
+    display: inline-flex;
+    gap: var(--gap);
+
+    color: var(--base-color);
+    font-size: var(--size);
+    line-height: var(--line-height);
   }
 </style>

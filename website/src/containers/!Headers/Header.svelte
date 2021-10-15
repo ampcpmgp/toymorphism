@@ -3,23 +3,23 @@
 </script>
 
 <div class="wrapper">
-  <Button padding="0.5rem" selected>
-    <Text>
+  <Button padding="0.5rem" gap="0.4rem" selected>
+    <Text size="1.5rem" shape="solid-3d">
       <i class="fas fa-home" />
-      Home
     </Text>
+    <Text>Home</Text>
   </Button>
-  <Button padding="0.5rem">
-    <Text>
+  <Button padding="0.5rem" gap="0.4rem">
+    <Text size="1.5rem" shape="solid-3d">
       <i class="fas fa-puzzle-piece" />
-      Components
     </Text>
+    <Text>Components</Text>
   </Button>
-  <Button padding="0.5rem">
-    <Text>
+  <Button padding="0.5rem" gap="0.4rem">
+    <Text size="1.5rem" shape="solid-3d">
       <i class="fas fa-book" />
-      Documents
     </Text>
+    <Text>Documents</Text>
   </Button>
 </div>
 
