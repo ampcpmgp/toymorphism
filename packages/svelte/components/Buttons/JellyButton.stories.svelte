@@ -1,11 +1,11 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import COMPONENT_NAME from "./COMPONENT_NAME.svelte";
+  import JellyButton from "./JellyButton.svelte";
 </script>
 
 <Meta
-  title="__GROUP_NAME__/COMPONENT_NAME"
-  component={COMPONENT_NAME}
+  title="Buttons/JellyButton"
+  component={JellyButton}
   parameters={{
     backgrounds: {
       default: "gray",
@@ -17,7 +17,7 @@
 />
 
 <Template let:args>
-  <COMPONENT_NAME {...args} on:click={args.onClick}>child</COMPONENT_NAME>
+  <JellyButton {...args} on:click={args.onClick}>child</JellyButton>
 </Template>
 
 <Story name="No settings" args={{}} />
