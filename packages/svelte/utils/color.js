@@ -30,9 +30,11 @@ export function getTextColors(color) {
 
   const sideColor = chroma.mix(color, isBlack ? "#444" : "black", 0.3).hex();
   const bottomColor = chroma.mix(color, isBlack ? "#444" : "black", 0.4).hex();
+  const shadowColor = chromaColor.darken(3).alpha(0.9).hex();
 
   return {
     sideColor,
     bottomColor,
+    shadowColor,
   };
 }
