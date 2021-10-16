@@ -1,5 +1,24 @@
+<script context="module">
+  import chroma from "chroma-js";
+
+  /**
+   * @param {string} color
+   */
+  export function getBaseColors(color) {
+    const chromaColor = chroma(color);
+    const sideColor = chroma.mix(color, "black", 0.4).hex();
+    const lightColor = chromaColor.brighten(1.5).hex();
+    const bottomColor = chroma.mix(color, "black", 0.6).hex();
+
+    return {
+      sideColor,
+      lightColor,
+      bottomColor,
+    };
+  }
+</script>
+
 <script>
-  import { getBaseColors } from "../../utils/color.js";
   import { baseColor } from "../../stores/theme.js";
   import { createEventDispatcher } from "svelte";
 

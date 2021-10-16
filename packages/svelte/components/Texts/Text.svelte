@@ -1,6 +1,30 @@
+<script context="module">
+  import chroma from "chroma-js";
+
+  /**
+   * @param {string} color
+   */
+  export function getTextColors(color) {
+    const chromaColor = chroma(color);
+    const luminance = chromaColor.luminance();
+    const isBlack = luminance < 0.01;
+
+    const sideColor = chroma.mix(color, isBlack ? "#444" : "black", 0.3).hex();
+    const bottomColor = chroma
+      .mix(color, isBlack ? "#444" : "black", 0.4)
+      .hex();
+    const shadowColor = chromaColor.darken(3).alpha(0.9).hex();
+
+    return {
+      sideColor,
+      bottomColor,
+      shadowColor,
+    };
+  }
+</script>
+
 <script>
   import { textColor } from "../../stores/theme";
-  import { getTextColors } from "../../utils/color";
 
   /** calculable size (e.g. 1rem, 20px) */
   export let size = "1rem";
