@@ -22,7 +22,7 @@
   </Base>
 </Template>
 
-<Story name="Default" args={{}} />
+<Story name="No settings" args={{}} />
 
 <Story
   name="Tag div"

@@ -1,11 +1,11 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import COMPONENT_NAME from "./COMPONENT_NAME.svelte";
+  import Jelly from "./Jelly.svelte";
 </script>
 
 <Meta
-  title="__GROUP_NAME__/COMPONENT_NAME"
-  component={COMPONENT_NAME}
+  title="_Core/Jelly"
+  component={Jelly}
   parameters={{
     backgrounds: {
       default: "gray",
@@ -17,7 +17,7 @@
 />
 
 <Template let:args>
-  <COMPONENT_NAME {...args} on:click={args.onClick}>child</COMPONENT_NAME>
+  <Jelly {...args} on:click={args.onClick}>Jelly</Jelly>
 </Template>
 
 <Story name="No settings" args={{}} />
@@ -25,6 +25,10 @@
 <Story
   name="Full settings"
   args={{
+    color: "#fc769f",
     custom: "custom",
+    paddingX: "5rem",
+    paddingY: "2rem",
+    borderRadius: "3.75rem",
   }}
 />

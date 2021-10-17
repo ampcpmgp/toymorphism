@@ -169,13 +169,15 @@
     color: initial;
     contain: none;
     user-select: none;
+    cursor: pointer;
 
     /* for ios */
     -webkit-user-select: none;
     appearance: none;
-    cursor: pointer;
 
-    /* https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile */
+    /* for ios
+      https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile
+    */
     -webkit-tap-highlight-color: transparent;
   }
 
