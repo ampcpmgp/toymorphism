@@ -6,12 +6,15 @@
   /** @type {string} */
   export let color = $baseColor;
 
+  /** @type {import("../../types/props").TextShape} */
+  export let shape = "none";
+
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
   export let attrs = {};
 </script>
 
 <h1 {...attrs}>
-  <Text {size} {color}><slot /></Text>
+  <Text {size} {color} {shape}><slot /></Text>
 </h1>
 
 <style>

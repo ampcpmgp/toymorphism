@@ -32,7 +32,7 @@
   export let color = $textColor;
   export let gap = "0.25rem";
   export let thickness = "calc(var(--size) / 8)";
-  /** @type {| "none"| "solid-3d" | "float" | "embossed"} */
+  /** @type {import("../../types/props").TextShape} */
   export let shape = "none";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
