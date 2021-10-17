@@ -12,7 +12,7 @@
 <Frame gap="0.75rem" padding="1rem" frameColor="lightgoldenrodyellow">
   <Header />
 
-  <H1 color="black">Toymorphism {version}</H1>
+  <H1 color="black" shape="float">Toymorphism {version}</H1>
 
   <Button padding="1rem" baseColor="green">
     <Text>Click Me!</Text>
