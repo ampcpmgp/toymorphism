@@ -87,7 +87,7 @@
 </Template>
 
 <Story
-  name="Variaous"
+  name="Various colors"
   args={{
     text: "😀👍🙆‍♀️🙋‍♂️",
   }}

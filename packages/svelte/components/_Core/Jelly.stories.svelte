@@ -26,7 +26,6 @@
   name="Full settings"
   args={{
     color: "#fc769f",
-    custom: "custom",
     paddingX: "5rem",
     paddingY: "2rem",
     borderRadius: "3.75rem",

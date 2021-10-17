@@ -17,14 +17,20 @@
 />
 
 <Template let:args>
-  <JellyButton {...args} on:click={args.onClick}>child</JellyButton>
+  <JellyButton {...args} on:click={args.onClick}>Jelly Button</JellyButton>
 </Template>
 
 <Story name="No settings" args={{}} />
 
 <Story
-  name="Default"
+  name="Full settings"
   args={{
-    custom: "custom",
+    baseColor: "green",
+    padding: "2rem",
+    borderRadius: "3rem",
+    fontSize: "2rem",
   }}
 />
+
+<style>
+</style>

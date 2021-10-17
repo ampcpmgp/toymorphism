@@ -33,9 +33,6 @@
   /** https://developer.mozilla.org/ja/docs/Web/CSS/transition-duration */
   export let transitionDuration = "80ms";
 
-  /** https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius */
-  export let borderRadius = "2rem";
-
   /** Only one can be specified
    * see: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
   export let padding = "1rem";
@@ -43,6 +40,9 @@
   export let paddingX = "";
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
   export let paddingY = "";
+
+  /** https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius */
+  export let borderRadius = "2rem";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction */
   export let flexDirection = "initial";
