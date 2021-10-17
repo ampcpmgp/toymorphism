@@ -72,6 +72,16 @@
 />
 
 <Story
+  name="Shape embossed"
+  args={{
+    size: "2rem",
+    color: "#fc769f",
+    shape: "embossed",
+    message: "Hello World | こんにちは世界",
+  }}
+/>
+
+<Story
   name="Font awesome"
   args={{
     size: "5rem",

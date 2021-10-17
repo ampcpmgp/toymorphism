@@ -1,6 +1,30 @@
+<script context="module">
+  import chroma from "chroma-js";
+
+  /**
+   * @param {string} color
+   */
+  export function getTextColors(color) {
+    const chromaColor = chroma(color);
+    const luminance = chromaColor.luminance();
+    const isBlack = luminance < 0.01;
+
+    const sideColor = chroma.mix(color, isBlack ? "#444" : "black", 0.3).hex();
+    const bottomColor = chroma
+      .mix(color, isBlack ? "#444" : "black", 0.4)
+      .hex();
+    const shadowColor = chromaColor.darken(3).alpha(0.9).hex();
+
+    return {
+      sideColor,
+      bottomColor,
+      shadowColor,
+    };
+  }
+</script>
+
 <script>
   import { textColor } from "../../stores/theme";
-  import { getTextColors } from "../../utils/color";
 
   /** calculable size (e.g. 1rem, 20px) */
   export let size = "1rem";
@@ -8,7 +32,7 @@
   export let color = $textColor;
   export let gap = "0.25rem";
   export let thickness = "calc(var(--size) / 8)";
-  /** @type {"solid-3d" | "float" | "none"} */
+  /** @type {| "none"| "solid-3d" | "float" | "embossed"} */
   export let shape = "none";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
@@ -21,6 +45,7 @@
   {...attrs}
   class:solid-3d={shape === "solid-3d"}
   class:float={shape === "float"}
+  class:embossed={shape === "embossed"}
   style="
     {attrs.style || ''};
     --size: {size};
@@ -28,6 +53,7 @@
     --base-color: {color};
     --side-color: {textColors.sideColor};
     --bottom-color: {textColors.bottomColor};
+    --shadow-color: {textColors.shadowColor};
     --thickness: {thickness};
     --gap: {gap};
   "
@@ -68,6 +94,16 @@
       /* blank */
       0 0 0 transparent
       ;
+  }
+
+  .embossed {
+    font-weight: 700;
+    white-space: pre;
+    color: transparent;
+    background-image: linear-gradient(0deg, var(--base-color) 0%, #fefafd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 1px 1px var(--shadow-color));
   }
 
   p {

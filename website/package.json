@@ -11,7 +11,7 @@
     "format": "prettier --write . --ignore-path .gitignore --config ../.prettierrc",
     "format:diff": "prettier --list-different . --ignore-path .gitignore --config ../.prettierrc",
     "typecheck": "tsc --noEmit && svelte-check",
-    "dev": "vite --host",
+    "dev": "vite --host --open",
     "build-website": "vite build",
     "serve": "vite preview"
   },
