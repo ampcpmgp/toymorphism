@@ -2,9 +2,9 @@
   "name": "toymorphism",
   "description": "Toy + Skeuomorphism",
   "version": "0.3.1",
-  "main": "dist/index.mjs",
+  "main": "index.js",
   "svelte": "index.js",
-  "types": "dist/types/index.d.ts",
+  "types": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -22,6 +22,7 @@
     "babel-loader": "^8.2.2",
     "rollup": "^2.58.0",
     "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-dts": "^4.0.0",
     "rollup-plugin-svelte": "^7.1.0",
     "sveld": "^0.10.2",
     "svelte": "^3.43.1",
