@@ -19,12 +19,12 @@
 </script>
 
 <script>
-  import { baseColor } from "../../stores/theme.js";
+  import { color as _color } from "../../stores/theme.js";
   import { createEventDispatcher } from "svelte";
 
   /** https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
    * @type {string} */
-  export let color = $baseColor;
+  export let color = $_color.base;
 
   /** @type {"div" | "button"} */
   export let tag = "div";

@@ -1,9 +1,9 @@
 <script>
-  import { textColor } from "../../stores/theme";
+  import { color as _color } from "../../stores/theme";
   import Text from "./../Texts/Text.svelte";
 
   export let size = "1rem";
-  export let color = $textColor;
+  export let color = $_color.text;
 
   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li#attributes
   export let attrs = {};

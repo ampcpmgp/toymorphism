@@ -8,12 +8,12 @@
   * https://dribbble.com/shots/6209185-BIG-Jelly-Button
  -->
 <script>
-  import { baseColor as _baseColor } from "./../../stores/theme.js";
+  import { color } from "./../../stores/theme.js";
   import Text from "../Texts/Text.svelte";
   import Jelly from "../_Core/Jelly.svelte";
 
   /** @type {string} */
-  export let baseColor = $_baseColor;
+  export let baseColor = $color.base;
   export let padding = "1rem";
   export let paddingX = "";
   export let paddingY = "";

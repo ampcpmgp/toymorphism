@@ -39,6 +39,7 @@
     "format": "prettier --write . --ignore-path .gitignore --config ../../.prettierrc",
     "format:diff": "prettier --list-different . --ignore-path .gitignore --config ../../.prettierrc",
     "typecheck": "tsc --noEmit && svelte-check",
+    "typecheck-watch": "concurrently \"tsc --noEmit --watch\" \"svelte-check --watch\"",
     "build": "rollup -c",
     "watch": "rollup -wc",
     "build-storybook": "build-storybook"

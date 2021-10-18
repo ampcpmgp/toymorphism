@@ -1,11 +1,11 @@
 <script>
-  import { baseColor, textColor as _textColor } from "../../stores/theme";
+  import { color } from "../../stores/theme";
 
   import Frame from "../Frames/Frame.svelte";
 
   export let code = "";
-  export let frameColor = $baseColor;
-  export let textColor = $_textColor;
+  export let frameColor = $color.base;
+  export let textColor = $color.text;
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
   export let attrs = {};
