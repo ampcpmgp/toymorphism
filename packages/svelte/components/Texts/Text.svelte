@@ -29,6 +29,7 @@
   /** calculable size (e.g. 1rem, 20px) */
   export let size = "1rem";
   export let lineHeight = "normal";
+  /** @type {string} */
   export let color = $textColor;
   export let gap = "0.25rem";
   export let thickness = "calc(var(--size) / 8)";

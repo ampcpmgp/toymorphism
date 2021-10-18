@@ -14,5 +14,4 @@ export { default as UL } from "./components/Lists/UL.svelte";
 export { default as ULItem } from "./components/Lists/ULItem.svelte";
 export { default as Text } from "./components/Texts/Text.svelte";
 
-import * as theme from "./stores/theme";
-export { theme };
+export * from "./stores";
