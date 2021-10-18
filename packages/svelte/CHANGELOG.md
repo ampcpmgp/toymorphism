@@ -1,5 +1,21 @@
 # toymorphism
 
+## 0.4.0
+
+### Minor Changes
+
+- 17e6173: Add Jelly & JellyButton
+
+### Patch Changes
+
+- 13c1a25: Toy Text shape
+- be72cf0: change theme color store
+- 5a1bb6f: Export theme
+- 87aa7a6: Frame padding, gap, ..etc settings
+- 87aa7a6: Button padding, gap, ...etc
+- dfb4bd7: theme color to writable object
+- 87aa7a6: Text gap & lineHeight settings
+
 ## 0.3.1
 
 ### Patch Changes
