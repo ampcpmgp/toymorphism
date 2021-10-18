@@ -1,10 +1,10 @@
 <script>
-  import { baseColor } from "../../stores/theme";
+  import { color as _color } from "../../stores/theme";
   import Text from "../Texts/Text.svelte";
 
   export let size = "2rem";
   /** @type {string} */
-  export let color = $baseColor;
+  export let color = $_color.text;
 
   /** @type {import("../../types/props").TextShape} */
   export let shape = "none";

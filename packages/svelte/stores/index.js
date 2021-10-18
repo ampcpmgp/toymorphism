@@ -1,1 +1,1 @@
-export { baseColor, textColor } from "./theme";
+export { color } from "./theme";

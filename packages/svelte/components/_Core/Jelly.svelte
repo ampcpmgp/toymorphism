@@ -21,12 +21,12 @@
 </script>
 
 <script>
-  import { baseColor } from "../../stores/theme";
+  import { color as _color } from "../../stores/theme";
   import { createEventDispatcher } from "svelte";
 
   /** https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
    * @type {string} */
-  export let color = $baseColor;
+  export let color = $_color.base;
 
   export let disabled = false;
 

@@ -24,13 +24,13 @@
 </script>
 
 <script>
-  import { textColor } from "../../stores/theme";
+  import { color as _color } from "../../stores/theme";
 
   /** calculable size (e.g. 1rem, 20px) */
   export let size = "1rem";
   export let lineHeight = "normal";
   /** @type {string} */
-  export let color = $textColor;
+  export let color = $_color.text;
   export let gap = "0.25rem";
   export let thickness = "calc(var(--size) / 8)";
   /** @type {import("../../types/props").TextShape} */
