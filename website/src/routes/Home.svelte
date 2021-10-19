@@ -1,10 +1,10 @@
 <script>
-  import { color, Button, Frame, H1, Text } from "toymorphism";
+  import { colors, Button, Frame, H1, Text } from "toymorphism";
   import Header from "../containers/!Headers/Header.svelte";
   import { version } from "toymorphism/package.json";
 
-  $color.base = "lightgreen";
-  $color.text = "black";
+  $colors.base = "lightgreen";
+  $colors.text = "black";
 </script>
 
 <Frame gap="0.75rem" padding="1rem" frameColor="lightgoldenrodyellow">
