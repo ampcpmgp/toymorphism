@@ -4,3 +4,11 @@
 </script>
 
 <Router {routes} />
+
+<style>
+  :global(body) {
+    padding: 1rem;
+    margin: auto;
+    max-width: 1080px;
+  }
+</style>
