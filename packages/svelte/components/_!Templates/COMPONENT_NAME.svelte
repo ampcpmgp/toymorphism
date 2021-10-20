@@ -1,7 +1,10 @@
 <script>
 </script>
 
-<div>a</div>
+<div class="wrapper">a</div>
 
 <style>
+  .wrapper {
+    display: flex;
+  }
 </style>

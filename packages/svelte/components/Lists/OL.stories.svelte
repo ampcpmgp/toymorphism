@@ -9,7 +9,7 @@
   component={OL}
   parameters={{
     backgrounds: {
-      default: "dark-gray",
+      default: "white",
     },
   }}
   argTypes={{

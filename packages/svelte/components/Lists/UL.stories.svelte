@@ -9,7 +9,7 @@
   component={UL}
   parameters={{
     backgrounds: {
-      default: "dark-gray",
+      default: "white",
     },
   }}
   argTypes={{

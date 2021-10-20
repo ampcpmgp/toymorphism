@@ -8,7 +8,7 @@
   component={H1}
   parameters={{
     backgrounds: {
-      default: "dark-gray",
+      default: "white",
     },
   }}
   argTypes={{

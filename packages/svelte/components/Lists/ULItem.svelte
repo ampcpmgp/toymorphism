@@ -3,6 +3,7 @@
   import Text from "./../Texts/Text.svelte";
 
   export let size = "1rem";
+  /** @type {string} */
   export let color = $colors.text;
 
   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li#attributes
