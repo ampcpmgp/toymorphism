@@ -28,5 +28,3 @@
     custom: "custom",
   }}
 />
-
-<style></style>

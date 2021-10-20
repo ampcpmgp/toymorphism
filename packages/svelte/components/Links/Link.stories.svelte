@@ -21,9 +21,21 @@
 </Template>
 
 <Story
-  name="Hello world"
+  name="No settings"
   args={{
     message: "Hello World | こんにちは世界",
+    attrs: {
+      href: "//example.com",
+      target: "_blank",
+    },
+  }}
+/>
+
+<Story
+  name="Full settings"
+  args={{
+    message: "Hello World | こんにちは世界",
+    size: "2rem",
     color: "#fc769f",
     attrs: {
       href: "//example.com",
