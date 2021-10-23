@@ -1,17 +1,20 @@
 <script>
-  import { colors } from "../../stores/theme";
+  import { colors, lengths } from "./../../stores/theme.js";
   import Base from "../_Core/Base.svelte";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes */
   export let attrs = {};
   export let baseColor = $colors.base;
-  export let disabled;
-  export let selected;
+  export let disabled = false;
+  export let selected = false;
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/width */
   export let diameter = "initial";
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
   export let padding = "initial";
+
+  /** @type {import("../../types/props.js").Thickness} */
+  export let thickness = $lengths.thickness;
 </script>
 
 <Base
@@ -21,6 +24,7 @@
   color={baseColor}
   {disabled}
   {selected}
+  {thickness}
   on:click
 >
   <div class="circle" style="--diameter: {diameter}; --padding: {padding};">

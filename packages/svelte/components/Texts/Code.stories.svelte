@@ -27,11 +27,11 @@
 />
 
 <Template let:args>
-  <Code {...args}>{args.message}</Code>
+  <Code {...args} />
 </Template>
 
 <Story
-  name="Hello world"
+  name="Full settings"
   args={{
     code: `window.Prism = window.Prism || {};
 window.Prism.manual = true;`,

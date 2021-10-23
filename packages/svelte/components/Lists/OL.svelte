@@ -15,6 +15,8 @@
 
 <style>
   ol {
+    margin: 0;
+    padding: 0;
     counter-reset: var(--cid);
     list-style-type: none;
   }
