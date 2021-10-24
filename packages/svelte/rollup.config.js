@@ -22,9 +22,6 @@ export default [
           outDir: "dist",
         },
       }),
-      copy({
-        targets: [{ src: "types/**", dest: "dist/types" }],
-      }),
     ],
   },
   {
@@ -34,5 +31,18 @@ export default [
       file: "dist/stores/index.d.ts",
     },
     plugins: [dts()],
+  },
+  {
+    input: "types/index.d.ts",
+    output: {
+      format: "es",
+      file: "dist/types/index.d.ts",
+    },
+    plugins: [
+      dts(),
+      copy({
+        targets: [{ src: "types/**", dest: "dist/types" }],
+      }),
+    ],
   },
 ];
