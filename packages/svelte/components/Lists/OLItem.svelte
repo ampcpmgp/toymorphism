@@ -7,7 +7,8 @@
 
   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li#attributes
   export let attrs = {};
-  export let cid = "default";
+  /** counter Id */
+  export let cid = "toymorphism-svelte-ol";
 </script>
 
 <li {...attrs} style="{attrs.style || ''}; --cid: {cid};">

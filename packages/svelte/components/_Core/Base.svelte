@@ -52,9 +52,9 @@
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
   export let gap = "initial";
 
-  /** 3rem corrucpted, pending
+  /** !warning! currently over 3rem corrucpted
    * see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
-  export let _thickness = "0.6rem";
+  export let thickness = "0.6rem";
 
   /**
    * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
@@ -71,7 +71,7 @@
     --side-color: ${baseColors.sideColor};
     --light-color: ${baseColors.lightColor};
     --bottom-color: ${baseColors.bottomColor};
-    --thickness: ${_thickness};
+    --thickness: ${thickness};
     --transition-duration: ${transitionDuration};
     --border-radius: ${borderRadius};
     --padding: ${padding};
@@ -99,6 +99,8 @@
     {disabled}
     ontouchstart={() => {}}
     class="box-shadow-wrapper"
+    class:cursor-initial={selected}
+    selected
   >
     <div class="base" class:circle={shape === "circle"} class:selected>
       <slot />
@@ -179,6 +181,10 @@
       https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile
     */
     -webkit-tap-highlight-color: transparent;
+  }
+
+  button.cursor-initial {
+    cursor: initial;
   }
 
   .selected,

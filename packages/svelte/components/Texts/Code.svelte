@@ -4,7 +4,9 @@
   import Frame from "../Frames/Frame.svelte";
 
   export let code = "";
+  /** @type {string} */
   export let frameColor = $colors.base;
+  /** @type {string} */
   export let textColor = $colors.text;
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
@@ -23,8 +25,8 @@
 <style>
   .wrapper {
     white-space: pre-wrap;
-    margin: 10px;
-    font-size: 14px;
+    margin: 1rem;
+    font-size: 0.8rem;
   }
 
   code {

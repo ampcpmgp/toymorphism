@@ -9,12 +9,14 @@
     </Text>
     <Text>Home</Text>
   </Button>
+
   <Button padding="0.5rem" gap="0.4rem">
     <Text color="white" size="1.5rem" shape="solid-3d">
       <i class="fas fa-puzzle-piece" />
     </Text>
     <Text>Components</Text>
   </Button>
+
   <Button padding="0.5rem" gap="0.4rem">
     <Text color="white" size="1.5rem" shape="solid-3d">
       <i class="fas fa-book" />
