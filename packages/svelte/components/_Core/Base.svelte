@@ -99,7 +99,6 @@
     {disabled}
     ontouchstart={() => {}}
     class="box-shadow-wrapper"
-    class:cursor-initial={selected}
     selected
   >
     <div class="base" class:circle={shape === "circle"} class:selected>
@@ -181,10 +180,6 @@
       https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile
     */
     -webkit-tap-highlight-color: transparent;
-  }
-
-  button.cursor-initial {
-    cursor: initial;
   }
 
   .selected,

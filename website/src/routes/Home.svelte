@@ -1,9 +1,8 @@
 <script>
-  import { colors, Frame, H1, Toc, H2, Code } from "toymorphism";
+  import { colors, Toc, H2, Code } from "toymorphism";
   import Header from "../containers/!Common/Header.svelte";
-  import Footer from "../containers/!Common/Footer.svelte";
-  import { version } from "toymorphism/package.json";
   import Philosophy from "../containers/Home/Philosophy.svelte";
+  import AppFrame from "../containers/!Common/AppFrame.svelte";
 
   $colors.base = "lightgreen";
 
@@ -13,14 +12,13 @@
       text: "Philosophy",
     },
     {
-      id: "get-started",
-      text: "Get started",
+      id: "getting-started",
+      text: "Getting started",
     },
   ];
 </script>
 
-<Frame gap="1.5rem" padding="1rem" frameColor="lightgoldenrodyellow">
-  <H1 shape="embossed">Toymorphism {version}</H1>
+<AppFrame>
   <Header />
 
   <div class="h2-wrapper">
@@ -40,10 +38,9 @@
       frameColor={"white"}
       textColor={"black"}
     />
+    <!-- Read more -->
   </div>
-
-  <Footer />
-</Frame>
+</AppFrame>
 
 <style>
   .h2-wrapper {
