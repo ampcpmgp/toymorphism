@@ -12,9 +12,7 @@
      * of JS in `.svelte` files.
      */
     "allowJs": true,
-    "checkJs": true,
-    "outDir": "./built"
+    "checkJs": true
   },
-  "include": ["./**/*.d.ts", "./**/*.ts", "./**/*.js", "./**/*.svelte"],
-  "exclude": ["./built/**/*"]
+  "include": ["./**/*.d.ts", "./**/*.ts", "./**/*.js", "./**/*.svelte"]
 }
