@@ -1,5 +1,15 @@
 # toymorphism
 
+## 0.5.0
+
+### Minor Changes
+
+- 82d0158: add LinkButton & thickness props, adjust styles
+
+### Patch Changes
+
+- 8ff1e84: Toy Table Of Content
+
 ## 0.4.0
 
 ### Minor Changes
