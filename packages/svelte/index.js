@@ -17,5 +17,6 @@ export { default as UL } from "./components/Lists/UL.svelte";
 export { default as ULItem } from "./components/Lists/ULItem.svelte";
 export { default as Text } from "./components/Texts/Text.svelte";
 export { default as Code } from "./components/Texts/Code.svelte";
+export { default as FontAwesomeIcon } from "./components/Icons/FontAwesomeIcon.svelte";
 
-export * from "./stores";
+export * from "./stores/index";
