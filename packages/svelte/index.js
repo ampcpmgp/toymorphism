@@ -19,4 +19,4 @@ export { default as Text } from "./components/Texts/Text.svelte";
 export { default as Code } from "./components/Texts/Code.svelte";
 export { default as FontAwesomeIcon } from "./components/Icons/FontAwesomeIcon.svelte";
 
-export * from "./stores/index";
+export * from "./stores";
