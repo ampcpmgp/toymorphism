@@ -14,12 +14,15 @@
   /** @type {string} */
   export let className = "";
   export { className as class };
+
+  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
+  export let attrs = {};
 </script>
 
 <svelte:head>
   <link rel="stylesheet" {href} />
 </svelte:head>
 
-<Text {size} {color} {thickness} {shape}>
+<Text {...attrs} {size} {color} {thickness} {shape}>
   <i class={className} />
 </Text>
