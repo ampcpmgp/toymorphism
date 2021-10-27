@@ -8,6 +8,27 @@ import dts from "rollup-plugin-dts";
 
 export default [
   {
+    input: "types/index.d.ts",
+    output: {
+      format: "es",
+      file: "dist/types/index.d.ts",
+    },
+    plugins: [
+      dts(),
+      copy({
+        targets: [{ src: "types/**", dest: "dist/types" }],
+      }),
+    ],
+  },
+  {
+    input: "stores/index.js",
+    output: {
+      format: "es",
+      file: "dist/stores/index.d.ts",
+    },
+    plugins: [dts()],
+  },
+  {
     input: "index.js",
     output: {
       format: "es",
@@ -21,27 +42,6 @@ export default [
         typesOptions: {
           outDir: "dist",
         },
-      }),
-    ],
-  },
-  {
-    input: "stores/index.js",
-    output: {
-      format: "es",
-      file: "dist/stores/index.d.ts",
-    },
-    plugins: [dts()],
-  },
-  {
-    input: "types/index.d.ts",
-    output: {
-      format: "es",
-      file: "dist/types/index.d.ts",
-    },
-    plugins: [
-      dts(),
-      copy({
-        targets: [{ src: "types/**", dest: "dist/types" }],
       }),
     ],
   },
