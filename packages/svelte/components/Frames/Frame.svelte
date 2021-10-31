@@ -4,14 +4,12 @@
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
   export let attrs = {};
-
-  /** see: https://developer.mozilla.org/ja/docs/Web/CSS/color */
+  /** @type {import("../../types/props").Color} */
   export let edgeColor = $colors.base;
-
-  /** see: https://developer.mozilla.org/ja/docs/Web/CSS/color */
+  /** @type {import("../../types/props").Color} */
   export let frameColor = "#fff";
-
   export let padding = "initial";
+  /** @type {import("../../types/props").Padding} */
   export let edgePadding = "0.25rem";
   export let gap = "initial";
 </script>
@@ -20,6 +18,7 @@
   <div
     class="base-inner"
     style="
+      {attrs.style || ''};
       --inner-color: {frameColor};
       --padding:{padding};
       --gap:{gap};

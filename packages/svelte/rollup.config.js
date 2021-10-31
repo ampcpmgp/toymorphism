@@ -14,10 +14,10 @@ export default [
       file: "dist/types/index.d.ts",
     },
     plugins: [
-      dts(),
       copy({
         targets: [{ src: "types/**", dest: "dist/types" }],
       }),
+      dts(),
     ],
   },
   {
@@ -25,6 +25,14 @@ export default [
     output: {
       format: "es",
       file: "dist/stores/index.d.ts",
+    },
+    plugins: [dts()],
+  },
+  {
+    input: "actions/index.js",
+    output: {
+      format: "es",
+      file: "dist/actions/index.d.ts",
     },
     plugins: [dts()],
   },
@@ -41,6 +49,10 @@ export default [
       sveld({
         typesOptions: {
           outDir: "dist",
+        },
+        json: true,
+        jsonOptions: {
+          outFile: "dist/COMPONENT_API.json",
         },
       }),
     ],

@@ -22,8 +22,7 @@
   import { colors } from "../../stores/theme.js";
   import { createEventDispatcher } from "svelte";
 
-  /** https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
-   * @type {string} */
+  /** @type {import("../../types/props.js").Color} */
   export let color = $colors.base;
 
   /** @type {"div" | "button"} */
@@ -52,8 +51,7 @@
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
   export let gap = "initial";
 
-  /** !warning! currently over 3rem corrucpted
-   * see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
+  /** @type {import("../../types/props.js").Color} */
   export let thickness = "0.6rem";
 
   /**
