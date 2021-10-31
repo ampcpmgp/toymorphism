@@ -30,6 +30,7 @@
   <Code {...args} />
 </Template>
 
+<!-- TODO: edgePadding, codeAttrs -->
 <Story
   name="Full settings"
   args={{

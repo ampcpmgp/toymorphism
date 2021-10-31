@@ -18,4 +18,5 @@ export { default as ULItem } from "./components/Lists/ULItem.svelte";
 export { default as Text } from "./components/Texts/Text.svelte";
 export { default as Code } from "./components/Texts/Code.svelte";
 
+export * from "./actions";
 export * from "./stores";

@@ -29,6 +29,14 @@ export default [
     plugins: [dts()],
   },
   {
+    input: "actions/index.js",
+    output: {
+      format: "es",
+      file: "dist/actions/index.d.ts",
+    },
+    plugins: [dts()],
+  },
+  {
     input: "index.js",
     output: {
       format: "es",

@@ -10,14 +10,18 @@
   export let textColor = $colors.text;
   /** @type {import("../../types/props").Padding} */
   export let padding = "1rem";
+  /** @type {import("../../types/props").Padding} */
+  export let edgePadding = "0.25rem";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
   export let attrs = {};
+  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code#attributes */
+  export let codeAttrs = {};
 </script>
 
-<Frame {frameColor}>
+<Frame {frameColor} {edgePadding} {attrs}>
   <pre>
-    <code {...attrs} style="{attrs.style || ''}; --text-color: {textColor}; --padding: {padding};">
+    <code {...codeAttrs} style="{codeAttrs.style || ''}; --text-color: {textColor}; --padding: {padding};">
       {code}
     </code>
   </pre>
