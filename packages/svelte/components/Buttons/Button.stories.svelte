@@ -38,13 +38,16 @@
 />
 
 <Story
-  name="Normal"
+  name="Full Settings"
   args={{
     text: "🎶",
     baseColor: "lightgreen",
     padding: "1rem",
     fontSize: "2rem",
     gap: "1rem",
+    disabled: false,
+    selected: false,
+    thickness: "1rem",
     attrs: {
       title: "music",
     },
