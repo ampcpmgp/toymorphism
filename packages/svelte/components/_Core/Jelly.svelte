@@ -24,8 +24,7 @@
   import { colors } from "../../stores/theme";
   import { createEventDispatcher } from "svelte";
 
-  /** https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
-   * @type {string} */
+  /** @type {import("../../types/props").Color} */
   export let color = $colors.base;
 
   export let disabled = false;

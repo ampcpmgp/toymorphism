@@ -12,6 +12,8 @@
   export let padding = "initial";
   export let fontSize = "initial";
   export let gap = "initial";
+  /** @type {import("../../types/props").Thickness} */
+  export let thickness = "0.6rem";
 </script>
 
 <Base
@@ -23,6 +25,7 @@
   {padding}
   {fontSize}
   {gap}
+  {thickness}
   on:click
 >
   <slot />

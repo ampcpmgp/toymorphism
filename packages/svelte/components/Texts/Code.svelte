@@ -8,28 +8,26 @@
   export let frameColor = $colors.base;
   /** @type {string} */
   export let textColor = $colors.text;
+  /** @type {import("../../types/props").Padding} */
+  export let padding = "1rem";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
   export let attrs = {};
 </script>
 
 <Frame {frameColor}>
-  <pre
-    class="wrapper">
-    <code {...attrs} style="{attrs.style || ''}; --text-color: {textColor};">
+  <pre>
+    <code {...attrs} style="{attrs.style || ''}; --text-color: {textColor}; --padding: {padding};">
       {code}
     </code>
   </pre>
 </Frame>
 
 <style>
-  .wrapper {
-    white-space: pre-wrap;
-    margin: 1rem;
-    font-size: 0.8rem;
-  }
-
   code {
+    display: flex;
+    padding: var(--padding);
+    font-size: 0.8rem;
     color: var(--text-color);
   }
 </style>
