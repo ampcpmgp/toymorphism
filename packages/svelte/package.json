@@ -9,7 +9,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.16.0",
     "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@storybook/addon-actions": "^6.4.0-beta.15",
