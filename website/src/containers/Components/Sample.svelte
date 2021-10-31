@@ -1,5 +1,5 @@
 <script>
-  import { components } from "toymorphism/dist/index.json";
+  import { components } from "toymorphism/dist/COMPONENT_API.json";
   import * as toymorphism from "toymorphism";
   import { Button, CircleButton, Code, rescale } from "toymorphism";
 

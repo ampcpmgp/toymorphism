@@ -1,5 +1,5 @@
 <script>
-  import { components } from "toymorphism/dist/index.json";
+  import { components } from "toymorphism/dist/COMPONENT_API.json";
   import AppFrame from "../containers/!Common/AppFrame.svelte";
   import Header from "../containers/!Common/Header.svelte";
   import Sample from "../containers/Components/Sample.svelte";
