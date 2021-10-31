@@ -28,10 +28,15 @@
 </Frame>
 
 <style>
+  pre {
+    margin: 0;
+  }
+
   code {
     display: flex;
     padding: var(--padding);
     font-size: 0.8rem;
     color: var(--text-color);
+    line-height: 1.5;
   }
 </style>

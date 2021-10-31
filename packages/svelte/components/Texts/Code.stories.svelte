@@ -30,7 +30,6 @@
   <Code {...args} />
 </Template>
 
-<!-- TODO: edgePadding, codeAttrs -->
 <Story
   name="Full settings"
   args={{
@@ -38,6 +37,8 @@
 window.Prism.manual = true;`,
     frameColor: "white",
     textColor: "black",
+    edgePadding: "1rem",
     attrs: {},
+    codeAttrs: { title: "prism" },
   }}
 />

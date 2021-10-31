@@ -18,7 +18,7 @@
   <div
     class="base-inner"
     style="
-      {attrs.style ?? ''};
+      {attrs.style || ''};
       --inner-color: {frameColor};
       --padding:{padding};
       --gap:{gap};
