@@ -33,7 +33,7 @@
     🎉
   </CircleButton>
 {:else if item.moduleName === "Code"}
-  <div use:rescale={0.6}>
+  <div use:rescale={0.8}>
     <Code
       code="let a = 1"
       edgeColor="lightblue"
@@ -44,8 +44,17 @@
     />
   </div>
 {:else if item.moduleName === "Frame"}
-  <div use:rescale={1}>
-    <Frame edgeColor="#ccc" frameColor="#fff">Frame</Frame>
+  <div use:rescale={0.5}>
+    <Frame
+      edgeColor="#ccc"
+      frameColor="#fff"
+      edgePadding="0.5rem"
+      padding="0.5rem"
+      gap="0.25rem"
+    >
+      <span>content</span>
+      <span>content</span>
+    </Frame>
   </div>
 {:else}
   <svelte:component this={toymorphism[item.moduleName]} />
