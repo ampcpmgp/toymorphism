@@ -31,11 +31,19 @@
 </Template>
 
 <Story
+  name="No settings"
+  args={{
+    code: `window.Prism = window.Prism || {};
+window.Prism.manual = true;`,
+  }}
+/>
+<Story
   name="Full settings"
   args={{
     code: `window.Prism = window.Prism || {};
 window.Prism.manual = true;`,
     frameColor: "white",
+    edgeColor: "skyblue",
     textColor: "black",
     edgePadding: "1rem",
     attrs: {},
