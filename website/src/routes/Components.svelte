@@ -20,9 +20,11 @@
 
 <style>
   .wrapper {
-    display: grid;
     width: 100%;
     height: 100%;
+    margin: auto;
+    display: grid;
+    place-content: center;
     grid-template-columns: repeat(auto-fill, 10rem);
     grid-auto-rows: 8rem;
   }

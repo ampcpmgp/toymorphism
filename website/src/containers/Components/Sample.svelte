@@ -1,7 +1,7 @@
 <script>
   import { components } from "toymorphism/dist/COMPONENT_API.json";
   import * as toymorphism from "toymorphism";
-  import { Button, CircleButton, Code, rescale } from "toymorphism";
+  import { Button, CircleButton, Code, Frame, rescale } from "toymorphism";
 
   /** @type {typeof components[0]} */
   export let item;
@@ -33,14 +33,28 @@
     🎉
   </CircleButton>
 {:else if item.moduleName === "Code"}
-  <div use:rescale={0.6}>
+  <div use:rescale={0.8}>
     <Code
       code="let a = 1"
+      edgeColor="lightblue"
       frameColor="white"
       textColor="black"
       padding="0.5rem 0.2rem"
       edgePadding="0.2rem"
     />
+  </div>
+{:else if item.moduleName === "Frame"}
+  <div use:rescale={0.5}>
+    <Frame
+      edgeColor="#ccc"
+      frameColor="#fff"
+      edgePadding="0.5rem"
+      padding="0.5rem"
+      gap="0.25rem"
+    >
+      <span>content</span>
+      <span>content</span>
+    </Frame>
   </div>
 {:else}
   <svelte:component this={toymorphism[item.moduleName]} />

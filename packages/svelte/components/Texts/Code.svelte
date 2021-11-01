@@ -4,9 +4,11 @@
   import Frame from "../Frames/Frame.svelte";
 
   export let code = "";
-  /** @type {string} */
-  export let frameColor = $colors.base;
-  /** @type {string} */
+  /** @type {import("../../types/props").Color} */
+  export let frameColor = "white";
+  /** @type {import("../../types/props").Color} */
+  export let edgeColor = $colors.base;
+  /** @type {import("../../types/props").Color} */
   export let textColor = $colors.text;
   /** @type {import("../../types/props").Padding} */
   export let padding = "1rem";
@@ -19,7 +21,7 @@
   export let codeAttrs = {};
 </script>
 
-<Frame {frameColor} {edgePadding} {attrs}>
+<Frame {frameColor} {edgeColor} {edgePadding} {attrs}>
   <pre>
     <code {...codeAttrs} style="{codeAttrs.style || ''}; --text-color: {textColor}; --padding: {padding};">
       {code}
