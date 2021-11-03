@@ -5,7 +5,6 @@
   export let size = "1.5rem";
   /** @type {string} */
   export let color = $colors.text;
-
   /** @type {import("../../types/props").TextShape} */
   export let shape = "none";
 

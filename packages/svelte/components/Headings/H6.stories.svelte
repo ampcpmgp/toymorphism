@@ -21,7 +21,7 @@
 </Template>
 
 <Story
-  name="Normal"
+  name="No settings"
   args={{
     message: "H6 Text",
   }}
