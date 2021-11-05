@@ -51,6 +51,6 @@
 <Story
   name="Normal"
   args={{
-    message: "Hello World | こんにちは世界",
+    message: "Hello World | こんにちは世界 | ☀️🔆🥳",
   }}
 />

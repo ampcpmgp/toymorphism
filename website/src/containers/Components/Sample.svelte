@@ -12,6 +12,7 @@
     H4,
     H5,
     H6,
+    Link,
     rescale,
   } from "toymorphism";
 
@@ -81,6 +82,15 @@
     <H5 color="#f66" shape="float" size="1.4rem">H5</H5>
   {:else if item.moduleName === "H6"}
     <H6 color="#f66" shape="float" size="1.2rem">H6</H6>
+  {:else if item.moduleName === "Link"}
+    <Link
+      size="1.2rem"
+      shape="none"
+      color="black"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="//example.com">Link</Link
+    >
   {:else}
     <svelte:component this={toymorphism[item.moduleName]} />
   {/if}
