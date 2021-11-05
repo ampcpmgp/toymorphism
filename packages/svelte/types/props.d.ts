@@ -17,3 +17,5 @@ export type Color = string;
 export type Padding = string;
 /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size */
 export type FontSize = string;
+/** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target */
+export type Target = "_self" | "_blank" | "_parent" | "_top";

@@ -9,14 +9,13 @@
   export let color = $colors.text;
   /** @type {import("../../types/props").TextShape} */
   export let shape = "none";
+  /** @type {import("csstype").Properties["textDecoration"]} */
   export let textDecorationLine = "underline";
   /** @type {string} */
   export let href = "";
-  /** @type {"_self" | "_blank" | "_parent" | "_top"}
-   * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target
-   */
+  /** @type {import("../../types/props").Target} */
   export let target = "_blank";
-  /** @type {string}
+  /** @type {HTMLAnchorElement["rel"]}
    * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
    */
   export let rel = "noopener noreferrer";
