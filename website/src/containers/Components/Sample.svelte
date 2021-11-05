@@ -13,6 +13,7 @@
     H5,
     H6,
     Link,
+    LinkButton,
     rescale,
   } from "toymorphism";
 
@@ -89,7 +90,21 @@
       color="black"
       target="_blank"
       rel="noopener noreferrer"
+      textDecorationLine="underline"
       href="//example.com">Link</Link
+    >
+  {:else if item.moduleName === "LinkButton"}
+    <LinkButton
+      size="1rem"
+      shape="none"
+      color="black"
+      target="_blank"
+      rel="noopener noreferrer"
+      diameter="2rem"
+      thickness="0.4rem"
+      textDecorationLine="none"
+      padding="0.4rem"
+      href="//example.com">Link</LinkButton
     >
   {:else}
     <svelte:component this={toymorphism[item.moduleName]} />
