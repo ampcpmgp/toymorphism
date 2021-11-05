@@ -11,9 +11,9 @@ export interface TocHeading {
 /** 🚧warning🚧 currently over 3rem corrucpted
  * see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
 export type Thickness = string;
-
 /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value */
 export type Color = string;
-
 /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
 export type Padding = string;
+/** see: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size */
+export type FontSize = string;

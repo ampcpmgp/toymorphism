@@ -37,9 +37,9 @@
     message: "Hello World | こんにちは世界",
     size: "2rem",
     color: "#fc769f",
-    attrs: {
-      href: "//example.com",
-      target: "_blank",
-    },
+    href: "//example.com",
+    target: "_blank",
+    rel: "nofollow",
+    attrs: {},
   }}
 />

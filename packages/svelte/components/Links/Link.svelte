@@ -3,12 +3,23 @@
 
   import Text from "./../Texts/Text.svelte";
 
+  /** @type {import("../../types/props").FontSize} */
   export let size = "1rem";
-  /** @type {string} */
+  /** @type {import("../../types/props").Color} */
   export let color = $colors.text;
   /** @type {import("../../types/props").TextShape} */
   export let shape = "none";
   export let textDecorationLine = "underline";
+  /** @type {string} */
+  export let href = "";
+  /** @type {"_self" | "_blank" | "_parent" | "_top"}
+   * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target
+   */
+  export let target = "_blank";
+  /** @type {string}
+   * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
+   */
+  export let rel = "noopener noreferrer";
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes */
   export let attrs = {};
@@ -19,6 +30,9 @@
   {...attrs}
   style="{attrs.style ||
     ''}; --color: {color}; --text-decoration-line: {textDecorationLine};"
+  href={href || attrs.href}
+  target={target || attrs.target}
+  rel={rel || attrs.rel}
 >
   <Text {size} {color} {shape}><slot /></Text>
 </a>
