@@ -16,8 +16,8 @@
 </script>
 
 <Base
+  {...$$restProps}
   tag="button"
-  {$$props}
   color={baseColor}
   {disabled}
   {selected}

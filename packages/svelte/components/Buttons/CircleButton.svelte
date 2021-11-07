@@ -19,9 +19,9 @@
 </script>
 
 <Base
+  {...$$restProps}
   tag="button"
   shape="circle"
-  {...$$props}
   color={baseColor}
   {disabled}
   {selected}
