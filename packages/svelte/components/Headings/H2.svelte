@@ -7,12 +7,9 @@
   export let color = $colors.text;
   /** @type {import("../../types/props").TextShape} */
   export let shape = "none";
-
-  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
-  export let attrs = {};
 </script>
 
-<h2 {...attrs}>
+<h2 {...$$restProps}>
   <Text {size} {color} {shape}><slot /></Text>
 </h2>
 

@@ -36,19 +36,16 @@
   /** @type {import("../../types/props").TextShape} */
   export let shape = "none";
 
-  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
-  export let attrs = {};
-
   $: textColors = getTextColors(color);
 </script>
 
 <p
-  {...attrs}
+  {...$$restProps}
   class:solid-3d={shape === "solid-3d"}
   class:float={shape === "float"}
   class:embossed={shape === "embossed"}
   style="
-    {attrs.style || ''};
+    {$$restProps.style || ''};
     --size: {size};
     --line-height: {lineHeight};
     --base-color: {color};

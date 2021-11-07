@@ -49,16 +49,11 @@
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
   export let gap = "initial";
 
-  /**
-   * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
-   */
-  export let attrs = {};
-
   const dispatch = createEventDispatcher();
 
   $: jellyColors = getJellyColors(color);
   $: style = `
-    ${attrs.style || ""};
+    ${$$restProps.style || ""};
     --base-color: ${color};
     --top-color: ${jellyColors.topColor};
     --border-color: ${jellyColors.borderColor};
@@ -79,8 +74,8 @@
 -->
 <button
   on:click={(e) => dispatch("click", e)}
-  class="wrapper"
-  {...attrs}
+  {...$$restProps}
+  class="wrapper {$$restProps.class || ''}"
   {style}
   {disabled}
   ontouchstart={() => {}}

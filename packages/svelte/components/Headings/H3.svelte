@@ -7,12 +7,9 @@
   export let color = $colors.text;
   /** @type {import("../../types/props").TextShape} */
   export let shape = "float";
-
-  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
-  export let attrs = {};
 </script>
 
-<h3 {...attrs}>
+<h3 {...$$restProps}>
   <Text {size} {color} {shape}><slot /></Text>
 </h3>
 

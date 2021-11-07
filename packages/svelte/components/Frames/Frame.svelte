@@ -2,8 +2,6 @@
   import { colors } from "../../stores/theme";
   import Base from "../_Core/Base.svelte";
 
-  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div#attributes */
-  export let attrs = {};
   /** @type {import("../../types/props").Color} */
   export let edgeColor = $colors.base;
   /** @type {import("../../types/props").Color} */
@@ -14,11 +12,11 @@
   export let gap = "initial";
 </script>
 
-<Base {attrs} color={edgeColor}>
+<Base {$$restProps} color={edgeColor}>
   <div
     class="base-inner"
     style="
-      {attrs.style || ''};
+      {$$restProps.style || ''};
       --inner-color: {frameColor};
       --padding:{padding};
       --gap:{gap};

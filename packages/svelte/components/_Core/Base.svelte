@@ -54,17 +54,11 @@
   /** @type {import("../../types/props.js").Color} */
   export let thickness = "0.6rem";
 
-  /**
-   * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
-   * and specified tag attributes
-   */
-  export let attrs = {};
-
   const dispatch = createEventDispatcher();
 
   $: baseColors = getBaseColors(color);
   $: style = `
-    ${attrs.style || ""};
+    ${$$restProps.style || ""};
     --base-color: ${color};
     --side-color: ${baseColors.sideColor};
     --light-color: ${baseColors.lightColor};
@@ -80,7 +74,7 @@
 </script>
 
 {#if tag === "div"}
-  <div class="box-shadow-wrapper" {...attrs} {style}>
+  <div class="box-shadow-wrapper" {...$$restProps} {style}>
     <div class="base" class:circle={shape === "circle"} class:selected>
       <slot />
     </div>
@@ -92,7 +86,7 @@
   -->
   <button
     on:click={(e) => dispatch("click", e)}
-    {...attrs}
+    {...$$restProps}
     {style}
     {disabled}
     ontouchstart={() => {}}

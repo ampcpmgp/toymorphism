@@ -25,12 +25,7 @@
   </Frame>
 </Template>
 
-<Story
-  name="No settings"
-  args={{
-    attrs: { title: "Frame" },
-  }}
-/>
+<Story name="No settings" args={{}} />
 
 <Story
   name="All settings"
@@ -40,6 +35,5 @@
     gap: "1rem",
     padding: "1rem",
     edgePadding: "0.5rem",
-    attrs: { title: "Frame" },
   }}
 />

@@ -17,7 +17,10 @@
 />
 
 <Template let:args>
-  <Jelly {...args} on:click={args.onClick}>Jelly</Jelly>
+  <Jelly {...args} on:click={args.onClick}>
+    <span>Jelly</span>
+    <span>Button</span>
+  </Jelly>
 </Template>
 
 <Story name="No settings" args={{}} />
@@ -29,5 +32,6 @@
     paddingX: "5rem",
     paddingY: "2rem",
     borderRadius: "3.75rem",
+    style: "--gap: 20px;",
   }}
 />

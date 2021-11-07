@@ -5,13 +5,11 @@
   export let size = "1rem";
   export let color = $colors.text;
 
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li#attributes
-  export let attrs = {};
   /** counter Id */
   export let cid = "toymorphism-svelte-ol";
 </script>
 
-<li {...attrs} style="{attrs.style || ''}; --cid: {cid};">
+<li {...$$restProps} style="{$$restProps.style || ''}; --cid: {cid};">
   <Text {size} {color}>
     <div class="counter">
       <slot />

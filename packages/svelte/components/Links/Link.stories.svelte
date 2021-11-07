@@ -24,10 +24,8 @@
   name="No settings"
   args={{
     message: "Hello World | こんにちは世界",
-    attrs: {
-      href: "//example.com",
-      target: "_blank",
-    },
+    href: "//example.com",
+    target: "_blank",
   }}
 />
 
@@ -40,6 +38,5 @@
     href: "//example.com",
     target: "_blank",
     rel: "nofollow",
-    attrs: {},
   }}
 />

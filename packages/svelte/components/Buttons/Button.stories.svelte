@@ -48,9 +48,6 @@
     disabled: false,
     selected: false,
     thickness: "1rem",
-    attrs: {
-      title: "music",
-    },
   }}
 />
 

@@ -34,8 +34,5 @@
     color: "#f77",
     size: "3rem",
     shape: "embossed",
-    attrs: {
-      id: "h1-text",
-    },
   }}
 />
