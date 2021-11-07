@@ -1,6 +1,4 @@
 <script>
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol#attributes
-  export let attrs = {};
   export let child = false;
 
   /** counter Id */
@@ -8,9 +6,9 @@
 </script>
 
 <ol
-  {...attrs}
+  {...$$restProps}
   style="
-    ${attrs.style || ''};
+    ${$$restProps.style || ''};
     --cid: {cid};
     --padding-inline-start: {child ? '1.5rem' : '0'}
     "

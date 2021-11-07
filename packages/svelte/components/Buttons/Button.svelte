@@ -2,8 +2,7 @@
   import { colors } from "../../stores/theme";
   import Base from "../_Core/Base.svelte";
 
-  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes */
-  export let attrs = {};
+  /** @restProps {button} */
 
   /** @type {string} */
   export let baseColor = $colors.base;
@@ -18,7 +17,7 @@
 
 <Base
   tag="button"
-  {attrs}
+  {$$props}
   color={baseColor}
   {disabled}
   {selected}

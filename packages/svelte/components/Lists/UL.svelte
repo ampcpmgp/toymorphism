@@ -1,13 +1,11 @@
 <script>
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul#attributes
-  export let attrs = {};
   export let child = false;
 </script>
 
 <ul
-  {...attrs}
+  {...$$restProps}
   style={`
-    ${attrs.style || ""};
+    ${$$restProps.style || ""};
     --padding-inline-start: ${child ? "1.5rem" : "0"}
     `}
 >

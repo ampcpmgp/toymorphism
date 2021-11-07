@@ -45,9 +45,6 @@
     color: "#fc769f",
     shape: "none",
     message: "Hello World | こんにちは世界",
-    attrs: {
-      title: "Shape none",
-    },
   }}
 />
 

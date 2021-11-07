@@ -29,6 +29,3 @@
 >
   <Text shape="embossed" color={baseColor} size={fontSize}><slot /></Text>
 </Jelly>
-
-<style>
-</style>
