@@ -12,9 +12,14 @@
     H4,
     H5,
     H6,
+    JellyButton,
     Link,
     LinkButton,
+    OL,
+    OLItem,
     rescale,
+    UL,
+    ULItem,
   } from "toymorphism";
 
   /** @type {typeof components[0]} */
@@ -93,6 +98,28 @@
       textDecorationLine="underline"
       href="//example.com">Link</Link
     >
+  {:else if item.moduleName === "JellyButton"}
+    <JellyButton
+      baseColor="plum"
+      borderRadius="1.5rem"
+      fontSize="0.75rem"
+      padding="0.6rem"
+    >
+      Jelly
+    </JellyButton>
+  {:else if item.moduleName === "OL"}
+    <div use:rescale={0.66}>
+      <OL>
+        <OLItem>item</OLItem>
+        <OLItem>item</OLItem>
+        <OL>
+          <OLItem>item</OLItem>
+        </OL>
+        <OLItem>item</OLItem>
+      </OL>
+    </div>
+  {:else if item.moduleName === "OLItem"}
+    <OLItem>item</OLItem>
   {:else if item.moduleName === "LinkButton"}
     <LinkButton
       size="1rem"
@@ -106,6 +133,19 @@
       padding="0.4rem"
       href="//example.com">Link</LinkButton
     >
+  {:else if item.moduleName === "UL"}
+    <div use:rescale={0.66}>
+      <UL>
+        <ULItem>item</ULItem>
+        <ULItem>item</ULItem>
+        <UL>
+          <ULItem>item</ULItem>
+        </UL>
+        <ULItem>item</ULItem>
+      </UL>
+    </div>
+  {:else if item.moduleName === "ULItem"}
+    <ULItem>item</ULItem>
   {:else}
     <svelte:component this={toymorphism[item.moduleName]} />
   {/if}

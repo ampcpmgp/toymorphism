@@ -12,7 +12,9 @@
     {#each components as item}
       <div class="compornent">
         <Sample {item} />
-        {item.moduleName}
+        <span class="item">
+          {item.moduleName}
+        </span>
       </div>
     {/each}
   </div>
@@ -26,7 +28,7 @@
     display: grid;
     place-content: center;
     grid-template-columns: repeat(auto-fill, 10rem);
-    grid-auto-rows: 8rem;
+    grid-auto-rows: 9rem;
   }
 
   .compornent {
@@ -35,9 +37,17 @@
     place-content: center;
     place-items: center;
     justify-content: space-between;
+    gap: 0.25rem;
     border: 1px solid #ccc;
     border-radius: 0.5rem;
-    padding: 0.5rem;
     margin: 1rem;
+  }
+
+  .item {
+    display: flex;
+    place-content: center;
+    width: 100%;
+    border-top: solid 1px #ccc;
+    color: #555;
   }
 </style>

@@ -16,6 +16,9 @@
 </li>
 
 <style>
+  li {
+    list-style: none;
+  }
   li .counter::before {
     /* ⚬ */
     content: "🞄 ";
