@@ -23,17 +23,17 @@
     <ULItem {...args}>ULItem Item</ULItem>
     <ULItem {...args}>ULItem Item</ULItem>
     <ULItem {...args}>ULItem Item</ULItem>
-    <UL child>
+    <UL>
       <ULItem {...args}>ULItem Item</ULItem>
       <ULItem {...args}>ULItem Item</ULItem>
-      <UL child>
+      <UL>
         <ULItem {...args}>ULItem Item</ULItem>
       </UL>
     </UL>
     <ULItem {...args}>ULItem Item</ULItem>
     <ULItem {...args}>ULItem Item</ULItem>
     <ULItem {...args}>ULItem Item</ULItem>
-    <UL child>
+    <UL>
       <ULItem {...args}>ULItem Item</ULItem>
     </UL>
   </UL>
