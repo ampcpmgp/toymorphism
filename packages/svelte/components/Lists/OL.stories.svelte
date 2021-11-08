@@ -23,28 +23,29 @@
     <OLItem {...args}>OLItem Item</OLItem>
     <OLItem {...args}>OLItem Item</OLItem>
     <OLItem {...args}>OLItem Item</OLItem>
-    <OL child>
+    <OL>
       <OLItem {...args}>OLItem Item</OLItem>
       <OLItem {...args}>OLItem Item</OLItem>
-      <OL child>
+      <OL>
         <OLItem {...args}>OLItem Item</OLItem>
       </OL>
     </OL>
     <OLItem {...args}>OLItem Item</OLItem>
     <OLItem {...args}>OLItem Item</OLItem>
     <OLItem {...args}>OLItem Item</OLItem>
-    <OL child>
+    <OL>
       <OLItem {...args}>OLItem Item</OLItem>
     </OL>
   </OL>
 
-  <OL>
-    <OLItem>OLItem Item</OLItem>
-    <OLItem>OLItem Item</OLItem>
-  </OL>
+  <br />
 
   <OL>
     <OLItem>OLItem Item</OLItem>
+    <OL>
+      <OLItem>OLItem Item</OLItem>
+      <OLItem>OLItem Item</OLItem>
+    </OL>
     <OLItem>OLItem Item</OLItem>
   </OL>
 </Template>
