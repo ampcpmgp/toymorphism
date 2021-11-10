@@ -18,6 +18,7 @@
     OL,
     OLItem,
     rescale,
+    Toc,
     UL,
     ULItem,
   } from "toymorphism";
@@ -133,6 +134,22 @@
       padding="0.4rem"
       href="//example.com">Link</LinkButton
     >
+  {:else if item.moduleName === "Toc"}
+    <div use:rescale={0.6}>
+      <Toc
+        headings={[
+          { id: "/components/h1", text: "h1", level: 1 },
+          { id: "/components/h2-1", text: "h2-1", level: 2 },
+          { id: "/components/h2-2", text: "h2-2", level: 2 },
+          { id: "/components/h3", text: "h3", level: 3 },
+        ]}
+      />
+
+      <h1 id="/components/h1">h1</h1>
+      <h2 id="/components/h2-1">h2-1</h2>
+      <h2 id="/components/h2-2">h2-2</h2>
+      <h3 id="/components/h3">h3</h3>
+    </div>
   {:else if item.moduleName === "UL"}
     <div use:rescale={0.66}>
       <UL>
@@ -156,5 +173,7 @@
     display: grid;
     place-items: center;
     height: 100%;
+    width: 100%;
+    overflow: auto;
   }
 </style>
