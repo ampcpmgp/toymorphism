@@ -5,6 +5,7 @@
     Button,
     CircleButton,
     Code,
+    FontAwesomeIcon,
     Frame,
     H1,
     H2,
@@ -64,6 +65,8 @@
         edgePadding="0.2rem"
       />
     </div>
+  {:else if item.moduleName === "FontAwesomeIcon"}
+    <FontAwesomeIcon class="fas fa-hippo" size="3rem" />
   {:else if item.moduleName === "Frame"}
     <div use:rescale={0.5}>
       <Frame
