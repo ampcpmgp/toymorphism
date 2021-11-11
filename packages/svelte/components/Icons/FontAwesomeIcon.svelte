@@ -10,19 +10,12 @@
   export let thickness = "calc(var(--size) / 8)";
   /** @type {import("../../types/props").TextShape} */
   export let shape = "solid-3d";
-
-  /** @type {string} */
-  export let className = "";
-  export { className as class };
-
-  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
-  export let attrs = {};
 </script>
 
 <svelte:head>
   <link rel="stylesheet" {href} />
 </svelte:head>
 
-<Text {...attrs} {size} {color} {thickness} {shape}>
-  <i class={className} />
+<Text {size} {color} {thickness} {shape}>
+  <i {...$$restProps} />
 </Text>
