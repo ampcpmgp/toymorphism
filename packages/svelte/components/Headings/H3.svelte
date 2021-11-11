@@ -5,13 +5,12 @@
   export let size = "1.17rem";
   /** @type {string} */
   export let color = $colors.text;
-
-  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p#attributes */
-  export let attrs = {};
+  /** @type {import("../../types/props").TextShape} */
+  export let shape = "float";
 </script>
 
-<h3 {...attrs}>
-  <Text {size} {color}><slot /></Text>
+<h3 {...$$restProps}>
+  <Text {size} {color} {shape}><slot /></Text>
 </h3>
 
 <style>

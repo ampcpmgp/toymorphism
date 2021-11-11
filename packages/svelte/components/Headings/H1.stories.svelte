@@ -21,11 +21,18 @@
 </Template>
 
 <Story
-  name="Normal"
+  name="No settings"
   args={{
     message: "H1 Text",
-    attrs: {
-      id: "h1-text",
-    },
+  }}
+/>
+
+<Story
+  name="Full settings"
+  args={{
+    message: "H1 Text",
+    color: "#f77",
+    size: "3rem",
+    shape: "embossed",
   }}
 />

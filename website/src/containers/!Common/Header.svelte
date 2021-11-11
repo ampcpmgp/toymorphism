@@ -25,7 +25,7 @@
       padding="0.5rem"
       gap="0.4rem"
       selected={currentPage === "components"}
-      on:click={() => push("/components")}
+      on:click={() => push("/components/")}
     >
       <Text color="white" size="1.5rem" shape="solid-3d">
         <i class="fas fa-puzzle-piece" />
@@ -37,7 +37,7 @@
       padding="0.5rem"
       gap="0.4rem"
       selected={currentPage === "documents"}
-      on:click={() => push("/documents")}
+      on:click={() => push("/documents/")}
     >
       <Text color="white" size="1.5rem" shape="solid-3d">
         <i class="fas fa-book" />

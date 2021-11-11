@@ -1,18 +1,27 @@
+<script context="module">
+  export const key = {};
+</script>
+
 <script>
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol#attributes
-  export let attrs = {};
-  export let child = false;
+  import { getContext, setContext } from "svelte";
+
+  const context = getContext(key);
+  const parentHierarchy = context ? context.hierarchy : -1;
+  const hierarchy = parentHierarchy + 1;
+  setContext(key, {
+    hierarchy,
+  });
 
   /** counter Id */
-  export let cid = "toymorphism-svelte-ol";
+  export let cid = `toymorphism-svelte-ol-${hierarchy}`;
 </script>
 
 <ol
-  {...attrs}
+  {...$$restProps}
   style="
-    ${attrs.style || ''};
+    ${$$restProps.style || ''};
     --cid: {cid};
-    --padding-inline-start: {child ? '1.5rem' : '0'}
+    --padding-inline-start: {hierarchy === 0 ? '0' : '1.5rem'}
     "
 >
   <slot />

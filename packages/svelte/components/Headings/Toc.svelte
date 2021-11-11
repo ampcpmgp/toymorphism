@@ -11,20 +11,14 @@
 
 <UL>
   {#each headings as heading}
-    <ULItem attrs={{ style: `margin-left: ${0.5 * (heading.level - 1)}rem;` }}>
-      <Link
-        attrs={{
-          href: `#${heading.id}`,
-          target: "_self",
-        }}
-        {color}
-      >
+    <ULItem style={`margin-left: ${0.5 * (heading.level - 1)}rem;`}>
+      <Link href={`#${heading.id}`} target="_self" {color}>
         {heading.text}
       </Link>
     </ULItem>
   {:else}
     <ULItem>
-      <Link attrs={{ href: "#", target: "_self" }}>No headings found</Link>
+      <Link href="#" target="_self">No headings found</Link>
     </ULItem>
   {/each}
 </UL>

@@ -22,8 +22,7 @@
   import { colors } from "../../stores/theme.js";
   import { createEventDispatcher } from "svelte";
 
-  /** https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
-   * @type {string} */
+  /** @type {import("../../types/props.js").Color} */
   export let color = $colors.base;
 
   /** @type {"div" | "button"} */
@@ -52,21 +51,14 @@
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
   export let gap = "initial";
 
-  /** !warning! currently over 3rem corrucpted
-   * see: https://developer.mozilla.org/en-US/docs/Web/CSS/length */
+  /** @type {import("../../types/props.js").Color} */
   export let thickness = "0.6rem";
-
-  /**
-   * see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
-   * and specified tag attributes
-   */
-  export let attrs = {};
 
   const dispatch = createEventDispatcher();
 
   $: baseColors = getBaseColors(color);
   $: style = `
-    ${attrs.style || ""};
+    ${$$restProps.style || ""};
     --base-color: ${color};
     --side-color: ${baseColors.sideColor};
     --light-color: ${baseColors.lightColor};
@@ -82,7 +74,7 @@
 </script>
 
 {#if tag === "div"}
-  <div class="box-shadow-wrapper" {...attrs} {style}>
+  <div class="box-shadow-wrapper" {...$$restProps} {style}>
     <div class="base" class:circle={shape === "circle"} class:selected>
       <slot />
     </div>
@@ -94,7 +86,7 @@
   -->
   <button
     on:click={(e) => dispatch("click", e)}
-    {...attrs}
+    {...$$restProps}
     {style}
     {disabled}
     ontouchstart={() => {}}

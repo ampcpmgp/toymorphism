@@ -5,12 +5,9 @@
   export let size = "1rem";
   /** @type {string} */
   export let color = $colors.text;
-
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li#attributes
-  export let attrs = {};
 </script>
 
-<li {...attrs}>
+<li {...$$restProps}>
   <Text {size} {color}>
     <div class="counter">
       <slot />
@@ -19,6 +16,9 @@
 </li>
 
 <style>
+  li {
+    list-style: none;
+  }
   li .counter::before {
     /* ⚬ */
     content: "🞄 ";

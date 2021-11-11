@@ -25,17 +25,17 @@
 <Template let:args>
   <Toc {...args} on:click={args.onClick} />
   <div class="scrollable" />
-  <H1 attrs={{ id: "heading-1" }}>Heading 1</H1>
+  <H1 id="heading-1">Heading 1</H1>
   <div class="scrollable" />
-  <H2 attrs={{ id: "heading-2" }}>Heading 2</H2>
+  <H2 id="heading-2">Heading 2</H2>
   <div class="scrollable" />
-  <H3 attrs={{ id: "heading-3" }}>Heading 3</H3>
+  <H3 id="heading-3">Heading 3</H3>
   <div class="scrollable" />
-  <H4 attrs={{ id: "heading-4" }}>Heading 4</H4>
+  <H4 id="heading-4">Heading 4</H4>
   <div class="scrollable" />
-  <H5 attrs={{ id: "heading-5" }}>Heading 5</H5>
+  <H5 id="heading-5">Heading 5</H5>
   <div class="scrollable" />
-  <H6 attrs={{ id: "heading-6" }}>Heading 6</H6>
+  <H6 id="heading-6">Heading 6</H6>
   <div class="scrollable" />
 </Template>
 
