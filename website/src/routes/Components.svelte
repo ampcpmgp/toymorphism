@@ -12,8 +12,12 @@
     {#each components as item}
       <div class="compornent">
         <Sample {item} />
-        <span class="item">
-          {item.moduleName}
+        <span class="item" title={item.moduleName}>
+          <span
+            style="text-overflow: ellipsis; max-width: 100%; overflow: hidden; padding: 0 0.25rem;"
+          >
+            {item.moduleName}
+          </span>
         </span>
       </div>
     {/each}
