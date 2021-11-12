@@ -1,6 +1,6 @@
 <script>
   import { push } from "svelte-spa-router";
-  import { Button, H1, Text } from "toymorphism";
+  import { Button, FontAwesomeIcon, H1, Text } from "toymorphism";
   import { version } from "toymorphism/package.json";
 
   /** @type {"home" | "components" | "documents"} */
@@ -17,9 +17,7 @@
       selected={currentPage === "home"}
       on:click={() => push("/")}
     >
-      <Text color="white" size="1.5rem" shape="solid-3d">
-        <i class="fas fa-home" />
-      </Text>
+      <FontAwesomeIcon color="white" size="1.5rem" class="fas fa-home" />
       <Text>Home</Text>
     </Button>
 

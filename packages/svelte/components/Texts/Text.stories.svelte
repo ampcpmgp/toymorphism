@@ -17,18 +17,9 @@
 />
 
 <Template let:args>
-  {#if args.message}
-    <Text {...args}>
-      <div>{args.message}</div>
-    </Text>
-  {:else if args.icon}
-    <Text {...args}>
-      <i class="fas fa-paw" />
-      <i class="fas fa-hippo" />
-      <i class="fas fa-kiwi-bird" />
-      <i class="fas fa-horse" />
-    </Text>
-  {/if}
+  <Text {...args}>
+    <div>{args.message}</div>
+  </Text>
 </Template>
 
 <Story
@@ -75,16 +66,5 @@
     color: "#fc769f",
     shape: "embossed",
     message: "Hello World | こんにちは世界",
-  }}
-/>
-
-<Story
-  name="Font awesome"
-  args={{
-    size: "5rem",
-    gap: "1rem",
-    shape: "solid-3d",
-    color: "#fc769f",
-    icon: true,
   }}
 />
