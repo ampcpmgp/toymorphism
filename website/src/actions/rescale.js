@@ -10,7 +10,7 @@ export function rescale(elem, scaleSize) {
   const ratioY = scaleSize;
 
   elem.style.transform = "scale(" + ratioX + ", " + ratioY + ")";
-  elem.style.transformOrigin = "center 0";
+  elem.style.transformOrigin = "0 0";
   // elem.style.width = width * ratioX + "px";
   elem.style.height = height * ratioY + "px";
 

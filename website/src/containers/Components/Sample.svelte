@@ -18,11 +18,11 @@
     LinkButton,
     OL,
     OLItem,
-    rescale,
     Toc,
     UL,
     ULItem,
   } from "toymorphism";
+  import { rescale } from "../../actions/rescale";
 
   /** @type {typeof components[0]} */
   export let item;
