@@ -5,6 +5,14 @@
 
   /** @type {"home" | "components" | "documents"} */
   export let currentPage = "home";
+
+  // https://github.com/ampcpmgp/toymorphism/issues/247
+  /** @type {"/" | "/components/" | "/documents/" | undefined} */
+  let clickedPage;
+
+  $: {
+    clickedPage && push(clickedPage);
+  }
 </script>
 
 <div class="wrapper">
@@ -14,8 +22,8 @@
     <Button
       padding="0.5rem"
       gap="0.4rem"
-      selected={currentPage === "home"}
-      on:click={() => push("/")}
+      selected={currentPage === "home" || clickedPage === "/"}
+      on:click={() => (clickedPage = "/")}
     >
       <FontAwesomeIcon color="white" size="1.5rem" class="fas fa-home" />
       <Text>Home</Text>
@@ -24,8 +32,8 @@
     <Button
       padding="0.5rem"
       gap="0.4rem"
-      selected={currentPage === "components"}
-      on:click={() => push("/components/")}
+      selected={currentPage === "components" || clickedPage === "/components/"}
+      on:click={() => (clickedPage = "/components/")}
     >
       <Text color="white" size="1.5rem" shape="solid-3d">
         <i class="fas fa-puzzle-piece" />
@@ -36,8 +44,8 @@
     <Button
       padding="0.5rem"
       gap="0.4rem"
-      selected={currentPage === "documents"}
-      on:click={() => push("/documents/")}
+      selected={currentPage === "documents" || clickedPage === "/documents/"}
+      on:click={() => (clickedPage = "/documents/")}
     >
       <Text color="white" size="1.5rem" shape="solid-3d">
         <i class="fas fa-book" />
