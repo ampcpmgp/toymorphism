@@ -9,7 +9,7 @@
   export let color = $colors.base;
   export let thickness = "calc(var(--size) / 8)";
   /** @type {import("../../types/props").TextShape} */
-  export let shape = "solid-3d";
+  export let shape = "solid";
 </script>
 
 <svelte:head>

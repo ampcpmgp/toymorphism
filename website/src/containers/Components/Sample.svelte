@@ -18,6 +18,7 @@
     LinkButton,
     OL,
     OLItem,
+    Text,
     Toc,
     UL,
     ULItem,
@@ -54,19 +55,28 @@
     >
       🎉
     </CircleButton>
-  {:else if item.moduleName === "Code"}
-    <div use:rescale={0.8}>
-      <Code
-        code="let a = 1"
-        edgeColor="lightblue"
-        frameColor="white"
-        textColor="black"
-        padding="0.5rem 0.2rem"
-        edgePadding="0.2rem"
-      />
-    </div>
-  {:else if item.moduleName === "FontAwesomeIcon"}
-    <FontAwesomeIcon class="fas fa-hippo" size="3rem" />
+  {:else if item.moduleName === "JellyButton"}
+    <JellyButton
+      baseColor="plum"
+      borderRadius="1.5rem"
+      fontSize="0.75rem"
+      padding="0.6rem"
+    >
+      Jelly
+    </JellyButton>
+  {:else if item.moduleName === "LinkButton"}
+    <LinkButton
+      size="1rem"
+      shape="none"
+      color="black"
+      target="_blank"
+      rel="noopener noreferrer"
+      diameter="2rem"
+      thickness="0.4rem"
+      textDecorationLine="none"
+      padding="0.4rem"
+      href="//example.com">Link</LinkButton
+    >
   {:else if item.moduleName === "Frame"}
     <div use:rescale={0.5}>
       <Frame
@@ -92,51 +102,6 @@
     <H5 color="#f66" shape="float" size="1.4rem">H5</H5>
   {:else if item.moduleName === "H6"}
     <H6 color="#f66" shape="float" size="1.2rem">H6</H6>
-  {:else if item.moduleName === "Link"}
-    <Link
-      size="1.2rem"
-      shape="none"
-      color="black"
-      target="_blank"
-      rel="noopener noreferrer"
-      textDecorationLine="underline"
-      href="//example.com">Link</Link
-    >
-  {:else if item.moduleName === "JellyButton"}
-    <JellyButton
-      baseColor="plum"
-      borderRadius="1.5rem"
-      fontSize="0.75rem"
-      padding="0.6rem"
-    >
-      Jelly
-    </JellyButton>
-  {:else if item.moduleName === "OL"}
-    <div use:rescale={0.66}>
-      <OL>
-        <OLItem>item</OLItem>
-        <OLItem>item</OLItem>
-        <OL>
-          <OLItem>item</OLItem>
-        </OL>
-        <OLItem>item</OLItem>
-      </OL>
-    </div>
-  {:else if item.moduleName === "OLItem"}
-    <OLItem>item</OLItem>
-  {:else if item.moduleName === "LinkButton"}
-    <LinkButton
-      size="1rem"
-      shape="none"
-      color="black"
-      target="_blank"
-      rel="noopener noreferrer"
-      diameter="2rem"
-      thickness="0.4rem"
-      textDecorationLine="none"
-      padding="0.4rem"
-      href="//example.com">Link</LinkButton
-    >
   {:else if item.moduleName === "Toc"}
     <div use:rescale={0.6}>
       <Toc
@@ -153,6 +118,31 @@
       <h2 id="/components/h2-2">h2-2</h2>
       <h3 id="/components/h3">h3</h3>
     </div>
+  {:else if item.moduleName === "FontAwesomeIcon"}
+    <FontAwesomeIcon class="fas fa-hippo" size="3rem" />
+  {:else if item.moduleName === "Link"}
+    <Link
+      size="1.2rem"
+      shape="none"
+      color="black"
+      target="_blank"
+      rel="noopener noreferrer"
+      textDecorationLine="underline"
+      href="//example.com">Link</Link
+    >
+  {:else if item.moduleName === "OL"}
+    <div use:rescale={0.66}>
+      <OL>
+        <OLItem>item</OLItem>
+        <OLItem>item</OLItem>
+        <OL>
+          <OLItem>item</OLItem>
+        </OL>
+        <OLItem>item</OLItem>
+      </OL>
+    </div>
+  {:else if item.moduleName === "OLItem"}
+    <OLItem>item</OLItem>
   {:else if item.moduleName === "UL"}
     <div use:rescale={0.66}>
       <UL>
@@ -166,6 +156,23 @@
     </div>
   {:else if item.moduleName === "ULItem"}
     <ULItem>item</ULItem>
+  {:else if item.moduleName === "Code"}
+    <div use:rescale={0.8}>
+      <Code
+        code="let a = 1"
+        edgeColor="lightblue"
+        frameColor="white"
+        textColor="black"
+        padding="0.5rem 0.2rem"
+        edgePadding="0.2rem"
+      />
+    </div>
+  {:else if item.moduleName === "Text"}
+    <div use:rescale={0.9} style="display: grid;">
+      <Text shape="float" color="orange">Hello</Text>
+      <Text shape="embossed" color="orange">Hello</Text>
+      <Text shape="solid" color="orange">Hello</Text>
+    </div>
   {:else}
     <svelte:component this={toymorphism[item.moduleName]} />
   {/if}

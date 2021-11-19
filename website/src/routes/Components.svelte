@@ -3,13 +3,19 @@
   import AppFrame from "../containers/!Common/AppFrame.svelte";
   import Header from "../containers/!Common/Header.svelte";
   import Sample from "../containers/Components/Sample.svelte";
+
+  const sorted = components.sort((a, b) => {
+    if (a.filePath < b.filePath) return -1;
+    if (a.filePath > b.filePath) return 1;
+    return 0;
+  });
 </script>
 
 <AppFrame>
   <Header currentPage="components" />
 
   <div class="wrapper">
-    {#each components as item}
+    {#each sorted as item}
       <div class="compornent">
         <Sample {item} />
         <span class="item" title={item.moduleName}>

@@ -41,7 +41,7 @@
 
 <p
   {...$$restProps}
-  class:solid-3d={shape === "solid-3d"}
+  class:solid={shape === "solid"}
   class:float={shape === "float"}
   class:embossed={shape === "embossed"}
   style="
@@ -71,7 +71,7 @@
     ;
   }
 
-  .solid-3d {
+  .solid {
     padding-bottom: calc(var(--thickness) * 1.5);
 
     /* prettier-ignore */

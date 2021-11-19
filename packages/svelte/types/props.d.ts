@@ -1,4 +1,4 @@
-export const TEXT_SHAPE = ["none", "solid-3d", "float", "embossed"] as const;
+export const TEXT_SHAPE = ["none", "solid", "float", "embossed"] as const;
 export type TextShape = typeof TEXT_SHAPE[number];
 
 export interface TocHeading {
