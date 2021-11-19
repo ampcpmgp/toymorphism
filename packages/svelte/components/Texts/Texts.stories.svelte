@@ -21,7 +21,7 @@
     <Text color="#fc769f" shape="none">
       {args.message}
     </Text>
-    <Text color="#fc769f" shape="solid-3d">
+    <Text color="#fc769f" shape="solid">
       {args.message}
     </Text>
     <Text color="#fc769f" shape="float">
@@ -36,7 +36,7 @@
     <Text size="2rem" color="#fc769f" shape="none">
       {args.message}
     </Text>
-    <Text size="2rem" color="#fc769f" shape="solid-3d">
+    <Text size="2rem" color="#fc769f" shape="solid">
       {args.message}
     </Text>
     <Text size="2rem" color="#fc769f" shape="float">

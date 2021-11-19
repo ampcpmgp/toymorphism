@@ -40,11 +40,11 @@
 />
 
 <Story
-  name="Shape solid-3d"
+  name="Shape solid"
   args={{
     size: "2rem",
     color: "#fc769f",
-    shape: "solid-3d",
+    shape: "solid",
     message: "Hello World | こんにちは世界",
   }}
 />

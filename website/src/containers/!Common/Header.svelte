@@ -35,7 +35,7 @@
       selected={currentPage === "components" || clickedPage === "/components/"}
       on:click={() => (clickedPage = "/components/")}
     >
-      <Text color="white" size="1.5rem" shape="solid-3d">
+      <Text color="white" size="1.5rem" shape="solid">
         <i class="fas fa-puzzle-piece" />
       </Text>
       <Text>Components</Text>
@@ -47,7 +47,7 @@
       selected={currentPage === "documents" || clickedPage === "/documents/"}
       on:click={() => (clickedPage = "/documents/")}
     >
-      <Text color="white" size="1.5rem" shape="solid-3d">
+      <Text color="white" size="1.5rem" shape="solid">
         <i class="fas fa-book" />
       </Text>
       <Text>Documents</Text>

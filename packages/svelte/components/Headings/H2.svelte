@@ -6,7 +6,7 @@
   /** @type {string} */
   export let color = $colors.text;
   /** @type {import("../../types/props").TextShape} */
-  export let shape = "none";
+  export let shape = "float";
 </script>
 
 <h2 {...$$restProps}>
