@@ -16,7 +16,7 @@
 </script>
 
 <div class="wrapper">
-  <H1 shape="embossed">Toymorphism {version}</H1>
+  <H1 shape="embossed" color="#888">Toymorphism {version}</H1>
 
   <div class="button-group">
     <Button
