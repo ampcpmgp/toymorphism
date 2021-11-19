@@ -1,5 +1,0 @@
----
-"toymorphism": patch
----
-
-Headings shape

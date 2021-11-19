@@ -1,7 +1,7 @@
 {
   "name": "toymorphism",
   "description": "Toy + Skeuomorphism",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "main": "index.js",
   "svelte": "index.js",
   "types": "index.d.ts",

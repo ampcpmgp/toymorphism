@@ -1,5 +1,23 @@
 # toymorphism
 
+## 0.6.0
+
+### Minor Changes
+
+- cb58d1f: attrs prpos -> \$\$restProps
+
+### Patch Changes
+
+- 2c26be2: add Link href, target, rel
+- dffbc35: add rescale
+- a5d156d: Toy FontAwesome
+- 26bfc4c: Add LinkButton rel & padding
+- d43d3cb: Add Button thickness
+- c0f2f42: add Code edgeColor
+- 81ce07d: Headings shape
+- 609f6eb: add Toy List context
+- dffbc35: add Code edgePadding, codeAttrs
+
 ## 0.5.0
 
 ### Minor Changes
