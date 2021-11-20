@@ -35,19 +35,14 @@
   export let shape = "normal";
   /** https://developer.mozilla.org/ja/docs/Web/CSS/transition-duration */
   export let transitionDuration = "80ms";
-
   /** https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius */
   export let borderRadius = "1rem";
-
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
   export let padding = "initial";
-
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction */
   export let flexDirection = "initial";
-
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size */
   export let fontSize = "initial";
-
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
   export let gap = "initial";
 
@@ -130,10 +125,6 @@
       calc(var(--thickness) * 0.14) calc(var(--thickness) * -0.16) 0rem var(--side-color),
       calc(var(--thickness) * -0.14) calc(var(--thickness) * -0.16) 0rem var(--side-color),
 
-      /* left & right */
-      calc(var(--thickness) * 0.16) 0rem 0rem var(--side-color),
-      calc(var(--thickness) * -0.16) 0rem 0rem var(--side-color),
-
       /* left bottom & right bottom */
       calc(var(--thickness) * 0.14) calc(var(--thickness) * 0.32) 0rem var(--side-color),
       calc(var(--thickness) * -0.14) calc(var(--thickness) * 0.32) 0rem var(--side-color),
@@ -148,6 +139,9 @@
       /* blank */
       0 0 0 transparent
       ;
+
+    /* for ios ref: https://qiita.com/siy1121/items/d5a5f198744cf882ef02 */
+    transform: translateY(0);
   }
 
   .circle {
@@ -182,10 +176,6 @@
     box-shadow:
       /* top */
       0rem calc(var(--thickness) * -0.16) 0rem var(--side-color),
-
-      /* left top & right top */
-      calc(var(--thickness) * 0.14) calc(var(--thickness) * -0.16) 0rem var(--side-color),
-      calc(var(--thickness) * -0.14) calc(var(--thickness) * -0.16) 0rem var(--side-color),
 
       /* left & right */
       calc(var(--thickness) * 0.16) 0rem 0rem var(--side-color),

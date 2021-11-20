@@ -1,3 +1,28 @@
+<script context="module">
+  import chroma from "chroma-js";
+
+  /**
+   * @param {string} color
+   */
+  export function getBaseColors(color) {
+    const chromaColor = chroma(color);
+    const luminance = chromaColor.luminance();
+    const isDark = luminance < 0.5;
+    const textColor = (
+      isDark ? chromaColor.brighten(1.5) : chromaColor.saturate(1.5)
+    ).hex();
+
+    console.log(
+      "filtered log chromaColor.luminance()",
+      chromaColor.luminance()
+    );
+
+    return {
+      textColor,
+    };
+  }
+</script>
+
 <!--
   Jelly Button
 
@@ -19,6 +44,8 @@
   export let paddingY = "";
   export let borderRadius = "2rem";
   export let fontSize = "";
+
+  const { textColor } = getBaseColors(baseColor);
 </script>
 
 <Jelly
@@ -27,5 +54,5 @@
   paddingY={padding || paddingY}
   {borderRadius}
 >
-  <Text shape="embossed" color={baseColor} size={fontSize}><slot /></Text>
+  <Text shape="embossed" color={textColor} size={fontSize}><slot /></Text>
 </Jelly>

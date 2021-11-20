@@ -16,7 +16,7 @@
 </script>
 
 <div class="wrapper">
-  <H1 shape="embossed">Toymorphism {version}</H1>
+  <H1 shape="embossed" color="#888" size="1.8rem">Toymorphism {version}</H1>
 
   <div class="button-group">
     <Button
@@ -25,8 +25,16 @@
       selected={currentPage === "home" || clickedPage === "/"}
       on:click={() => (clickedPage = "/")}
     >
-      <FontAwesomeIcon color="white" size="1.5rem" class="fas fa-home" />
-      <Text>Home</Text>
+      <FontAwesomeIcon
+        color="white"
+        size="1.5rem"
+        class="fas fa-home"
+        style="min-width: 2rem;"
+      />
+
+      <div class="hide-sp">
+        <Text>Home</Text>
+      </div>
     </Button>
 
     <Button
@@ -35,10 +43,16 @@
       selected={currentPage === "components" || clickedPage === "/components/"}
       on:click={() => (clickedPage = "/components/")}
     >
-      <Text color="white" size="1.5rem" shape="solid">
-        <i class="fas fa-puzzle-piece" />
-      </Text>
-      <Text>Components</Text>
+      <FontAwesomeIcon
+        color="white"
+        size="1.5rem"
+        class="fas fa-puzzle-piece"
+        style="min-width: 2rem;"
+      />
+
+      <div class="hide-sp">
+        <Text>Components</Text>
+      </div>
     </Button>
 
     <Button
@@ -47,10 +61,16 @@
       selected={currentPage === "documents" || clickedPage === "/documents/"}
       on:click={() => (clickedPage = "/documents/")}
     >
-      <Text color="white" size="1.5rem" shape="solid">
-        <i class="fas fa-book" />
-      </Text>
-      <Text>Documents</Text>
+      <FontAwesomeIcon
+        color="white"
+        size="1.5rem"
+        class="fas fa-book"
+        style="min-width: 2rem;"
+      />
+
+      <div class="hide-sp">
+        <Text>Documents</Text>
+      </div>
     </Button>
   </div>
 </div>
@@ -69,5 +89,11 @@
     place-content: center;
     gap: 1rem;
     margin: auto;
+  }
+
+  @media (max-width: 576px) {
+    .hide-sp {
+      display: none;
+    }
   }
 </style>

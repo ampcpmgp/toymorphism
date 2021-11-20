@@ -97,10 +97,6 @@
   .embossed {
     font-weight: 700;
     white-space: pre;
-    color: transparent;
-    background-image: linear-gradient(0deg, var(--base-color) 0%, #fefafd 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
     filter: drop-shadow(0 1px 1px var(--shadow-color));
   }
 
