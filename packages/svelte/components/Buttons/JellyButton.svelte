@@ -12,11 +12,6 @@
       isDark ? chromaColor.brighten(1.5) : chromaColor.saturate(1.5)
     ).hex();
 
-    console.log(
-      "filtered log chromaColor.luminance()",
-      chromaColor.luminance()
-    );
-
     return {
       textColor,
     };
