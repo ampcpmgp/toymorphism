@@ -1,5 +1,16 @@
 # toymorphism
 
+## 0.6.1
+
+### Patch Changes
+
+- 41cbd7d: fix ios Button collapsed
+- 41cbd7d: fix Jelly Button color
+- af90acf: Toy H2 change shape
+- 41cbd7d: fix ios embossed style
+- af90acf: Toy Text solid-3d to solid
+- 9c962c8: Toy JellyButton add textColor
+
 ## 0.6.0
 
 ### Minor Changes
