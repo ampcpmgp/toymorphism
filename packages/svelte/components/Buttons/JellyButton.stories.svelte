@@ -26,6 +26,7 @@
   name="Full settings"
   args={{
     baseColor: "green",
+    textColor: "gold",
     padding: "2rem",
     borderRadius: "3rem",
     fontSize: "2rem",
