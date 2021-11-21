@@ -39,8 +39,8 @@
   export let paddingY = "";
   export let borderRadius = "2rem";
   export let fontSize = "";
-
-  const { textColor } = getBaseColors(baseColor);
+  /** @type {string} */
+  export let textColor = getBaseColors(baseColor).textColor;
 </script>
 
 <Jelly
