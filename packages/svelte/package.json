@@ -1,7 +1,7 @@
 {
   "name": "toymorphism",
   "description": "Toy + Skeuomorphism",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "main": "index.js",
   "svelte": "index.js",
   "types": "index.d.ts",
@@ -14,7 +14,7 @@
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@storybook/addon-actions": "^6.4.0-beta.15",
     "@storybook/addon-essentials": "^6.4.0-beta.23",
-    "@storybook/addon-links": "^6.4.0-beta.15",
+    "@storybook/addon-links": "^6.4.0",
     "@storybook/addon-svelte-csf": "^1.1.0",
     "@storybook/svelte": "^6.4.0-beta.15",
     "@tsconfig/svelte": "^2.0.1",
