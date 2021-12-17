@@ -23,7 +23,7 @@
     "csstype": "^3.0.9",
     "rollup": "^2.58.0",
     "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-dts": "^4.0.0",
+    "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-svelte": "^7.1.0",
     "sveld": "^0.10.2",
     "svelte": "^3.44.0",
