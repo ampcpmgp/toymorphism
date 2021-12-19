@@ -13,7 +13,8 @@
      */
     "allowJs": true,
     "checkJs": true,
-    "noEmit": true
+    "noEmit": true,
+    "outDir": "build"
   },
   "include": ["./**/*.d.ts", "./**/*.ts", "./**/*.js", "./**/*.svelte"]
 }
