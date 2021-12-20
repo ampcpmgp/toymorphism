@@ -7,7 +7,7 @@
   export let currentPage = "home";
 
   // https://github.com/ampcpmgp/toymorphism/issues/247
-  /** @type {"/" | "/components/" | "/documents/" | undefined} */
+  /** @type {"/" | "/components" | "/documents" | undefined} */
   let clickedPage;
 
   $: {
@@ -40,8 +40,8 @@
     <Button
       padding="0.5rem"
       gap="0.4rem"
-      selected={currentPage === "components" || clickedPage === "/components/"}
-      on:click={() => (clickedPage = "/components/")}
+      selected={currentPage === "components" || clickedPage === "/components"}
+      on:click={() => (clickedPage = "/components")}
     >
       <FontAwesomeIcon
         color="white"
@@ -58,8 +58,8 @@
     <Button
       padding="0.5rem"
       gap="0.4rem"
-      selected={currentPage === "documents" || clickedPage === "/documents/"}
-      on:click={() => (clickedPage = "/documents/")}
+      selected={currentPage === "documents" || clickedPage === "/documents"}
+      on:click={() => (clickedPage = "/documents")}
     >
       <FontAwesomeIcon
         color="white"
