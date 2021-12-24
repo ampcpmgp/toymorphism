@@ -5,16 +5,27 @@
    * @param {string} color
    */
   export function getBaseColors(color) {
-    const chromaColor = chroma(color);
-    const sideColor = chroma.mix(color, "black", 0.4).hex();
-    const lightColor = chromaColor.brighten(1.5).hex();
-    const bottomColor = chroma.mix(color, "black", 0.6).hex();
+    try {
+      const chromaColor = chroma(color);
+      const sideColor = chroma.mix(color, "black", 0.4).hex();
+      const lightColor = chromaColor.brighten(1.5).hex();
+      const bottomColor = chroma.mix(color, "black", 0.6).hex();
 
-    return {
-      sideColor,
-      lightColor,
-      bottomColor,
-    };
+      return {
+        sideColor,
+        lightColor,
+        bottomColor,
+      };
+    } catch (error) {
+      console.warn(
+        "Chroma could not convert color: ",
+        color,
+        "\n",
+        "See more: https://developer.mozilla.org/en-US/docs/Web/CSS/color"
+      );
+
+      return {};
+    }
   }
 </script>
 
@@ -23,7 +34,10 @@
   import { createEventDispatcher } from "svelte";
 
   /** @type {import("../../types/props.js").Color} */
-  export let color = $colors.base;
+  export let color;
+
+  // If undefined is explicitly specified, it will be used. Required on the Component page of the website.
+  $: color = color || $colors.base;
 
   /** @type {"div" | "button"} */
   export let tag = "div";
@@ -52,6 +66,7 @@
   const dispatch = createEventDispatcher();
 
   $: baseColors = getBaseColors(color);
+
   $: style = `
     ${$$restProps.style || ""};
     --base-color: ${color};

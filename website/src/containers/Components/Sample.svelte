@@ -106,17 +106,17 @@
     <div use:rescale={0.6}>
       <Toc
         headings={[
-          { id: "/components/h1", text: "h1", level: 1 },
-          { id: "/components/h2-1", text: "h2-1", level: 2 },
-          { id: "/components/h2-2", text: "h2-2", level: 2 },
-          { id: "/components/h3", text: "h3", level: 3 },
+          { id: "/components-in-page-link/h1", text: "h1", level: 1 },
+          { id: "/components-in-page-link/h2-1", text: "h2-1", level: 2 },
+          { id: "/components-in-page-link/h2-2", text: "h2-2", level: 2 },
+          { id: "/components-in-page-link/h3", text: "h3", level: 3 },
         ]}
       />
 
-      <h1 id="/components/h1">h1</h1>
-      <h2 id="/components/h2-1">h2-1</h2>
-      <h2 id="/components/h2-2">h2-2</h2>
-      <h3 id="/components/h3">h3</h3>
+      <h1 id="/components-in-page-link/h1">h1</h1>
+      <h2 id="/components-in-page-link/h2-1">h2-1</h2>
+      <h2 id="/components-in-page-link/h2-2">h2-2</h2>
+      <h3 id="/components-in-page-link/h3">h3</h3>
     </div>
   {:else if item.moduleName === "FontAwesomeIcon"}
     <FontAwesomeIcon class="fas fa-hippo" size="3rem" />

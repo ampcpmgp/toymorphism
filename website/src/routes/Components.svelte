@@ -18,13 +18,17 @@
     {#each sorted as item}
       <div class="compornent">
         <Sample {item} />
-        <span class="item" title={item.moduleName}>
+        <a
+          href={`#/components/${item.moduleName}`}
+          class="item"
+          title={item.moduleName}
+        >
           <span
             style="text-overflow: ellipsis; max-width: 100%; overflow: hidden; padding: 0 0.25rem;"
           >
             {item.moduleName}
           </span>
-        </span>
+        </a>
       </div>
     {/each}
   </div>

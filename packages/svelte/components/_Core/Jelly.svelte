@@ -5,18 +5,29 @@
    * @param {string} color
    */
   export function getJellyColors(color) {
-    const chromaColor = chroma(color);
-    const topColor = chromaColor.brighten(0.5).hex();
-    const edgeColor = chromaColor.darken(1.2).hex();
-    const topEdgeColor = chromaColor.brighten(0.2).saturate(2).hex();
-    const borderColor = chromaColor.saturate(1.5).alpha(0.2).hex();
+    try {
+      const chromaColor = chroma(color);
+      const topColor = chromaColor.brighten(0.5).hex();
+      const edgeColor = chromaColor.darken(1.2).hex();
+      const topEdgeColor = chromaColor.brighten(0.2).saturate(2).hex();
+      const borderColor = chromaColor.saturate(1.5).alpha(0.2).hex();
 
-    return {
-      topColor,
-      borderColor,
-      edgeColor,
-      topEdgeColor,
-    };
+      return {
+        topColor,
+        borderColor,
+        edgeColor,
+        topEdgeColor,
+      };
+    } catch (error) {
+      console.warn(
+        "Chroma could not convert color: ",
+        color,
+        "\n",
+        "See more: https://developer.mozilla.org/en-US/docs/Web/CSS/color"
+      );
+
+      return {};
+    }
   }
 </script>
 
@@ -25,7 +36,7 @@
   import { createEventDispatcher } from "svelte";
 
   /** @type {import("../../types/props").Color} */
-  export let color = $colors.base;
+  export let color;
 
   export let disabled = false;
 
@@ -48,6 +59,9 @@
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
   export let gap = "initial";
+
+  // If undefined is explicitly specified, it will be used. Required on the Component page of the website.
+  $: color = color || $colors.base;
 
   const dispatch = createEventDispatcher();
 

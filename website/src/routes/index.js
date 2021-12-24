@@ -1,11 +1,14 @@
 import Home from "./Home.svelte";
 import Components from "./Components.svelte";
+import Component from "./Component.svelte";
 import Documents from "./Documents.svelte";
 import NotFound from "./NotFound.svelte";
 
 export default {
   "/": Home,
-  "/components/*": Components,
-  "/documents/": Documents,
+  "/components": Components,
+  "/components-in-page-link/*": Components,
+  "/components/:name": Component,
+  "/documents": Documents,
   "*": NotFound,
 };
