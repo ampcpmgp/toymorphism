@@ -5,21 +5,32 @@
    * @param {string} color
    */
   export function getTextColors(color) {
-    const chromaColor = chroma(color);
-    const luminance = chromaColor.luminance();
-    const isBlack = luminance < 0.01;
+    try {
+      const chromaColor = chroma(color);
+      const luminance = chromaColor.luminance();
+      const isBlack = luminance < 0.01;
 
-    const sideColor = chroma.mix(color, isBlack ? "#444" : "black", 0.3).hex();
-    const bottomColor = chroma
-      .mix(color, isBlack ? "#444" : "black", 0.4)
-      .hex();
-    const shadowColor = chromaColor.darken(3).alpha(0.9).hex();
+      const sideColor = chroma
+        .mix(color, isBlack ? "#444" : "black", 0.3)
+        .hex();
+      const bottomColor = chroma
+        .mix(color, isBlack ? "#444" : "black", 0.4)
+        .hex();
+      const shadowColor = chromaColor.darken(3).alpha(0.9).hex();
 
-    return {
-      sideColor,
-      bottomColor,
-      shadowColor,
-    };
+      return {
+        sideColor,
+        bottomColor,
+        shadowColor,
+      };
+    } catch (error) {
+      console.warn(
+        "Chroma could not convert color: ",
+        color,
+        "\n",
+        "See more: https://developer.mozilla.org/en-US/docs/Web/CSS/color"
+      );
+    }
   }
 </script>
 
@@ -29,13 +40,15 @@
   /** calculable size (e.g. 1rem, 20px) */
   export let size = "1rem";
   export let lineHeight = "normal";
-  /** @type {string} */
-  export let color = $colors.text;
+  /** @type {import("../../types/props").Color} */
+  export let color;
   export let gap = "0.25rem";
   export let thickness = "calc(var(--size) / 8)";
   /** @type {import("../../types/props").TextShape} */
   export let shape = "none";
 
+  // If undefined is explicitly specified, it will be used. Required on the Component page of the website.
+  $: color = color || $colors.text;
   $: textColors = getTextColors(color);
 </script>
 

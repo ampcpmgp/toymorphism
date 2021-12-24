@@ -5,16 +5,27 @@
    * @param {string} color
    */
   export function getBaseColors(color) {
-    const chromaColor = chroma(color);
-    const luminance = chromaColor.luminance();
-    const isDark = luminance < 0.5;
-    const textColor = (
-      isDark ? chromaColor.brighten(1.5) : chromaColor.saturate(1.5)
-    ).hex();
+    try {
+      const chromaColor = chroma(color);
+      const luminance = chromaColor.luminance();
+      const isDark = luminance < 0.5;
+      const textColor = (
+        isDark ? chromaColor.brighten(1.5) : chromaColor.saturate(1.5)
+      ).hex();
 
-    return {
-      textColor,
-    };
+      return {
+        textColor,
+      };
+    } catch (error) {
+      console.warn(
+        "Chroma could not convert color: ",
+        color,
+        "\n",
+        "See more: https://developer.mozilla.org/en-US/docs/Web/CSS/color"
+      );
+
+      return {};
+    }
   }
 </script>
 
