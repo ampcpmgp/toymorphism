@@ -36,8 +36,6 @@
       padding="0.5rem"
       baseColor="#99f"
       fontSize="0.8rem"
-      disabled={false}
-      selected={false}
       gap="0.25rem"
       thickness="0.6rem"
     >
