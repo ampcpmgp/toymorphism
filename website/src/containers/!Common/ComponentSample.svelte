@@ -1,6 +1,60 @@
+<script context="module">
+  /** @type {import("toymorphism/dist/components/Buttons/Button.svelte").ButtonProps} */
+  export const defaultButtonProps = {};
+
+  /** @type {import("toymorphism/dist/components/Buttons/LinkButton.svelte").LinkButtonProps} */
+  export const defaultLinkButtonProps = {
+    href: "//example.com",
+    target: "_blank",
+  };
+
+  /** @type {import("toymorphism/dist/components/Icons/FontAwesomeIcon.svelte").FontAwesomeIconProps} */
+  export const defaultFontAwesomeIconProps = {
+    class: "fas fa-home",
+  };
+
+  /** @type {import("toymorphism/dist/components/Headings/Toc.svelte").TocProps} */
+  export const defaultTocProps = {
+    headings: [
+      { id: "/components/_h1", text: "h1", level: 1 },
+      { id: "/components/_h2-1", text: "h2-1", level: 2 },
+      { id: "/components/_h2-2", text: "h2-2", level: 2 },
+      { id: "/components/_h3", text: "h3", level: 3 },
+    ],
+  };
+
+  /** @type {import("toymorphism/dist/components/Texts/Code.svelte").CodeProps} */
+  export const defaultCodeProps = {
+    code: "let a = 1",
+  };
+
+  export function getDefaultProps(
+    /** @type {import("../../types/sveld").Component} */
+    component
+  ) {
+    const props = {};
+
+    switch (component.moduleName) {
+      case "LinkButton":
+        return defaultLinkButtonProps;
+
+      case "Toc":
+        return defaultTocProps;
+
+      case "FontAwesomeIcon":
+        return defaultFontAwesomeIconProps;
+
+      case "Code":
+        return defaultCodeProps;
+
+      default:
+        return props;
+    }
+  }
+</script>
+
 <script>
   import { components } from "toymorphism/dist/COMPONENT_API.json";
-  import * as toymorphism from "toymorphism";
   import {
     Button,
     CircleButton,
@@ -14,7 +68,6 @@
     H5,
     H6,
     JellyButton,
-    Link,
     LinkButton,
     OL,
     OLItem,
@@ -23,156 +76,85 @@
     UL,
     ULItem,
   } from "toymorphism";
-  import { rescale } from "../../actions/rescale";
 
   /** @type {typeof components[0]} */
   export let item;
+  export let props = {};
   void components;
 </script>
 
 <div class="wrapper">
   {#if item.moduleName === "Button"}
-    <Button
-      padding="0.5rem"
-      baseColor="#99f"
-      fontSize="0.8rem"
-      gap="0.25rem"
-      thickness="0.6rem"
-    >
+    <Button {...props}>
       <span>🌻</span>
       <span>Button</span>
     </Button>
   {:else if item.moduleName === "CircleButton"}
-    <CircleButton
-      baseColor="#f99"
-      padding="0.2rem"
-      diameter="2rem"
-      disabled={false}
-      selected={false}
-      thickness="0.4rem"
-    >
-      🎉
+    <CircleButton {...props}>
+      <span style="font-size: 1.8rem;">🎉</span>
     </CircleButton>
   {:else if item.moduleName === "JellyButton"}
-    <JellyButton
-      baseColor="plum"
-      borderRadius="1.5rem"
-      fontSize="0.75rem"
-      padding="0.6rem"
-    >
-      Jelly
-    </JellyButton>
+    <JellyButton {...props}>Jelly</JellyButton>
   {:else if item.moduleName === "LinkButton"}
-    <LinkButton
-      size="1rem"
-      shape="none"
-      color="black"
-      target="_blank"
-      rel="noopener noreferrer"
-      diameter="2rem"
-      thickness="0.4rem"
-      textDecorationLine="none"
-      padding="0.4rem"
-      href="//example.com">Link</LinkButton
-    >
+    <LinkButton {...props}>example.com</LinkButton>
   {:else if item.moduleName === "Frame"}
-    <div use:rescale={0.5}>
-      <Frame
-        edgeColor="#ccc"
-        frameColor="#fff"
-        edgePadding="0.5rem"
-        padding="0.5rem"
-        gap="0.25rem"
-      >
-        <span>content</span>
-        <span>content</span>
-      </Frame>
-    </div>
+    <Frame {...props}>
+      <span>content</span>
+      <span>content</span>
+    </Frame>
   {:else if item.moduleName === "H1"}
-    <H1 color="#f66" shape="float" size="2.2rem">H1</H1>
+    <H1 {...props}>H1</H1>
   {:else if item.moduleName === "H2"}
-    <H2 color="#f66" shape="float" size="2.0rem">H2</H2>
+    <H2 {...props}>H2</H2>
   {:else if item.moduleName === "H3"}
-    <H3 color="#f66" shape="float" size="1.8rem">H3</H3>
+    <H3 {...props}>H3</H3>
   {:else if item.moduleName === "H4"}
-    <H4 color="#f66" shape="float" size="1.6rem">H4</H4>
+    <H4 {...props}>H4</H4>
   {:else if item.moduleName === "H5"}
-    <H5 color="#f66" shape="float" size="1.4rem">H5</H5>
+    <H5 {...props}>H5</H5>
   {:else if item.moduleName === "H6"}
-    <H6 color="#f66" shape="float" size="1.2rem">H6</H6>
+    <H6 {...props}>H6</H6>
   {:else if item.moduleName === "Toc"}
-    <div use:rescale={0.6}>
-      <Toc
-        headings={[
-          { id: "/components-in-page-link/h1", text: "h1", level: 1 },
-          { id: "/components-in-page-link/h2-1", text: "h2-1", level: 2 },
-          { id: "/components-in-page-link/h2-2", text: "h2-2", level: 2 },
-          { id: "/components-in-page-link/h3", text: "h3", level: 3 },
-        ]}
-      />
+    <Toc {...props} />
 
-      <h1 id="/components-in-page-link/h1">h1</h1>
-      <h2 id="/components-in-page-link/h2-1">h2-1</h2>
-      <h2 id="/components-in-page-link/h2-2">h2-2</h2>
-      <h3 id="/components-in-page-link/h3">h3</h3>
-    </div>
+    <h1 id="/components/_h1">h1</h1>
+    <h2 id="/components/_h2-1">h2-1</h2>
+    <h2 id="/components/_h2-2">h2-2</h2>
+    <h3 id="/components/_h3">h3</h3>
   {:else if item.moduleName === "FontAwesomeIcon"}
-    <FontAwesomeIcon class="fas fa-hippo" size="3rem" />
-  {:else if item.moduleName === "Link"}
-    <Link
-      size="1.2rem"
-      shape="none"
-      color="black"
-      target="_blank"
-      rel="noopener noreferrer"
-      textDecorationLine="underline"
-      href="//example.com">Link</Link
-    >
+    <FontAwesomeIcon {...props}>
+      <!-- no children -->
+    </FontAwesomeIcon>
   {:else if item.moduleName === "OL"}
-    <div use:rescale={0.66}>
+    <OL {...props}>
+      <OLItem>item</OLItem>
+      <OLItem>item</OLItem>
       <OL>
         <OLItem>item</OLItem>
-        <OLItem>item</OLItem>
-        <OL>
-          <OLItem>item</OLItem>
-        </OL>
-        <OLItem>item</OLItem>
       </OL>
-    </div>
+      <OLItem>item</OLItem>
+    </OL>
   {:else if item.moduleName === "OLItem"}
-    <OLItem>item</OLItem>
+    <OLItem {...props}>item</OLItem>
   {:else if item.moduleName === "UL"}
-    <div use:rescale={0.66}>
+    <UL {...props}>
+      <ULItem>item</ULItem>
+      <ULItem>item</ULItem>
       <UL>
         <ULItem>item</ULItem>
-        <ULItem>item</ULItem>
-        <UL>
-          <ULItem>item</ULItem>
-        </UL>
-        <ULItem>item</ULItem>
       </UL>
-    </div>
+      <ULItem>item</ULItem>
+    </UL>
   {:else if item.moduleName === "ULItem"}
-    <ULItem>item</ULItem>
+    <ULItem {...props}>item</ULItem>
   {:else if item.moduleName === "Code"}
-    <div use:rescale={0.8}>
-      <Code
-        code="let a = 1"
-        edgeColor="lightblue"
-        frameColor="white"
-        textColor="black"
-        padding="0.5rem 0.2rem"
-        edgePadding="0.2rem"
-      />
-    </div>
+    <Code {...props}>
+      <!-- no children -->
+    </Code>
   {:else if item.moduleName === "Text"}
-    <div use:rescale={0.9} style="display: grid;">
-      <Text shape="float" color="orange">Hello</Text>
-      <Text shape="embossed" color="orange">Hello</Text>
-      <Text shape="solid" color="orange">Hello</Text>
-    </div>
+    <Text {...props}>Hello</Text>
   {:else}
-    <svelte:component this={toymorphism[item.moduleName]} />
+    <!-- else content here -->
   {/if}
 </div>
 

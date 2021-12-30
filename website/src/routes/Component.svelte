@@ -9,8 +9,8 @@
   export let params = {};
 
   /**
-   * @typedef {import("../../types/sveld").ComponentProp} ComponentProp
-   * @typedef {import("../../types/sveld").UiProps} UiProps
+   * @typedef {import("../types/sveld").ComponentProp} ComponentProp
+   * @typedef {import("../types/sveld").UiProps} UiProps
    */
 
   /** @type {UiProps[]} */
@@ -78,7 +78,7 @@
   <Header currentPage="components" />
 
   {#if component}
-    <ComponentSample item={component} {...propsObj} />
+    <ComponentSample item={component} props={propsObj} />
 
     <form>
       {#each props as prop}

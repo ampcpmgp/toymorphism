@@ -1,3 +1,9 @@
+export interface Component {
+  moduleName: string;
+  filePath: string;
+  props: ComponentProp[] | any;
+}
+
 export interface ComponentProp {
   name: string;
   kind: string;

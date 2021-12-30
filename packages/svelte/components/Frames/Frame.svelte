@@ -2,14 +2,15 @@
   import { colors } from "../../stores/theme";
   import Base from "../_Core/Base.svelte";
 
+  /** @restProps {div} */
+
   /** @type {import("../../types/props").Color} */
   export let edgeColor = $colors.base;
   /** @type {import("../../types/props").Color} */
   export let frameColor = "#fff";
-  export let padding = "initial";
+  export let padding = "0.4rem";
   /** @type {import("../../types/props").Padding} */
   export let edgePadding = "0.25rem";
-  export let gap = "initial";
 </script>
 
 <Base {$$restProps} color={edgeColor}>
@@ -19,7 +20,6 @@
       {$$restProps.style || ''};
       --inner-color: {frameColor};
       --padding:{padding};
-      --gap:{gap};
       --edge-padding: {edgePadding};
     "
   >
@@ -47,6 +47,5 @@
     flex-direction: column;
     place-content: center;
     place-items: center;
-    gap: var(--gap);
   }
 </style>

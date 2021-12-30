@@ -11,7 +11,7 @@
   /** @type {import("../../types/props").Color} */
   export let textColor = $colors.text;
   /** @type {import("../../types/props").Padding} */
-  export let padding = "1rem";
+  export let padding = "0.5rem";
   /** @type {import("../../types/props").Padding} */
   export let edgePadding = "0.25rem";
 
