@@ -2,7 +2,9 @@
   import { components } from "toymorphism/dist/COMPONENT_API.json";
   import AppFrame from "../containers/!Common/AppFrame.svelte";
   import Header from "../containers/!Common/Header.svelte";
-  import Sample from "../containers/Components/Sample.svelte";
+  import ComponentSample, {
+    getDefaultProps,
+  } from "../containers/!Common/ComponentSample.svelte";
 
   const sorted = components.sort((a, b) => {
     if (a.filePath < b.filePath) return -1;
@@ -17,9 +19,9 @@
   <div class="wrapper">
     {#each sorted as item}
       <div class="compornent">
-        <Sample {item} />
+        <ComponentSample {item} props={getDefaultProps(item)} />
         <a
-          href={`#/components/${item.moduleName}`}
+          href={`#/components/detail/${item.moduleName}`}
           class="item"
           title={item.moduleName}
         >

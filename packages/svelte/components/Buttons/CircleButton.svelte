@@ -10,9 +10,9 @@
   export let selected = false;
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/width */
-  export let diameter = "initial";
+  export let diameter = "initail";
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
-  export let padding = "initial";
+  export let padding = "0.2rem";
 
   /** @type {import("../../types/props.js").Thickness} */
   export let thickness = $lengths.thickness;

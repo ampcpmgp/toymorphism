@@ -4,7 +4,7 @@
   /**
    * @param {string} color
    */
-  export function getBaseColors(color) {
+  function getBaseColors(color) {
     try {
       const chromaColor = chroma(color);
       const sideColor = chroma.mix(color, "black", 0.4).hex();

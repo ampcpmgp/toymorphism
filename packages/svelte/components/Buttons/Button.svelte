@@ -8,9 +8,9 @@
   export let baseColor = $colors.base;
   export let disabled = false;
   export let selected = false;
-  export let padding = "initial";
+  export let padding = "0.5rem";
   export let fontSize = "initial";
-  export let gap = "initial";
+  export let gap = "0.25rem";
   /** @type {import("../../types/props").Thickness} */
   export let thickness = "0.6rem";
 </script>

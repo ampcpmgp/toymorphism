@@ -1,16 +1,16 @@
 <script>
   import { onMount } from "svelte";
 
-  import * as toymorphism from "toymorphism";
   import { components } from "toymorphism/dist/COMPONENT_API.json";
   import AppFrame from "../containers/!Common/AppFrame.svelte";
   import Header from "../containers/!Common/Header.svelte";
+  import ComponentSample from "./../containers/!Common/ComponentSample.svelte";
 
   export let params = {};
 
   /**
-   * @typedef {import("../../types/sveld").ComponentProp} ComponentProp
-   * @typedef {import("../../types/sveld").UiProps} UiProps
+   * @typedef {import("../types/sveld").ComponentProp} ComponentProp
+   * @typedef {import("../types/sveld").UiProps} UiProps
    */
 
   /** @type {UiProps[]} */
@@ -78,9 +78,7 @@
   <Header currentPage="components" />
 
   {#if component}
-    <svelte:component this={toymorphism[params.name]} {...propsObj}>
-      {params.name}
-    </svelte:component>
+    <ComponentSample item={component} props={propsObj} />
 
     <form>
       {#each props as prop}
