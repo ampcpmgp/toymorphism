@@ -53,7 +53,7 @@
   /** @type {string} */
   export let textColor;
 
-  $: _textColor = textColor ?? getBaseColors(baseColor).textColor;
+  $: _textColor = textColor || getBaseColors(baseColor).textColor;
 </script>
 
 <Jelly
