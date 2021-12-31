@@ -36,7 +36,7 @@
   import { createEventDispatcher } from "svelte";
 
   /** @type {import("../../types/props").Color} */
-  export let color;
+  export let color = $colors.base;
 
   export let disabled = false;
 
@@ -59,9 +59,6 @@
 
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
   export let gap = "initial";
-
-  // If undefined is explicitly specified, it will be used. Required on the Component page of the website.
-  $: color = color || $colors.base;
 
   const dispatch = createEventDispatcher();
 

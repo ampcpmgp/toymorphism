@@ -34,10 +34,7 @@
   import { createEventDispatcher } from "svelte";
 
   /** @type {import("../../types/props").Color} */
-  export let color;
-
-  // If undefined is explicitly specified, it will be used. Required on the Component page of the website.
-  $: color = color || $colors.base;
+  export let color = $colors.base;
 
   /** @type {"div" | "button"} */
   export let tag = "div";
