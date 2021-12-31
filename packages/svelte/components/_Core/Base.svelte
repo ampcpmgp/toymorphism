@@ -33,7 +33,7 @@
   import { colors } from "../../stores/theme.js";
   import { createEventDispatcher } from "svelte";
 
-  /** @type {import("../../types/props.js").Color} */
+  /** @type {import("../../types/props").Color} */
   export let color;
 
   // If undefined is explicitly specified, it will be used. Required on the Component page of the website.
@@ -60,7 +60,7 @@
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
   export let gap = "initial";
 
-  /** @type {import("../../types/props.js").Color} */
+  /** @type {import("../../types/props").Color} */
   export let thickness = "0.6rem";
 
   const dispatch = createEventDispatcher();

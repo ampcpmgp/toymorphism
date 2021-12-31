@@ -4,7 +4,7 @@
 
   /** @restProps {button} */
 
-  /** @type {import("../../types/props.js").Color} */
+  /** @type {import("../../types/props").Color} */
   export let baseColor = $colors.base;
   export let disabled = false;
   export let selected = false;
@@ -14,7 +14,7 @@
   /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
   export let padding = "0.2rem";
 
-  /** @type {import("../../types/props.js").Thickness} */
+  /** @type {import("../../types/props").Thickness} */
   export let thickness = $lengths.thickness;
 </script>
 

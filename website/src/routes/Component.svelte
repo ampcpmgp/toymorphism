@@ -67,8 +67,8 @@
         return "checkbox";
 
       case "string":
-      case `import("../../types/props.js").Thickness`:
-      case `import("../../types/props.js").Color`:
+      case `import("../../types/props").Thickness`:
+      case `import("../../types/props").Color`:
         return "text";
 
       default:
