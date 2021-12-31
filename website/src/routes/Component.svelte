@@ -28,27 +28,26 @@
         ...item,
         _inputType: getComponentInputType(item),
         _selectableValues: getSelectedValues(item),
-        _value: convertDefaultValue(item),
+        _defaultValue: convertDefaultValue(item),
       };
     }
   );
-
-  // combine "component default props" & "website default props"
-  $: defaultProps = {
-    ...componentDefaultProps.reduce(
-      (acc, cur) => ({ ...acc, [cur.name]: cur._value }),
-      {}
-    ),
-    ...getDefaultProps(component),
-  };
+  $: defaultProps = getDefaultProps(component);
 
   $: {
     props = {
       ...defaultProps,
-      ...Object.entries(inputProps).reduce(
-        (acc, [key, value]) => ({ ...acc, [key]: value ?? defaultProps[key] }),
-        {}
-      ),
+      ...Object.entries(inputProps).reduce((acc, [key, value]) => {
+        // If input value does not exist and has no default props, dont put key into the object.
+        if (
+          (value === undefined || value === "") &&
+          defaultProps[key] === undefined
+        ) {
+          return acc;
+        }
+
+        return { ...acc, [key]: value ?? defaultProps[key] };
+      }, {}),
     };
   }
 
@@ -99,7 +98,7 @@
   <Header currentPage="components" />
 
   {#if component}
-    <ComponentSample item={component} props={inputProps} />
+    <ComponentSample item={component} {props} />
 
     <form>
       {#each componentDefaultProps as prop}

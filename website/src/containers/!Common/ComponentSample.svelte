@@ -5,7 +5,6 @@
   /** @type {import("toymorphism/dist/components/Buttons/LinkButton.svelte").LinkButtonProps} */
   export const defaultLinkButtonProps = {
     href: "//example.com",
-    target: "_blank",
   };
 
   /** @type {import("toymorphism/dist/components/Icons/FontAwesomeIcon.svelte").FontAwesomeIconProps} */
