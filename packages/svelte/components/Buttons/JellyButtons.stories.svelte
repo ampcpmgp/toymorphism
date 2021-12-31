@@ -85,8 +85,6 @@
   name="Various colors"
   args={{
     text: "Jelly Button",
-    fontSize: "1rem",
-    padding: "1.4rem",
   }}
 />
 

@@ -14,6 +14,10 @@
   // Actual properties to be sent to the component.
   let props = {};
 
+  // re-render if input values change
+  // https://github.com/sveltejs/svelte/issues/4442
+  let propsUpdated = Date.now();
+
   /**
    * @typedef {import("../types/sveld").ComponentProp} ComponentProp
    * @typedef {import("../types/sveld").UiProps} UiProps
@@ -38,17 +42,19 @@
     props = {
       ...defaultProps,
       ...Object.entries(inputProps).reduce((acc, [key, value]) => {
-        // If input value does not exist and has no default props, dont put key into the object.
-        if (
-          (value === undefined || value === "") &&
-          defaultProps[key] === undefined
-        ) {
-          return acc;
+        // If input value is "", set it to undefined
+        if (value === "") {
+          value = undefined;
         }
 
-        return { ...acc, [key]: value ?? defaultProps[key] };
+        return {
+          ...acc,
+          [key]: value ?? defaultProps[key],
+        };
       }, {}),
     };
+
+    propsUpdated = Date.now();
   }
 
   onMount(() => {
@@ -98,7 +104,9 @@
   <Header currentPage="components" />
 
   {#if component}
-    <ComponentSample item={component} {props} />
+    {#key propsUpdated}
+      <ComponentSample item={component} {props} />
+    {/key}
 
     <form>
       {#each componentDefaultProps as prop}
