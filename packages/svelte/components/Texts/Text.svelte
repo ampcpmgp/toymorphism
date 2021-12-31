@@ -30,6 +30,8 @@
         "\n",
         "See more: https://developer.mozilla.org/en-US/docs/Web/CSS/color"
       );
+
+      return {};
     }
   }
 </script>

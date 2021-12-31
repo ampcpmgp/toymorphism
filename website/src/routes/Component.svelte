@@ -4,37 +4,58 @@
   import { components } from "toymorphism/dist/COMPONENT_API.json";
   import AppFrame from "../containers/!Common/AppFrame.svelte";
   import Header from "../containers/!Common/Header.svelte";
-  import ComponentSample from "./../containers/!Common/ComponentSample.svelte";
+  import ComponentSample, {
+    getDefaultProps,
+  } from "./../containers/!Common/ComponentSample.svelte";
 
   export let params = {};
+  // Input properties for forms
+  let inputProps = {};
+  // Actual properties to be sent to the component.
+  let props = {};
 
   /**
    * @typedef {import("../types/sveld").ComponentProp} ComponentProp
    * @typedef {import("../types/sveld").UiProps} UiProps
    */
 
-  /** @type {UiProps[]} */
-  let props = [];
-
   $: component = components.find((item) => item.moduleName === params.name);
-  /** @type {ComponentProp[]} */
-  $: defaultProps = JSON.parse(JSON.stringify(component.props));
-  $: propsObj = props.reduce((acc, item) => {
-    return {
-      ...acc,
-      [item.name]: item._value,
-    };
-  }, {});
 
-  onMount(() => {
-    props = defaultProps.map((/** @type {ComponentProp} */ item) => {
+  /** @type {UiProps[]} */
+  $: componentDefaultProps = JSON.parse(JSON.stringify(component.props)).map(
+    (/** @type {ComponentProp} */ item) => {
       return {
         ...item,
         _inputType: getComponentInputType(item),
         _selectableValues: getSelectedValues(item),
         _value: convertDefaultValue(item),
       };
-    });
+    }
+  );
+
+  // combine "component default props" & "website default props"
+  $: defaultProps = {
+    ...componentDefaultProps.reduce(
+      (acc, cur) => ({ ...acc, [cur.name]: cur._value }),
+      {}
+    ),
+    ...getDefaultProps(component),
+  };
+
+  $: {
+    props = {
+      ...defaultProps,
+      ...Object.entries(inputProps).reduce(
+        (acc, [key, value]) => ({ ...acc, [key]: value ?? defaultProps[key] }),
+        {}
+      ),
+    };
+  }
+
+  onMount(() => {
+    inputProps = {
+      ...defaultProps,
+    };
   });
 
   /**
@@ -78,10 +99,10 @@
   <Header currentPage="components" />
 
   {#if component}
-    <ComponentSample item={component} props={propsObj} />
+    <ComponentSample item={component} props={inputProps} />
 
     <form>
-      {#each props as prop}
+      {#each componentDefaultProps as prop}
         <label>
           {prop.name}:
 
@@ -92,9 +113,9 @@
           <input type="hidden" />
 
           {#if prop._inputType === "checkbox"}
-            <input type="checkbox" bind:checked={prop._value} />
+            <input type="checkbox" bind:checked={inputProps[prop.name]} />
           {:else}
-            <input type="text" bind:value={prop._value} />
+            <input type="text" bind:value={inputProps[prop.name]} />
           {/if}
         </label>
       {/each}
