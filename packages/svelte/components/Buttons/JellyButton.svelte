@@ -51,7 +51,9 @@
   export let borderRadius = "2rem";
   export let fontSize = "";
   /** @type {string} */
-  export let textColor = getBaseColors(baseColor).textColor;
+  export let textColor;
+
+  $: _textColor = textColor ?? getBaseColors(baseColor).textColor;
 </script>
 
 <Jelly
@@ -60,5 +62,5 @@
   paddingY={padding || paddingY}
   {borderRadius}
 >
-  <Text shape="embossed" color={textColor} size={fontSize}><slot /></Text>
+  <Text shape="embossed" color={_textColor} size={fontSize}><slot /></Text>
 </Jelly>
