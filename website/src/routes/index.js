@@ -6,8 +6,8 @@ import NotFound from "./NotFound.svelte";
 
 export default {
   "/": Home,
-  "/components/detail/:name": Component,
-  "/components/*": Components,
+  "/components/:name": Component,
+  "/components": Components,
   "/documents": Documents,
   "*": NotFound,
 };

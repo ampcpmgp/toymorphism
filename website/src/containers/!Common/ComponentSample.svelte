@@ -71,12 +71,12 @@
     OL,
     OLItem,
     Text,
-    Toc,
+    // Toc,
     UL,
     ULItem,
   } from "toymorphism";
 
-  /** @type {typeof components[0]} */
+  /** @type {import("../../types/sveld").Component} */
   export let item;
   export let props = {};
   void components;
@@ -114,12 +114,18 @@
   {:else if item.moduleName === "H6"}
     <H6 {...props}>H6</H6>
   {:else if item.moduleName === "Toc"}
-    <Toc {...props} />
+    <!-- <Toc {...props} />
 
-    <h1 id="/components/_h1">h1</h1>
-    <h2 id="/components/_h2-1">h2-1</h2>
-    <h2 id="/components/_h2-2">h2-2</h2>
-    <h3 id="/components/_h3">h3</h3>
+    {#each getDefaultProps(item).headings as heading}
+      {#if heading.level === 1}
+        <h1 id={heading.id}>{heading.text}</h1>
+      {:else if heading.level === 2}
+        <h2 id={heading.id}>{heading.text}</h2>
+      {:else if heading.level === 3}
+        <h3 id={heading.id}>{heading.text}</h3>
+      {/if}
+      <div style="height: 30vh;" />
+    {/each} -->
   {:else if item.moduleName === "FontAwesomeIcon"}
     <FontAwesomeIcon {...props}>
       <!-- no children -->

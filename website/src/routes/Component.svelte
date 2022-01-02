@@ -71,16 +71,15 @@
       case "boolean":
         return "checkbox";
 
+      case `import("../../types/props").TocHeading[]`:
+        return "textarea";
+
       case "string":
       case `import("../../types/props").Thickness`:
       case `import("../../types/props").Color`:
-        return "text";
-
       default:
-        break;
+        return "text";
     }
-
-    return item.type;
   }
 
   /**
@@ -108,9 +107,14 @@
       <ComponentSample item={component} {props} />
     {/key}
 
-    <form>
+    <form style="width: 100%; display: grid; place-items:center;">
       {#each componentDefaultProps as prop}
-        <label>
+        <label
+          style="
+        display: flex;
+        width: 100%;
+    "
+        >
           {prop.name}:
 
           <!--
@@ -121,6 +125,15 @@
 
           {#if prop._inputType === "checkbox"}
             <input type="checkbox" bind:checked={inputProps[prop.name]} />
+          {:else if prop._inputType === "textarea"}
+            <textarea
+              value={JSON.stringify(inputProps[prop.name], null, 2)}
+              style="width: 100%;"
+              rows="10"
+              on:input={(e) => {
+                inputProps[prop.name] = JSON.parse(e.currentTarget.value);
+              }}
+            />
           {:else}
             <input type="text" bind:value={inputProps[prop.name]} />
           {/if}

@@ -21,7 +21,7 @@
       <div class="compornent">
         <ComponentSample {item} props={getDefaultProps(item)} />
         <a
-          href={`#/components/detail/${item.moduleName}`}
+          href={`#/components/${item.moduleName}`}
           class="item"
           title={item.moduleName}
         >
