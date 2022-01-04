@@ -49,16 +49,18 @@
   export let paddingX = "";
   export let paddingY = "";
   export let borderRadius = "2rem";
-  export let fontSize = "";
+  export let fontSize = "1rem";
   /** @type {string} */
-  export let textColor = getBaseColors(baseColor).textColor;
+  export let textColor = "";
+
+  $: _textColor = textColor || getBaseColors(baseColor).textColor;
 </script>
 
 <Jelly
   color={baseColor}
-  paddingX={padding || paddingX}
-  paddingY={padding || paddingY}
+  paddingX={paddingX || padding}
+  paddingY={paddingY || padding}
   {borderRadius}
 >
-  <Text shape="embossed" color={textColor} size={fontSize}><slot /></Text>
+  <Text shape="embossed" color={_textColor} size={fontSize}><slot /></Text>
 </Jelly>

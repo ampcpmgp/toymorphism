@@ -9,7 +9,8 @@ export { default as H3 } from "./components/Headings/H3.svelte";
 export { default as H4 } from "./components/Headings/H4.svelte";
 export { default as H5 } from "./components/Headings/H5.svelte";
 export { default as H6 } from "./components/Headings/H6.svelte";
-export { default as Toc } from "./components/Headings/Toc.svelte";
+// https://github.com/ItalyPaleAle/svelte-spa-router/issues/157
+// export { default as Toc } from "./components/Headings/Toc.svelte";
 export { default as OL } from "./components/Lists/OL.svelte";
 export { default as OLItem } from "./components/Lists/OLItem.svelte";
 export { default as UL } from "./components/Lists/UL.svelte";

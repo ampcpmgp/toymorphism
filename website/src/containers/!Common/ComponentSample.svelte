@@ -5,7 +5,6 @@
   /** @type {import("toymorphism/dist/components/Buttons/LinkButton.svelte").LinkButtonProps} */
   export const defaultLinkButtonProps = {
     href: "//example.com",
-    target: "_blank",
   };
 
   /** @type {import("toymorphism/dist/components/Icons/FontAwesomeIcon.svelte").FontAwesomeIconProps} */
@@ -13,19 +12,26 @@
     class: "fas fa-home",
   };
 
-  /** @type {import("toymorphism/dist/components/Headings/Toc.svelte").TocProps} */
-  export const defaultTocProps = {
-    headings: [
-      { id: "/components/_h1", text: "h1", level: 1 },
-      { id: "/components/_h2-1", text: "h2-1", level: 2 },
-      { id: "/components/_h2-2", text: "h2-2", level: 2 },
-      { id: "/components/_h3", text: "h3", level: 3 },
-    ],
-  };
+  // /** @type {import("toymorphism/dist/components/Headings/Toc.svelte").TocProps} */
+  // export const defaultTocProps = {
+  //   headings: [
+  //     { id: "/components/_h1", text: "h1", level: 1 },
+  //     { id: "/components/_h2-1", text: "h2-1", level: 2 },
+  //     { id: "/components/_h2-2", text: "h2-2", level: 2 },
+  //     { id: "/components/_h3", text: "h3", level: 3 },
+  //   ],
+  // };
 
   /** @type {import("toymorphism/dist/components/Texts/Code.svelte").CodeProps} */
   export const defaultCodeProps = {
     code: "let a = 1",
+  };
+
+  /** @type {import("toymorphism/dist/components/Texts/Text.svelte").TextProps} */
+  export const defaultTextProps = {
+    shape: "solid",
+    size: "2rem",
+    color: "limegreen",
   };
 
   export function getDefaultProps(
@@ -38,14 +44,17 @@
       case "LinkButton":
         return defaultLinkButtonProps;
 
-      case "Toc":
-        return defaultTocProps;
+      // case "Toc":
+      //   return defaultTocProps;
 
       case "FontAwesomeIcon":
         return defaultFontAwesomeIconProps;
 
       case "Code":
         return defaultCodeProps;
+
+      case "Text":
+        return defaultTextProps;
 
       default:
         return props;
@@ -72,12 +81,12 @@
     OL,
     OLItem,
     Text,
-    Toc,
+    // Toc,
     UL,
     ULItem,
   } from "toymorphism";
 
-  /** @type {typeof components[0]} */
+  /** @type {import("../../types/sveld").Component} */
   export let item;
   export let props = {};
   void components;
@@ -115,12 +124,18 @@
   {:else if item.moduleName === "H6"}
     <H6 {...props}>H6</H6>
   {:else if item.moduleName === "Toc"}
-    <Toc {...props} />
+    <!-- <Toc {...props} />
 
-    <h1 id="/components/_h1">h1</h1>
-    <h2 id="/components/_h2-1">h2-1</h2>
-    <h2 id="/components/_h2-2">h2-2</h2>
-    <h3 id="/components/_h3">h3</h3>
+    {#each getDefaultProps(item).headings as heading}
+      {#if heading.level === 1}
+        <h1 id={heading.id}>{heading.text}</h1>
+      {:else if heading.level === 2}
+        <h2 id={heading.id}>{heading.text}</h2>
+      {:else if heading.level === 3}
+        <h3 id={heading.id}>{heading.text}</h3>
+      {/if}
+      <div style="height: 30vh;" />
+    {/each} -->
   {:else if item.moduleName === "FontAwesomeIcon"}
     <FontAwesomeIcon {...props}>
       <!-- no children -->

@@ -20,7 +20,7 @@ export interface ComponentProp {
  * For Component Page
  */
 export interface UiProps extends ComponentProp {
-  _value?: any;
+  _defaultValue?: any;
   _checked?: boolean;
   _inputType: string;
   _selectableValues: string[];

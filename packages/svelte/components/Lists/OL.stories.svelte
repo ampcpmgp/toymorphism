@@ -17,24 +17,24 @@
   }}
 />
 
-<Template let:args>
+<Template>
   <OL>
-    <OLItem {...args}>OLItem Item</OLItem>
-    <OLItem {...args}>OLItem Item</OLItem>
-    <OLItem {...args}>OLItem Item</OLItem>
-    <OLItem {...args}>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
     <OL>
-      <OLItem {...args}>OLItem Item</OLItem>
-      <OLItem {...args}>OLItem Item</OLItem>
+      <OLItem>OLItem Item</OLItem>
+      <OLItem>OLItem Item</OLItem>
       <OL>
-        <OLItem {...args}>OLItem Item</OLItem>
+        <OLItem>OLItem Item</OLItem>
       </OL>
     </OL>
-    <OLItem {...args}>OLItem Item</OLItem>
-    <OLItem {...args}>OLItem Item</OLItem>
-    <OLItem {...args}>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
+    <OLItem>OLItem Item</OLItem>
     <OL>
-      <OLItem {...args}>OLItem Item</OLItem>
+      <OLItem>OLItem Item</OLItem>
     </OL>
   </OL>
 

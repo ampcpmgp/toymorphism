@@ -4,37 +4,63 @@
   import { components } from "toymorphism/dist/COMPONENT_API.json";
   import AppFrame from "../containers/!Common/AppFrame.svelte";
   import Header from "../containers/!Common/Header.svelte";
-  import ComponentSample from "./../containers/!Common/ComponentSample.svelte";
+  import ComponentSample, {
+    getDefaultProps,
+  } from "./../containers/!Common/ComponentSample.svelte";
 
   export let params = {};
+  // Input properties for forms
+  let inputProps = {};
+  // Actual properties to be sent to the component.
+  let props = {};
+
+  // re-render if input values change
+  // https://github.com/sveltejs/svelte/issues/4442
+  let propsUpdated = Date.now();
 
   /**
    * @typedef {import("../types/sveld").ComponentProp} ComponentProp
    * @typedef {import("../types/sveld").UiProps} UiProps
    */
 
-  /** @type {UiProps[]} */
-  let props = [];
-
   $: component = components.find((item) => item.moduleName === params.name);
-  /** @type {ComponentProp[]} */
-  $: defaultProps = JSON.parse(JSON.stringify(component.props));
-  $: propsObj = props.reduce((acc, item) => {
-    return {
-      ...acc,
-      [item.name]: item._value,
-    };
-  }, {});
 
-  onMount(() => {
-    props = defaultProps.map((/** @type {ComponentProp} */ item) => {
+  /** @type {UiProps[]} */
+  $: componentDefaultProps = JSON.parse(JSON.stringify(component.props)).map(
+    (/** @type {ComponentProp} */ item) => {
       return {
         ...item,
         _inputType: getComponentInputType(item),
         _selectableValues: getSelectedValues(item),
-        _value: convertDefaultValue(item),
+        _defaultValue: convertDefaultValue(item),
       };
-    });
+    }
+  );
+  $: defaultProps = getDefaultProps(component);
+
+  $: {
+    props = {
+      ...defaultProps,
+      ...Object.entries(inputProps).reduce((acc, [key, value]) => {
+        // If input value is "", set it to undefined
+        if (value === "") {
+          value = undefined;
+        }
+
+        return {
+          ...acc,
+          [key]: value ?? defaultProps[key],
+        };
+      }, {}),
+    };
+
+    propsUpdated = Date.now();
+  }
+
+  onMount(() => {
+    inputProps = {
+      ...defaultProps,
+    };
   });
 
   /**
@@ -45,16 +71,18 @@
       case "boolean":
         return "checkbox";
 
+      case `import("../../types/props").TocHeading[]`:
+        return "textarea&object";
+
+      case `import("../../types/props").MultilineText`:
+        return "textarea";
+
       case "string":
-      case `import("../../types/props.js").Thickness`:
-      case `import("../../types/props.js").Color`:
-        return "text";
-
+      case `import("../../types/props").Thickness`:
+      case `import("../../types/props").Color`:
       default:
-        break;
+        return "text";
     }
-
-    return item.type;
   }
 
   /**
@@ -78,11 +106,18 @@
   <Header currentPage="components" />
 
   {#if component}
-    <ComponentSample item={component} props={propsObj} />
+    {#key propsUpdated}
+      <ComponentSample item={component} {props} />
+    {/key}
 
-    <form>
-      {#each props as prop}
-        <label>
+    <form style="width: 100%; display: grid; place-items:center;">
+      {#each componentDefaultProps as prop}
+        <label
+          style="
+        display: flex;
+        width: 100%;
+    "
+        >
           {prop.name}:
 
           <!--
@@ -92,9 +127,24 @@
           <input type="hidden" />
 
           {#if prop._inputType === "checkbox"}
-            <input type="checkbox" bind:checked={prop._value} />
+            <input type="checkbox" bind:checked={inputProps[prop.name]} />
+          {:else if prop._inputType === "textarea&object"}
+            <textarea
+              value={JSON.stringify(inputProps[prop.name], null, 2)}
+              style="width: 100%;"
+              rows="12"
+              on:input={(e) => {
+                inputProps[prop.name] = JSON.parse(e.currentTarget.value);
+              }}
+            />
+          {:else if prop._inputType === "textarea"}
+            <textarea
+              bind:value={inputProps[prop.name]}
+              style="width: 100%;"
+              rows="6"
+            />
           {:else}
-            <input type="text" bind:value={prop._value} />
+            <input type="text" bind:value={inputProps[prop.name]} />
           {/if}
         </label>
       {/each}

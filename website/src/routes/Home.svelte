@@ -1,5 +1,7 @@
 <script>
-  import { Toc, H2, Code } from "toymorphism";
+  import { H2, Code } from "toymorphism";
+  import Toc from "toymorphism/components/Headings/Toc.svelte";
+
   import Header from "../containers/!Common/Header.svelte";
   import Philosophy from "../containers/Home/Philosophy.svelte";
   import AppFrame from "../containers/!Common/AppFrame.svelte";

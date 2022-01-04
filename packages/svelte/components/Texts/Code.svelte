@@ -3,6 +3,11 @@
 
   import Frame from "../Frames/Frame.svelte";
 
+  /**
+   * @restProps {div}
+   */
+
+  /** @type {import("../../types/props").MultilineText} */
   export let code = "";
   /** @type {import("../../types/props").Color} */
   export let frameColor = "white";
@@ -14,14 +19,11 @@
   export let padding = "0.5rem";
   /** @type {import("../../types/props").Padding} */
   export let edgePadding = "0.25rem";
-
-  /** see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code#attributes */
-  export let codeAttrs = {};
 </script>
 
 <Frame {frameColor} {edgeColor} {edgePadding} {...$$restProps}>
   <pre>
-    <code {...codeAttrs} style="{codeAttrs.style || ''}; --text-color: {textColor}; --padding: {padding};">
+    <code style="--text-color: {textColor}; --padding: {padding};">
       {code}
     </code>
   </pre>

@@ -1,9 +1,6 @@
-<script context="module">
-  export const key = {};
-</script>
-
 <script>
   import { getContext, setContext } from "svelte";
+  import { key } from "./ol";
 
   const context = getContext(key);
   const parentHierarchy = context ? context.hierarchy : -1;
@@ -13,7 +10,7 @@
   });
 
   /** counter Id */
-  export let cid = `toymorphism-svelte-ol-${hierarchy}`;
+  let cid = `toymorphism-svelte-ol-${hierarchy}`;
 </script>
 
 <ol
