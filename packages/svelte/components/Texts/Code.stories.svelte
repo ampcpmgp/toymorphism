@@ -46,6 +46,5 @@ window.Prism.manual = true;`,
     edgeColor: "skyblue",
     textColor: "black",
     edgePadding: "1rem",
-    codeAttrs: { title: "prism" },
   }}
 />

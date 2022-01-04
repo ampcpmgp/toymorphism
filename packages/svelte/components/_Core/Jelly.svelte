@@ -188,6 +188,7 @@
 
     /* for ios */
     -webkit-user-select: none;
+    user-select: none;
     appearance: none;
 
     /* for ios

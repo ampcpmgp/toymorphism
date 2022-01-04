@@ -72,6 +72,9 @@
         return "checkbox";
 
       case `import("../../types/props").TocHeading[]`:
+        return "textarea&object";
+
+      case `import("../../types/props").MultilineText`:
         return "textarea";
 
       case "string":
@@ -125,14 +128,20 @@
 
           {#if prop._inputType === "checkbox"}
             <input type="checkbox" bind:checked={inputProps[prop.name]} />
-          {:else if prop._inputType === "textarea"}
+          {:else if prop._inputType === "textarea&object"}
             <textarea
               value={JSON.stringify(inputProps[prop.name], null, 2)}
               style="width: 100%;"
-              rows="10"
+              rows="12"
               on:input={(e) => {
                 inputProps[prop.name] = JSON.parse(e.currentTarget.value);
               }}
+            />
+          {:else if prop._inputType === "textarea"}
+            <textarea
+              bind:value={inputProps[prop.name]}
+              style="width: 100%;"
+              rows="6"
             />
           {:else}
             <input type="text" bind:value={inputProps[prop.name]} />

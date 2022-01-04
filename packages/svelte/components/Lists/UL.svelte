@@ -1,5 +1,5 @@
 <script context="module">
-  export const key = {};
+  const key = {};
 </script>
 
 <script>

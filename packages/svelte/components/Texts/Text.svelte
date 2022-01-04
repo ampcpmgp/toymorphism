@@ -4,7 +4,7 @@
   /**
    * @param {string} color
    */
-  export function getTextColors(color) {
+  function getTextColors(color) {
     try {
       const chromaColor = chroma(color);
       const luminance = chromaColor.luminance();
@@ -43,13 +43,13 @@
   export let size = "1rem";
   export let lineHeight = "normal";
   /** @type {import("../../types/props").Color} */
-  export let color;
-  export let gap = "0.25rem";
+  export let color = $colors.text;
   export let thickness = "calc(var(--size) / 8)";
   /** @type {import("../../types/props").TextShape} */
   export let shape = "none";
 
-  // If undefined is explicitly specified, it will be used. Required on the Component page of the website.
+  // If undefined is explicitly specified, the following code is required.
+  // Using by `Component.svelte` of website.
   $: color = color || $colors.text;
   $: textColors = getTextColors(color);
 </script>
@@ -68,7 +68,6 @@
     --bottom-color: {textColors.bottomColor};
     --shadow-color: {textColors.shadowColor};
     --thickness: {thickness};
-    --gap: {gap};
   "
 >
   <slot />
@@ -118,7 +117,6 @@
   p {
     margin: 0;
     display: inline-flex;
-    gap: var(--gap);
 
     color: var(--base-color);
     font-size: var(--size);

@@ -27,6 +27,13 @@
     code: "let a = 1",
   };
 
+  /** @type {import("toymorphism/dist/components/Texts/Text.svelte").TextProps} */
+  export const defaultTextProps = {
+    shape: "solid",
+    size: "2rem",
+    color: "limegreen",
+  };
+
   export function getDefaultProps(
     /** @type {import("../../types/sveld").Component} */
     component
@@ -45,6 +52,9 @@
 
       case "Code":
         return defaultCodeProps;
+
+      case "Text":
+        return defaultTextProps;
 
       default:
         return props;

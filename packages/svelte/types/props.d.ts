@@ -17,3 +17,5 @@ export type Color = string;
 export type Padding = string;
 /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size */
 export type FontSize = string;
+
+export type MultilineText = string;
