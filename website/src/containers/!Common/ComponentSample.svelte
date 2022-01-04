@@ -44,8 +44,8 @@
       case "LinkButton":
         return defaultLinkButtonProps;
 
-      case "Toc":
-        return defaultTocProps;
+      // case "Toc":
+      //   return defaultTocProps;
 
       case "FontAwesomeIcon":
         return defaultFontAwesomeIconProps;
