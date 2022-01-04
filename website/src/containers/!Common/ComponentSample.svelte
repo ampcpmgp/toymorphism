@@ -12,15 +12,15 @@
     class: "fas fa-home",
   };
 
-  /** @type {import("toymorphism/dist/components/Headings/Toc.svelte").TocProps} */
-  export const defaultTocProps = {
-    headings: [
-      { id: "/components/_h1", text: "h1", level: 1 },
-      { id: "/components/_h2-1", text: "h2-1", level: 2 },
-      { id: "/components/_h2-2", text: "h2-2", level: 2 },
-      { id: "/components/_h3", text: "h3", level: 3 },
-    ],
-  };
+  // /** @type {import("toymorphism/dist/components/Headings/Toc.svelte").TocProps} */
+  // export const defaultTocProps = {
+  //   headings: [
+  //     { id: "/components/_h1", text: "h1", level: 1 },
+  //     { id: "/components/_h2-1", text: "h2-1", level: 2 },
+  //     { id: "/components/_h2-2", text: "h2-2", level: 2 },
+  //     { id: "/components/_h3", text: "h3", level: 3 },
+  //   ],
+  // };
 
   /** @type {import("toymorphism/dist/components/Texts/Code.svelte").CodeProps} */
   export const defaultCodeProps = {
