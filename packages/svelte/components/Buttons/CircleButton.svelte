@@ -9,9 +9,11 @@
   export let disabled = false;
   export let selected = false;
 
-  /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/width */
-  export let diameter = "initail";
-  /** see: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
+  /** Set diameter length.
+   * See below for possible values.
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/width */
+  export let diameter = "initial";
+  /** https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
   export let padding = "0.2rem";
 
   /** @type {import("../../types/props").Thickness} */

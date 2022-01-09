@@ -4,6 +4,12 @@
   import { components } from "toymorphism/dist/COMPONENT_API.json";
   import AppFrame from "../containers/!Common/AppFrame.svelte";
   import Header from "../containers/!Common/Header.svelte";
+  import {
+    getComponentInputType,
+    getDefaultValue,
+    getDescription,
+    getSelectedValues,
+  } from "../utils/component";
   import ComponentSample, {
     getDefaultProps,
   } from "./../containers/!Common/ComponentSample.svelte";
@@ -32,7 +38,8 @@
         ...item,
         _inputType: getComponentInputType(item),
         _selectableValues: getSelectedValues(item),
-        _defaultValue: convertDefaultValue(item),
+        _defaultValue: getDefaultValue(item),
+        _description: getDescription(item),
       };
     }
   );
@@ -62,44 +69,6 @@
       ...defaultProps,
     };
   });
-
-  /**
-   * @param {ComponentProp} item
-   */
-  function getComponentInputType(item) {
-    switch (item.type) {
-      case "boolean":
-        return "checkbox";
-
-      case `import("../../types/props").TocHeading[]`:
-        return "textarea&object";
-
-      case `import("../../types/props").MultilineText`:
-        return "textarea";
-
-      case "string":
-      case `import("../../types/props").Thickness`:
-      case `import("../../types/props").Color`:
-      default:
-        return "text";
-    }
-  }
-
-  /**
-   * @param {ComponentProp} item
-   */
-  function getSelectedValues(item) {
-    // TODO: set value
-
-    return [item.type];
-  }
-
-  /**
-   * @param {ComponentProp} item
-   */
-  function convertDefaultValue(item) {
-    return eval(item.value);
-  }
 </script>
 
 <AppFrame>
@@ -107,46 +76,70 @@
 
   {#if component}
     {#key propsUpdated}
-      <ComponentSample item={component} {props} />
+      <div style="display:grid;place-items:center;gap: 1rem;">
+        <div
+          style="border:solid 1px #ccc; padding: 0.25rem; border-radius:0.25rem;"
+        >
+          {component.moduleName}
+        </div>
+
+        <ComponentSample item={component} {props} />
+      </div>
     {/key}
 
-    <form style="width: 100%; display: grid; place-items:center;">
+    <form
+      style="display: grid; grid-template-columns: auto auto auto 1fr; gap: 1rem;"
+    >
+      <div style="font-weight: bold;">Name</div>
+      <div style="font-weight: bold;">Value</div>
+      <div style="font-weight: bold;">Default</div>
+      <div style="font-weight: bold;">Description</div>
+
       {#each componentDefaultProps as prop}
-        <label
-          style="
-        display: flex;
-        width: 100%;
-    "
-        >
-          {prop.name}:
-
-          <!--
-            for a11y-label-has-associated-control
-            see more: https://github.com/sveltejs/svelte/issues/5300
-          -->
-          <input type="hidden" />
-
-          {#if prop._inputType === "checkbox"}
-            <input type="checkbox" bind:checked={inputProps[prop.name]} />
-          {:else if prop._inputType === "textarea&object"}
-            <textarea
-              value={JSON.stringify(inputProps[prop.name], null, 2)}
-              style="width: 100%;"
-              rows="12"
-              on:input={(e) => {
-                inputProps[prop.name] = JSON.parse(e.currentTarget.value);
-              }}
-            />
-          {:else if prop._inputType === "textarea"}
-            <textarea
-              bind:value={inputProps[prop.name]}
-              style="width: 100%;"
-              rows="6"
-            />
-          {:else}
-            <input type="text" bind:value={inputProps[prop.name]} />
-          {/if}
+        <label for={prop.name}>
+          {prop.name}
         </label>
+
+        {#if prop._inputType === "checkbox"}
+          <input
+            id={prop.name}
+            type="checkbox"
+            bind:checked={inputProps[prop.name]}
+          />
+        {:else if prop._inputType === "textarea&object"}
+          <textarea
+            id={prop.name}
+            value={JSON.stringify(inputProps[prop.name], null, 2)}
+            style="width: 100%;"
+            rows="12"
+            on:input={(e) => {
+              inputProps[prop.name] = JSON.parse(e.currentTarget.value);
+            }}
+          />
+        {:else if prop._inputType === "textarea"}
+          <textarea
+            id={prop.name}
+            bind:value={inputProps[prop.name]}
+            style="width: 100%;"
+            rows="6"
+          />
+        {:else if prop._inputType === "select"}
+          <select id={prop.name} bind:value={inputProps[prop.name]}>
+            {#each prop._selectableValues as option}
+              <option value={option}>{option}</option>
+            {/each}
+          </select>
+        {:else}
+          <input
+            style="align-self: start;"
+            id={prop.name}
+            type="text"
+            bind:value={inputProps[prop.name]}
+          />
+        {/if}
+
+        <div>{prop._defaultValue}</div>
+        <div style="white-space: pre;">{prop._description}</div>
       {/each}
     </form>
   {:else}
