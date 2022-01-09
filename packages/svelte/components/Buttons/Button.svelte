@@ -4,7 +4,10 @@
 
   /** @restProps {button} */
 
-  /** @type {string} */
+  /** Default value is $colors.base
+   * If you want to use custom colors, see below
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/color
+   * @type {string} */
   export let baseColor = $colors.base;
   export let disabled = false;
   export let selected = false;

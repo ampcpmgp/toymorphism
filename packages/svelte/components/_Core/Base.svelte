@@ -108,11 +108,12 @@
 
 <style>
   .box-shadow-wrapper {
-    padding: 0;
+    padding: calc(var(--thickness) * 0.14);
     /* same top shadow */
     padding-top: calc(var(--thickness) * 0.32);
     /* same bottom shadow */
     padding-bottom: calc(var(--thickness) * 1.67);
+    margin-bottom: var(--thickness);
   }
 
   .base {

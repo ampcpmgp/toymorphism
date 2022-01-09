@@ -1,3 +1,5 @@
+import { getComponentInputType } from "../utils/component";
+
 export interface Component {
   moduleName: string;
   filePath: string;
@@ -22,6 +24,7 @@ export interface ComponentProp {
 export interface UiProps extends ComponentProp {
   _defaultValue?: any;
   _checked?: boolean;
-  _inputType: string;
+  _inputType: ReturnType<typeof getComponentInputType>;
   _selectableValues: string[];
+  _description?: string;
 }
