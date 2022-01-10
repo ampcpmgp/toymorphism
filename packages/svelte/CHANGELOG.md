@@ -1,5 +1,15 @@
 # toymorphism
 
+## 0.6.2
+
+### Patch Changes
+
+- 92625e7: Fix Text color error handling
+- 92625e7: Fix styles & default values
+- a13e993: Fix FontAwesomeIcon class
+- e9981e5: Add color error handling
+- 0711095: Fix Base component padding, margin-bottom
+
 ## 0.6.1
 
 ### Patch Changes
