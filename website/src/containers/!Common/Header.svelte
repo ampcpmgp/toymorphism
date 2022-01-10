@@ -55,7 +55,7 @@
       </div>
     </Button>
 
-    <Button
+    <!-- <Button
       padding="0.5rem"
       gap="0.4rem"
       selected={currentPage === "documents" || clickedPage === "/documents"}
@@ -71,7 +71,7 @@
       <div class="hide-sp">
         <Text>Documents</Text>
       </div>
-    </Button>
+    </Button> -->
   </div>
 </div>
 

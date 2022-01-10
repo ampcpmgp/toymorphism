@@ -2,6 +2,14 @@
   import { colors } from "../../stores";
   import Text from "../Texts/Text.svelte";
 
+  /** @type {string} */
+  let className = "";
+
+  /**
+   * see more: https://fontawesome.com/v5.15/icons
+   */
+  export { className as class };
+
   export let href =
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css";
   export let size = "2rem";
@@ -17,5 +25,5 @@
 </svelte:head>
 
 <Text {size} {color} {thickness} {shape}>
-  <i {...$$restProps} />
+  <i {...$$restProps} class={className} />
 </Text>

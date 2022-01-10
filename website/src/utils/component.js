@@ -60,6 +60,11 @@ export function getDefaultValue(item) {
  * @param {ComponentProp} item
  */
 export function getDescription(item) {
-  // TODO: convert link to anchor tag
-  return item.description ?? "";
+  const text = item.description ?? "";
+  const replaced = text.replace(
+    /(?:(https?:\/\/[^\s]+))/m,
+    '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+  );
+
+  return replaced;
 }

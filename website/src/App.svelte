@@ -13,5 +13,6 @@
     padding: 1rem;
     margin: auto;
     max-width: 1080px;
+    overflow-y: scroll;
   }
 </style>

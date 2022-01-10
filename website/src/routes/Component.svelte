@@ -77,18 +77,12 @@
   {#if component}
     {#key propsUpdated}
       <div style="display:grid;place-items:center;gap: 1rem;">
-        <div
-          style="border:solid 1px #ccc; padding: 0.25rem; border-radius:0.25rem;"
-        >
-          {component.moduleName}
-        </div>
-
         <ComponentSample item={component} {props} />
       </div>
     {/key}
 
     <form
-      style="display: grid; grid-template-columns: auto auto auto 1fr; gap: 1rem;"
+      style="display: grid; grid-template-columns: auto auto 1fr 40%; gap: 1rem;"
     >
       <div style="font-weight: bold;">Name</div>
       <div style="font-weight: bold;">Value</div>
@@ -138,8 +132,10 @@
           />
         {/if}
 
-        <div>{prop._defaultValue}</div>
-        <div style="white-space: pre;">{prop._description}</div>
+        <div style=" word-break: break-all;">{prop._defaultValue}</div>
+        <div style="white-space: pre-wrap; word-break: break-all;">
+          {@html prop._description}
+        </div>
       {/each}
     </form>
   {:else}
