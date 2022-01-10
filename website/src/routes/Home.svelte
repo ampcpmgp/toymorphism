@@ -34,7 +34,12 @@
   <div class="h2-wrapper">
     <H2 shape="float" id={headings[1].id}>{headings[1].text}</H2>
     <Code
-      code={`npm install toymorphism\n\n// App.svelte\nimport { Button } from "toymorphism";\n\n<Button>Hello world</Button>`}
+      code={`npm install toymorphism`}
+      frameColor={"white"}
+      textColor={"black"}
+    />
+    <Code
+      code={`// App.svelte\nimport { Button } from "toymorphism";\n\n<Button>Hello world</Button>`}
       frameColor={"white"}
       textColor={"black"}
     />
