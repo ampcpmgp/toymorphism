@@ -1,5 +1,11 @@
 # toymorphism
 
+## 0.6.3
+
+### Patch Changes
+
+- 68606c7: Fix ios style collapse UIItem
+
 ## 0.6.2
 
 ### Patch Changes
