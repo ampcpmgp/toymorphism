@@ -1,5 +1,11 @@
 # toymorphism
 
+## 0.6.4
+
+### Patch Changes
+
+- 952ea16: Fix Base Component padding
+
 ## 0.6.3
 
 ### Patch Changes
