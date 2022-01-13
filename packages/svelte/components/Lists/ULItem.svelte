@@ -21,6 +21,6 @@
   }
   li .counter::before {
     /* ⚬ */
-    content: "🞄 ";
+    content: "・";
   }
 </style>

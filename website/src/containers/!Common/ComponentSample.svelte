@@ -2,6 +2,11 @@
   /** @type {import("toymorphism/dist/components/Buttons/Button.svelte").ButtonProps} */
   export const defaultButtonProps = {};
 
+  /** @type {import("toymorphism/dist/components/Buttons/CircleButton.svelte").CircleButtonProps} */
+  export const defaultCircleButtonProps = {
+    diameter: "2.5rem",
+  };
+
   /** @type {import("toymorphism/dist/components/Buttons/LinkButton.svelte").LinkButtonProps} */
   export const defaultLinkButtonProps = {
     href: "//example.com",
@@ -41,6 +46,12 @@
     const props = {};
 
     switch (component.moduleName) {
+      case "Button":
+        return defaultButtonProps;
+
+      case "CircleButton":
+        return defaultCircleButtonProps;
+
       case "LinkButton":
         return defaultLinkButtonProps;
 
