@@ -16,7 +16,7 @@
     "@storybook/addon-essentials": "^6.4.0-beta.23",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/addon-svelte-csf": "^1.1.0",
-    "@storybook/svelte": "^6.4.0-beta.15",
+    "@storybook/svelte": "^6.4.17",
     "@tsconfig/svelte": "^3.0.0",
     "@types/chroma-js": "^2.1.3",
     "babel-loader": "^8.2.2",
